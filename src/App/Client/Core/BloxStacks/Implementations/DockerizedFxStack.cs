@@ -3,14 +3,14 @@ using Functionland.FxBlox.Client.Core.Models;
 
 namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations;
 
-public abstract partial class DockerizedBloxStack : IBloxStack
+public abstract partial class DockerizedFxStack : IFxStack
 {
     [AutoInject] private IBloxDockerManager BloxDockerManager { get; set; } = default!;
 
     public abstract string Title { get; }
     public abstract string Description { get; }
     public abstract Task NavigateToConfigurationPageAsync();
-    public abstract Task<BloxStackStatusReport> GetStatusReportAsync();
+    public abstract Task<BloxStackStatusReport> GetStatusReportAsync(BloxDevice bloxDevice);
 
     public async Task ConfigureBloxAsync(BloxDevice bloxDevice)
     {

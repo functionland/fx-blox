@@ -1,4 +1,4 @@
-﻿namespace Functionland.FxBlox.Client.Core.BloxStacks.Contracts;
+﻿namespace Functionland.FxBlox.Client.Core.Models;
 
 public enum BloxStackStatus
 {

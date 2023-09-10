@@ -7,12 +7,12 @@ using Functionland.FxBlox.Client.Core.Models;
 
 namespace Functionland.FxBlox.Client.Core.BloxStacks.Contracts
 {
-    public interface IBloxStack
+    public interface IFxStack
     {
         string Title { get; }
         string Description { get; }
         Task NavigateToConfigurationPageAsync();
-        Task<BloxStackStatusReport> GetStatusReportAsync();
+        Task<BloxStackStatusReport> GetStatusReportAsync(BloxDevice bloxDevice);
         Task ConfigureBloxAsync(BloxDevice bloxDevice);
     }
 }
