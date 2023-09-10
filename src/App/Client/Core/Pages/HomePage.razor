@@ -1,0 +1,15 @@
+﻿@page "/"
+@using Functionland.FxBlox.Shared.Resources
+@inherits AppComponentBase
+
+<PageTitle>@Localizer[nameof(AppStrings.HomeTitle)]</PageTitle>
+
+<div class="page-container">
+    <section class="page-section hero-section">
+        <h1 class="hero-section-title">@Localizer[nameof(AppStrings.HomeTitle)]</h1>
+
+        <div class="hero-section-desc">
+            @Localizer[nameof(AppStrings.HomeMessage)]
+        </div>
+    </section>
+</div>

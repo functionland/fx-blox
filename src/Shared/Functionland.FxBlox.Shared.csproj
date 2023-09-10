@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Bit.CodeAnalyzers" Version="5.2.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Bit.SourceGenerators" Version="5.2.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="DeviceDetector.NET" Version="6.1.4" />
+        <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="7.0.9" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.9" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="7.0.4" />
+        <PackageReference Include="System.Text.Json" Version="7.0.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Functionland.FxBlox.Core.Util\Functionland.FxBlox.Core.Util.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+		<Using Include="Functionland.FxBlox.Shared" />
+		<Using Include="Functionland.FxBlox.Shared.Attributes" />
+		<Using Include="Functionland.FxBlox.Shared.Resources" />
+		<Using Include="Functionland.FxBlox.Shared.Exceptions" />
+		<Using Include="Functionland.FxBlox.Shared.Services.Contracts" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="**\*.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>$([System.String]::Copy('%(Filename)').Replace('.Designer','')).resx</DependentUpon>
+        </Compile>
+        <EmbeddedResource Update="**\*.resx">
+            <Generator>PublicResXFileCodeGenerator</Generator>
+            <LastGenOutput>%(Filename).Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+
+</Project>

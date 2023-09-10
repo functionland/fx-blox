@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2724349D-F7D7-449E-93E8-D698BE1FBDF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{141FF11E-4897-4EB9-85E9-013644A49DEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".SolutionItems", "{F7C0E329-C7D5-45E8-930C-8612FC8450B3}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0817B677-2D1D-4458-A281-0D17DAF8E713}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Shared", "Shared\Functionland.FxBlox.Shared.csproj", "{EED41B42-F47C-49E7-B0B8-9C59FF94539E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Client.App", "App\Client\App\Functionland.FxBlox.Client.App.csproj", "{502B4322-5098-49EC-8F34-CF4F8399DB54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Client.Core", "App\Client\Core\Functionland.FxBlox.Client.Core.csproj", "{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Core.Util", "Core\Functionland.FxBlox.Core.Util\Functionland.FxBlox.Core.Util.csproj", "{7B23F1F6-F735-4563-8243-5A33F01010F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EED41B42-F47C-49E7-B0B8-9C59FF94539E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED41B42-F47C-49E7-B0B8-9C59FF94539E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED41B42-F47C-49E7-B0B8-9C59FF94539E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED41B42-F47C-49E7-B0B8-9C59FF94539E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{502B4322-5098-49EC-8F34-CF4F8399DB54}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EED41B42-F47C-49E7-B0B8-9C59FF94539E} = {0817B677-2D1D-4458-A281-0D17DAF8E713}
+		{502B4322-5098-49EC-8F34-CF4F8399DB54} = {141FF11E-4897-4EB9-85E9-013644A49DEF}
+		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC} = {141FF11E-4897-4EB9-85E9-013644A49DEF}
+		{7B23F1F6-F735-4563-8243-5A33F01010F3} = {2724349D-F7D7-449E-93E8-D698BE1FBDF3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2578169F-4F2F-4618-9EEB-D34A2A2DB160}
+	EndGlobalSection
+EndGlobal

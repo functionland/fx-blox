@@ -1,0 +1,17 @@
+﻿@namespace Functionland.FxBlox.Client.Core
+@inherits LayoutComponentBase
+
+@* <div class="status-bar">Functionland.FxBlox.App</div> *@
+
+@*<Header OnToggleMenu=ToggleMenuHandler />*@
+
+<div class="main">
+    <div class="main-content">
+        <AppErrorBoundary>
+            @Body
+        </AppErrorBoundary>
+    </div>
+    @*<Footer />*@
+</div>
+
+<MessageBox />

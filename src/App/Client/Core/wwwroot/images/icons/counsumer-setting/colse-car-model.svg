@@ -1,0 +1,11 @@
+<svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Buttons">
+<path id="Path" d="M11 22.5C17.0751 22.5 22 17.5751 22 11.5C22 5.42487 17.0751 0.5 11 0.5C4.92487 0.5 0 5.42487 0 11.5C0 17.5751 4.92487 22.5 11 22.5Z" fill="#FDECED"/>
+<g id="Indicators/ArrowDownIndicator">
+<g id="Group">
+<path id="Line-7" d="M7.96484 14.5081L14.0401 8.49013" stroke="#EF3E4A" stroke-linecap="round"/>
+<path id="Line-7_2" d="M14.0938 14.5361L7.90948 8.46049" stroke="#EF3E4A" stroke-linecap="round"/>
+</g>
+</g>
+</g>
+</svg>
