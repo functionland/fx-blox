@@ -20,11 +20,17 @@ To unify the development experience of facing different workloads (Fula, RocketP
 
 ```mermaid
 classDiagram
-IBloxStack <|-- FulaBloxStack
-IBloxStack <|-- EthereumRocketPoolBloxStack
-IBloxStack <|-- TonStakeBloxStack
+IBloxStack <|-- DockerizedBloxStack
+DockerizedBloxStack <|-- FulaBloxStack
+DockerizedBloxStack <|-- EthereumRocketPoolBloxStack
+DockerizedBloxStack <|-- TonStakeBloxStack
 
 class IBloxStack {
   <<interface>>
+}
+
+class DockerizedBloxStack {
+  <<abstract>>
+  + GetDockerImageName()
 }
 ```
