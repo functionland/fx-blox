@@ -1,0 +1,26 @@
+﻿@namespace Functionland.FxBlox.Client.Core.Components
+
+@inherits AppComponentBase;
+
+<div class="progress-container">
+    <div class="main-content">
+        @if (ProgressMode == ProgressMode.Progressive)
+        {
+            <BitProgressIndicator BarHeight="4"
+                                  Label="@CurrentText"
+                                  PercentComplete="@(GetPercentComplete())" />
+        }
+        else
+        {
+            <BitProgressIndicator BarHeight="4"
+                                  Label="@CurrentText" />
+        }
+        <div class="progress-dsc">
+            <p>@CurrentSubText</p>
+            @if (ProgressMode == ProgressMode.Progressive)
+            {
+                <p>@(GetPercentComplete() + "%")</p>
+            }
+        </div>
+    </div>
+</div>

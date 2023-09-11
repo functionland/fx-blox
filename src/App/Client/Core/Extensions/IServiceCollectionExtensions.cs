@@ -1,6 +1,4 @@
-﻿using Functionland.FxBlox.Client.Core.Services.Implementations;
-
-namespace Microsoft.Extensions.DependencyInjection
+﻿ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IServiceCollectionExtensions
     {
@@ -14,6 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddScoped<AuthenticationStateProvider, AppAuthenticationStateProvider>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddSingleton<IGoBackService, GoBackService>();
             services.AddScoped(sp => (AppAuthenticationStateProvider)sp.GetRequiredService<AuthenticationStateProvider>());
 
             return services;

@@ -661,4 +661,22 @@ Please confirm your email by clicking on the link.</value>
   <data name="Update" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="ErrorMessage" xml:space="preserve">
+    <value>Error message</value>
+  </data>
+  <data name="InputSearchFullWidth" xml:space="preserve">
+    <value>Search in “{0}”</value>
+  </data>
+  <data name="InputSearchParial" xml:space="preserve">
+    <value>Search your files</value>
+  </data>
+  <data name="TextAreaLabel" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="TextAreaPlaceholder" xml:space="preserve">
+    <value>Type message here...</value>
+  </data>
 </root>

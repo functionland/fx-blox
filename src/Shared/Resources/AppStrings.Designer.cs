@@ -169,6 +169,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        public static string Clear {
+            get {
+                return ResourceManager.GetString("Clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The property {0}.{1} could not be found..
         /// </summary>
         public static string Common_PropertyNotFound {
@@ -521,6 +530,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error message.
+        /// </summary>
+        public static string ErrorMessage {
+            get {
+                return ResourceManager.GetString("ErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} field only accepts files with the following extensions: {1}.
         /// </summary>
         public static string FileExtensionsAttribute_Invalid {
@@ -670,6 +688,24 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string HomeTitle {
             get {
                 return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search in “{0}”.
+        /// </summary>
+        public static string InputSearchFullWidth {
+            get {
+                return ResourceManager.GetString("InputSearchFullWidth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search your files.
+        /// </summary>
+        public static string InputSearchParial {
+            get {
+                return ResourceManager.GetString("InputSearchParial", resourceCulture);
             }
         }
         
@@ -1291,6 +1327,24 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string TermsTitle {
             get {
                 return ResourceManager.GetString("TermsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Label.
+        /// </summary>
+        public static string TextAreaLabel {
+            get {
+                return ResourceManager.GetString("TextAreaLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type message here....
+        /// </summary>
+        public static string TextAreaPlaceholder {
+            get {
+                return ResourceManager.GetString("TextAreaPlaceholder", resourceCulture);
             }
         }
         
