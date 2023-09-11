@@ -22,7 +22,7 @@ namespace Functionland.FxBlox.Client.Core.Components
         [AutoInject] protected IAuthTokenProvider AuthTokenProvider = default!;
 
         [AutoInject] protected IStringLocalizer<AppStrings> Localizer = default!;
-
+        [AutoInject] protected IGoBackService GoBackService { get; set; } = default!;
         [AutoInject] protected IExceptionHandler ExceptionHandler { get; set; } = default!;
 
         [AutoInject] protected AppAuthenticationStateProvider AuthenticationStateProvider = default!;
