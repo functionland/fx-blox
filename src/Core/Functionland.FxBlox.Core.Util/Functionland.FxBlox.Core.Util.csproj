@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bit.Universal.Core" Version="13.4.0" />
+    <PackageReference Include="Bit.Universal.Core" Version="13.6.0" />
     <PackageReference Include="Html2Markdown" Version="5.1.0.703" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="7.0.9" />
@@ -15,11 +15,11 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Bit.CodeAnalyzers" Version="5.2.0-pre-03">
+		<PackageReference Include="Bit.CodeAnalyzers" Version="5.5.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Bit.SourceGenerators" Version="5.2.0-pre-03">
+		<PackageReference Include="Bit.SourceGenerators" Version="5.5.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
