@@ -1,0 +1,27 @@
+﻿@namespace Functionland.FxBlox.Client.Core.Components
+
+@inherits AppComponentBase;
+
+@if (IsPartial)
+{
+    <div class="deep-search">
+        <input class="input-box input-partial @(IsEnabled ? "" : "fully-disabled") @(_isFocused ? "search-icon-active" : "")"
+           type="text" id="searchinput"
+           placeholder="@Localizer[nameof(AppStrings.InputSearchParial)]"
+           value="@_inputText"
+           @oninput="HandleInput"
+        @onfocus="HandleFocus" autocomplete="off" />
+        <div class="search-icon"></div>
+    </div>
+}
+else
+{
+    <div class="inline-search">
+        <div class="search-icon @(IsEnabled ? "" : "fully-disabled")"></div>
+        <input id="inline-search-input" class="input-box input-full-width" value="@_inputText" @oninput="HandleInput" @onfocus="HandleFocus" type="text" placeholder="@Localizer[nameof(AppStrings.InputSearchFullWidth), (Placeholder?? "Folder name")]" autocomplete="off"/>
+        @if (!string.IsNullOrEmpty(_inputText) || !string.IsNullOrWhiteSpace(_inputText))
+        {
+            <button class="button-search-input" @onclick="HandleCancel">@Localizer[nameof(AppStrings.Clear)]</button>
+        }
+    </div>
+}

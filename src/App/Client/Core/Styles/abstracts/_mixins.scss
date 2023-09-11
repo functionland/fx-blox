@@ -1,8 +1,8 @@
-﻿@mixin unselectable() {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+﻿@import "_variables.scss";
+@import "_functions.scss";
+
+@mixin Icon($icon, $color: color(gray-content1)) {
+    color: $color;
+    content: $icon;
+    font-family: $Icons-Outline;
 }

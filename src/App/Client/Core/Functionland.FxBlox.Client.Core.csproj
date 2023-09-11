@@ -70,6 +70,9 @@
         <Using Include="Microsoft.Maui.Networking" />
 		<Using Include="Microsoft.Maui.Storage" />
 		<Using Include="Functionland.FxBlox.Shared.Infra" />
+		<Using Include="Functionland.FxBlox.Client.Core.Components" />
+		<Using Include="Functionland.FxBlox.Client.Core.Enums" />
+		<Using Include="Functionland.FxBlox.Client.Core.Services.Contracts" />
     </ItemGroup>
 
     <ItemGroup>
@@ -86,6 +89,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\scripts\" />
+      <Folder Include="wwwroot\styles\" />
     </ItemGroup>
 
     <ItemGroup>
