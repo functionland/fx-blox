@@ -13,12 +13,12 @@ public abstract partial class DockerizedFxStack : IFxStack
     public abstract Task<BloxStackStatusReport> GetStatusReportAsync(BloxDevice bloxDevice,
         CancellationToken cancellationToken);
 
-    public async Task ConfigureBloxAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
+    public async Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
     {
-        await OnConfigureBloxAsync(bloxDevice, cancellationToken);
+        await OnDeployAsync(bloxDevice, cancellationToken);
     }
 
-    protected virtual async Task OnConfigureBloxAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
+    protected virtual async Task OnDeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
     {
         var dockerImage = GetDockerImageName();
         await BloxDockerManager.DeployAsync(bloxDevice, dockerImage, cancellationToken);
