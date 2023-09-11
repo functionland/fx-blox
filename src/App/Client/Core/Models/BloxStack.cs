@@ -12,6 +12,7 @@ namespace Functionland.FxBlox.Client.Core.Models
     /// </summary>
     public class BloxStack
     {
+        public required BloxDevice Device { get; set; }
         public required IFxStack Stack { get; set; }
         public BloxStackStatus? Status { get; set; }
     }
