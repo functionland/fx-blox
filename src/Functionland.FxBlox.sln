@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Client.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Functionland.FxBlox.Core.Util", "Core\Functionland.FxBlox.Core.Util\Functionland.FxBlox.Core.Util.csproj", "{7B23F1F6-F735-4563-8243-5A33F01010F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functionland.FxBlox.Client.Core.Tests", "App\Client\Test\Functionland.FxBlox.Client.Core.Tests\Functionland.FxBlox.Client.Core.Tests.csproj", "{F9EE602A-E594-421D-B804-8A4431091934}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B23F1F6-F735-4563-8243-5A33F01010F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9EE602A-E594-421D-B804-8A4431091934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9EE602A-E594-421D-B804-8A4431091934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9EE602A-E594-421D-B804-8A4431091934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9EE602A-E594-421D-B804-8A4431091934}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +64,7 @@ Global
 		{502B4322-5098-49EC-8F34-CF4F8399DB54} = {141FF11E-4897-4EB9-85E9-013644A49DEF}
 		{AFAFB11F-6784-4CAB-9B2A-9D924B7A5BBC} = {141FF11E-4897-4EB9-85E9-013644A49DEF}
 		{7B23F1F6-F735-4563-8243-5A33F01010F3} = {2724349D-F7D7-449E-93E8-D698BE1FBDF3}
+		{F9EE602A-E594-421D-B804-8A4431091934} = {141FF11E-4897-4EB9-85E9-013644A49DEF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2578169F-4F2F-4618-9EEB-D34A2A2DB160}
