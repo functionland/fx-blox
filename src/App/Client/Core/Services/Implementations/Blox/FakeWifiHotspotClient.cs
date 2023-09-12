@@ -8,7 +8,7 @@ using Functionland.FxBlox.Client.Core.Services.Contracts;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
-    public class FakeBloxWifiHotspotClient : IBloxWifiHotspotClient
+    public class FakeBloxHotspotClient : IBloxHotspotClient
     {
         public BloxDevice Device { get; private set; } = default!;
 

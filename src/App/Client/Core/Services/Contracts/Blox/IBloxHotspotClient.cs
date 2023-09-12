@@ -7,7 +7,7 @@ using Functionland.FxBlox.Client.Core.Models;
 
 namespace Functionland.FxBlox.Client.Core.Services.Contracts
 {
-    public interface IBloxWifiHotspotClient : IDisposable
+    public interface IBloxHotspotClient : IDisposable
     {
         BloxDevice Device { get; }
         Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken);

@@ -5,7 +5,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations;
 public partial class BloxConnectionFactory
 {
     [AutoInject]
-    public IServiceProvider ServiceProvider { get; set; }
+    private IServiceProvider ServiceProvider { get; set; }
 
     /// <summary>
     /// You should dispose the connection yourself.
@@ -14,7 +14,7 @@ public partial class BloxConnectionFactory
     /// <returns></returns>
     public BloxConnection Create(BloxDevice device)
     {
-        var hotspotClientFactory = ServiceProvider.GetRequiredService<BloxWifiHotspotClientFactory>();
+        var hotspotClientFactory = ServiceProvider.GetRequiredService<BloxHotspotClientFactory>();
         var libp2pClientFactory = ServiceProvider.GetRequiredService<BloxLibp2pClientFactory>();
 
         var hotspotClient = hotspotClientFactory.Create(device);

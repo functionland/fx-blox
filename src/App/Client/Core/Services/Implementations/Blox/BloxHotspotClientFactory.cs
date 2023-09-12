@@ -11,13 +11,13 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
     /// <summary>
     /// Use this factory to initialize proper Libp2p client for your Blox device
     /// </summary>
-    public partial class BloxWifiHotspotClientFactory
+    public partial class BloxHotspotClientFactory
     {
         [AutoInject]
         IServiceProvider ServiceProvider {get; set; }
-        public IBloxWifiHotspotClient Create(BloxDevice device)
+        public IBloxHotspotClient Create(BloxDevice device)
         {
-            var client = ServiceProvider.GetRequiredService<IBloxWifiHotspotClient>();
+            var client = ServiceProvider.GetRequiredService<IBloxHotspotClient>();
             client.Initialize(device);
             return client;
         }

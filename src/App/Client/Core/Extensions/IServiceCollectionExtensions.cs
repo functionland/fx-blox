@@ -21,8 +21,8 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<BloxLibp2pClientFactory>();
             services.AddTransient<IBloxLibp2pClient, FakeBloxLibp2pClient>();
 
-            services.AddSingleton<BloxWifiHotspotClientFactory>();
-            services.AddTransient<IBloxWifiHotspotClient, FakeBloxWifiHotspotClient>();
+            services.AddSingleton<BloxHotspotClientFactory>();
+            services.AddTransient<IBloxHotspotClient, FakeBloxHotspotClient>();
 
             services.AddSingleton<BloxConnectionFactory>();
 
