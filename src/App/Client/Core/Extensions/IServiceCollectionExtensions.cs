@@ -17,5 +17,19 @@
 
             return services;
         }
+
+        public static async Task RunAppEvents(this IServiceProvider serviceProvider)
+        {
+            var exceptionHandler = serviceProvider.GetRequiredService<IExceptionHandler>();
+            try
+            {
+                var FxLocalDbService = serviceProvider.GetRequiredService<IFxLocalDbService>();
+                await FxLocalDbService.InitAsync();
+            }
+            catch (Exception ex)
+            {
+                exceptionHandler.Handle(ex);
+            }
+        }
     }
 }
