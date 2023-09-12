@@ -14,12 +14,12 @@ namespace Functionland.FxBlox.Client.Core.Models
     {
     public required BloxDevice Device { get; set; }
     public List<BloxStack> Stacks { get; set; } = new();
-    public required IBloxWifiClient WifiClient { get; set; }
+    public required IBloxWifiHotspotClient HotspotClient { get; set; }
     public required IBloxLibp2pClient Libp2pClient { get; set; }
 
     public void Dispose()
     {
-        WifiClient.Dispose();
+        HotspotClient.Dispose();
         Libp2pClient.Dispose();
     }
     }
