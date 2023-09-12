@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Functionland.FxBlox.Client.Core.Services.Contracts
 {
-    public interface IBloxWifiClient
+    public interface IBloxWifiClient : IDisposable
     {
     }
 }
