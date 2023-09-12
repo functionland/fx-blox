@@ -1,4 +1,7 @@
-﻿ namespace Microsoft.Extensions.DependencyInjection
+﻿using Functionland.FxBlox.Client.Core.Services.Contracts;
+using Functionland.FxBlox.Client.Core.Services.Implementations;
+
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class IServiceCollectionExtensions
     {
@@ -14,6 +17,14 @@
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddSingleton<IGoBackService, GoBackService>();
             services.AddScoped(sp => (AppAuthenticationStateProvider)sp.GetRequiredService<AuthenticationStateProvider>());
+
+            services.AddSingleton<BloxLibp2pClientFactory>();
+            services.AddTransient<IBloxLibp2pClient, FakeBloxLibp2pClient>();
+
+            services.AddSingleton<BloxWifiHotspotClientFactory>();
+            services.AddTransient<IBloxWifiHotspotClient, FakeBloxWifiHotspotClient>();
+
+            services.AddSingleton<BloxConnectionFactory>();
 
             return services;
         }

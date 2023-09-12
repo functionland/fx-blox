@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Functionland.FxBlox.Client.Core.Models;
+using Functionland.FxBlox.Client.Core.Services.Contracts;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public class FakeBloxWifiHotspotClient : IBloxWifiHotspotClient
     {
-        public BloxDevice Device { get; }
+        public BloxDevice Device { get; private set; } = default!;
 
-        public FakeBloxWifiHotspotClient(BloxDevice device)
+        public void Initialize(BloxDevice device)
         {
             Device = device;
         }

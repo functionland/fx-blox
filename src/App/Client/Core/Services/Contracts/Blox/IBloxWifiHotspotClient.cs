@@ -13,5 +13,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
         Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken);
         Task ConnectToWifiAsync(WifiInfo wifi, string password, CancellationToken cancellationToken);
         Task<bool> GetStatusAsync(CancellationToken cancellationToken);
+        void Initialize(BloxDevice device);
     }
 }
