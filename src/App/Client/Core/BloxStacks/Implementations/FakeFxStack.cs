@@ -30,7 +30,7 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations
             return Task.FromResult(FakeStatusReport);
         }
 
-        public async Task ConfigureBloxAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
+        public async Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
         {
             await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
         }

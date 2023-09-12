@@ -4,5 +4,6 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Contracts;
 
 public interface IBloxDockerManager
 {
-    Task DeployAsync(BloxDevice bloxDevice, string dockerImage, CancellationToken cancellationToken);
+    Task DeployAsync(BloxDevice bloxDevice, string dockerImage, List<KeyValuePair<string, string>> keyValuePairs,
+        CancellationToken cancellationToken);
 }
