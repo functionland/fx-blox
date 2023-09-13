@@ -61,6 +61,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         public static string Active {
@@ -102,6 +111,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string AlreadyHaveAccountMessage {
             get {
                 return ResourceManager.GetString("AlreadyHaveAccountMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        public static string Appearance {
+            get {
+                return ResourceManager.GetString("Appearance", resourceCulture);
             }
         }
         
@@ -265,6 +283,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string CreditCardAttribute_Invalid {
             get {
                 return ResourceManager.GetString("CreditCardAttribute_Invalid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Current.
+        /// </summary>
+        public static string Current {
+            get {
+                return ResourceManager.GetString("Current", resourceCulture);
             }
         }
         
@@ -854,6 +881,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mode.
+        /// </summary>
+        public static string Mode {
+            get {
+                return ResourceManager.GetString("Mode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Device.
         /// </summary>
         public static string MyDevice {
@@ -1214,6 +1250,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to FxBlox by Functionland.
+        /// </summary>
+        public static string SettingPageAppTitle {
+            get {
+                return ResourceManager.GetString("SettingPageAppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -1345,6 +1390,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string TermsTitle {
             get {
                 return ResourceManager.GetString("TermsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Test explorer.
+        /// </summary>
+        public static string TestExplorer {
+            get {
+                return ResourceManager.GetString("TestExplorer", resourceCulture);
             }
         }
         

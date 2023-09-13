@@ -1,4 +1,4 @@
-﻿[
+﻿[  
   {
     "outputFile": "Shared/MainLayout.razor.css",
     "inputFile": "Shared/MainLayout.razor.scss"
@@ -314,5 +314,9 @@
   {
     "outputFile": "Pages/MyDevice.razor.css",
     "inputFile": "Pages/MyDevice.razor.scss"
+  },
+  {
+    "outputFile": "Pages/_Settings/SettingsPage/SettingsPage.razor.css",
+    "inputFile": "Pages/_Settings/SettingsPage/SettingsPage.razor.scss"
   }
 ]

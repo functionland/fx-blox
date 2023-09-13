@@ -22,6 +22,8 @@
 		<EmbeddedResource Include="Migrations\*.sql" />
 		
         <PackageReference Include="Bit.BlazorUI" Version="5.5.0" />
+		
+        <PackageReference Include="Bit.BlazorUI.Extras" Version="5.5.0" />
         <PackageReference Include="Bit.BlazorUI.Icons" Version="5.5.0" />
         <PackageReference Include="Bit.BlazorUI.Assets" Version="5.5.0" />
         <PackageReference Include="Bit.CodeAnalyzers" Version="5.5.0">

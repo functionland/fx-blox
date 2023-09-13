@@ -102,6 +102,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Platforms\Android\Resources\values\appicon_background.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Core\Functionland.FxBlox.Client.Core.csproj" />
     </ItemGroup>
 

@@ -679,10 +679,28 @@ Please confirm your email by clicking on the link.</value>
   <data name="TextAreaPlaceholder" xml:space="preserve">
     <value>Type message here...</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="Current" xml:space="preserve">
+    <value>Current</value>
+  </data>
+  <data name="Mode" xml:space="preserve">
+    <value>Mode</value>
+  </data>
   <data name="MyDevice" xml:space="preserve">
     <value>My Device</value>
   </data>
+  <data name="SettingPageAppTitle" xml:space="preserve">
+    <value>FxBlox by Functionland</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="TestExplorer" xml:space="preserve">
+    <value>Test explorer</value>
   </data>
 </root>
