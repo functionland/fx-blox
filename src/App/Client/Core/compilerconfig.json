@@ -106,7 +106,7 @@
   {
     "outputFile": "Components/PageNotFound.razor.css",
     "inputFile": "Components/PageNotFound.razor.scss"
-  }, 
+  },
   {
     "outputFile": "Components/ArtifactExplorer/ArtifactExplorer.razor.css",
     "inputFile": "Components/ArtifactExplorer/ArtifactExplorer.razor.scss"
@@ -306,5 +306,9 @@
   {
     "outputFile": "Components/Modal/FileViewerModal/ExtractorBottomSheet.razor.css",
     "inputFile": "Components/Modal/FileViewerModal/ExtractorBottomSheet.razor.scss"
+  },
+  {
+    "outputFile": "Components/BottomNavigation.razor.css",
+    "inputFile": "Components/BottomNavigation.razor.scss"
   }
 ]

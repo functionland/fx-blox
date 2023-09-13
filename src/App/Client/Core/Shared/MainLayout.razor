@@ -8,10 +8,17 @@
 <div class="main">
     <div class="main-content">
         <AppErrorBoundary>
-            @Body
+             @if (_isLoading)
+            {
+                <LoadingComponent Color="#FFF" />
+            }
+            else
+            {
+              @Body
+            }
         </AppErrorBoundary>
     </div>
-    @*<Footer />*@
+    <BottomNavigation />
 </div>
 
 <MessageBox />

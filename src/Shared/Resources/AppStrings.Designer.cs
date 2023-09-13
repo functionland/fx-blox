@@ -854,6 +854,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Device.
+        /// </summary>
+        public static string MyDevice {
+            get {
+                return ResourceManager.GetString("MyDevice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Password.
         /// </summary>
         public static string NewPassword {
@@ -1201,6 +1210,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string SelectBirthDate {
             get {
                 return ResourceManager.GetString("SelectBirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
             }
         }
         

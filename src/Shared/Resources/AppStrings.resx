@@ -679,4 +679,10 @@ Please confirm your email by clicking on the link.</value>
   <data name="TextAreaPlaceholder" xml:space="preserve">
     <value>Type message here...</value>
   </data>
+  <data name="MyDevice" xml:space="preserve">
+    <value>My Device</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

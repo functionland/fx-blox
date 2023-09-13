@@ -14,7 +14,7 @@ namespace Functionland.FxBlox.Client.Core
         [AutoInject] private IExceptionHandler _exceptionHandler = default!;
 
         [AutoInject] private AppAuthenticationStateProvider _authStateProvider = default!;
-
+        private bool _isLoading = true;
         protected override void OnParametersSet()
         {
             // TODO: we can try to recover from exception after rendering the ErrorBoundary with this line.
@@ -26,6 +26,8 @@ namespace Functionland.FxBlox.Client.Core
 
         protected override async Task OnInitializedAsync()
         {
+            _isLoading = false;
+
             try
             {
                 _authStateProvider.AuthenticationStateChanged += VerifyUserIsAuthenticatedOrNot;
