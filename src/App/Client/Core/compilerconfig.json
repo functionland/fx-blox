@@ -310,5 +310,9 @@
   {
     "outputFile": "Components/BottomNavigation.razor.css",
     "inputFile": "Components/BottomNavigation.razor.scss"
+  },
+  {
+    "outputFile": "Pages/MyDevice.razor.css",
+    "inputFile": "Pages/MyDevice.razor.scss"
   }
 ]
