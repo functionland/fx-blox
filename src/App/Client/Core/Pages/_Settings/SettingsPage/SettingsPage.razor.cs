@@ -45,6 +45,14 @@ public partial class SettingsPage
         if (firstRender)
         {
             _applyAnimation = true;
+
+#if BlazorHybrid
+            var preferredCultureCookie = Preferences.Get(".AspNetCore.Culture", null);
+#else
+        var preferredCultureCookie = await JSRuntime.InvokeAsync<string?>("window.App.getCookie", ".AspNetCore.Culture");
+#endif
+            SelectedCulture = CultureInfoManager.GetCurrentCulture(preferredCultureCookie);
+
             StateHasChanged();
         }
     }
@@ -68,4 +76,23 @@ public partial class SettingsPage
         CurrentVersion = AppInfo.Current.VersionString;
 #endif
     }
+
+    private string? SelectedCulture;
+
+    private async Task OnCultureChanged()
+    {
+        var cultureCookie = $"c={SelectedCulture}|uic={SelectedCulture}";
+
+#if BlazorHybrid
+        Preferences.Set(".AspNetCore.Culture", cultureCookie);
+#else
+        await JSRuntime.InvokeVoidAsync("window.App.setCookie", ".AspNetCore.Culture", cultureCookie, 30 * 24 * 3600);
+#endif
+
+        NavigationManager.ForceReload();
+    }
+
+    private static List<BitDropdownItem> GetCultures() =>
+        CultureInfoManager.SupportedCultures.Select(sc => new BitDropdownItem { Value = sc.code, Text = sc.name }).ToList();
+
 }

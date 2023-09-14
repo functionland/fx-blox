@@ -667,4 +667,7 @@ Veuillez confirmer votre email en cliquant sur le lien.</value>
   <data name="Update" xml:space="preserve">
     <value>Mise à jour</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>à propos</value>
+  </data>
 </root>
