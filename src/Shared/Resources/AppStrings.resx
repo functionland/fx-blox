@@ -703,4 +703,25 @@ Please confirm your email by clicking on the link.</value>
   <data name="TestExplorer" xml:space="preserve">
     <value>Test explorer</value>
   </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Night" xml:space="preserve">
+    <value>Night</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="AutomaticContent" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="LightMode" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="SystemThemeDescription" xml:space="preserve">
+    <value>Use system light/dark mode setting.</value>
+  </data>
 </root>

@@ -8,6 +8,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddClientSharedServices(this IServiceCollection services)
         {
             services.AddLocalization();
+            services.AddScoped<ThemeInterop>();
             services.AddSingleton<IAppStateStore, InMemoryAppStateStore>();
             services.AddScoped<IStateService, StateService>();
             services.AddScoped<IExceptionHandler, ExceptionHandler>();

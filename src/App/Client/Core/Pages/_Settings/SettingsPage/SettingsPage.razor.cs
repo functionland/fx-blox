@@ -3,7 +3,11 @@
 public partial class SettingsPage
 {
     private bool _applyAnimation = false;
-   
+    
+    [AutoInject] private ThemeInterop ThemeInterop = default!;
+
+    private FxTheme DesiredTheme { get; set; }
+
     private string? CurrentTheme { get; set; }
     private string? CurrentVersion { get; set; }
 
@@ -12,12 +16,21 @@ public partial class SettingsPage
 
     protected override async Task OnInitAsync()
     {
-       
+        AppStateStore.CurrentPagePath = "settings";
         GoBackService.SetState(Task ()=>
         {
              UpdateBackButtonDeviceBehavior();
              return Task.CompletedTask;
         }, true, false);
+
+        DesiredTheme = await ThemeInterop.GetThemeAsync();
+
+        if (DesiredTheme == FxTheme.Dark)
+            CurrentTheme = Localizer.GetString(nameof(AppStrings.Night));
+        else if (DesiredTheme == FxTheme.Light)
+            CurrentTheme = Localizer.GetString(nameof(AppStrings.Day));
+        else
+            CurrentTheme = Localizer.GetString(nameof(AppStrings.System));
 
         GetAppVersion();
     }

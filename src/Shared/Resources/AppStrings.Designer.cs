@@ -151,6 +151,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automatic.
+        /// </summary>
+        public static string AutomaticContent {
+            get {
+                return ResourceManager.GetString("AutomaticContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid request.
         /// </summary>
         public static string BadRequestException {
@@ -368,6 +377,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string DarkMode {
+            get {
+                return ResourceManager.GetString("DarkMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The custom DataType string cannot be null or empty..
         /// </summary>
         public static string DataTypeAttribute_EmptyDataTypeString {
@@ -382,6 +400,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string Date {
             get {
                 return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Day.
+        /// </summary>
+        public static string Day {
+            get {
+                return ResourceManager.GetString("Day", resourceCulture);
             }
         }
         
@@ -818,6 +845,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        public static string LightMode {
+            get {
+                return ResourceManager.GetString("LightMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot retrieve property &apos;{0}&apos; because localization failed.  Type &apos;{1}&apos; is not public or does not contain a public static string property with the name &apos;{2}&apos;..
         /// </summary>
         public static string LocalizableString_LocalizationFailed {
@@ -904,6 +940,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string NewPassword {
             get {
                 return ResourceManager.GetString("NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Night.
+        /// </summary>
+        public static string Night {
+            get {
+                return ResourceManager.GetString("Night", resourceCulture);
             }
         }
         
@@ -1363,6 +1408,24 @@ namespace Functionland.FxBlox.Shared.Resources {
         public static string Submit {
             get {
                 return ResourceManager.GetString("Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        public static string System {
+            get {
+                return ResourceManager.GetString("System", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use system light/dark mode setting..
+        /// </summary>
+        public static string SystemThemeDescription {
+            get {
+                return ResourceManager.GetString("SystemThemeDescription", resourceCulture);
             }
         }
         
