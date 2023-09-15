@@ -20,12 +20,17 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         {
             try
             {
-                // ToDo Load information from local storage.
+                // ToDo: Load information from local storage.
             }
             finally
             {
                 IsInitialized = true;
             }
+        }
+
+        public async Task SaveToStorageAsync()
+        {
+            // ToDo: Save information to local storage
         }
 
         public void ThrowIfNotInitialized()
@@ -40,18 +45,20 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             return ConnectionsCache.ToList();
         }
 
-        public BloxConnection CreateNew(BloxDevice device, CancellationToken cancellationToken)
+        public async Task<BloxConnection> CreateForDeviceAsync(BloxDevice device, CancellationToken cancellationToken)
         {
             ThrowIfNotInitialized();
             var connection = BloxConnectionFactory.Create(device);
             ConnectionsCache.Add(connection);
+            await SaveToStorageAsync();
             return connection;
         }
 
-        public void RemoveConnection(BloxConnection connection, CancellationToken cancellationToken)
+        public async Task RemoveConnectionAsync(BloxConnection connection, CancellationToken cancellationToken)
         {
             ThrowIfNotInitialized();
             ConnectionsCache.Remove(connection);
+            await SaveToStorageAsync();
         }
     }
 }

@@ -7,6 +7,6 @@ public interface IBloxConnectionService
     bool IsInitialized { get; set; }
     Task InitializeAsync(CancellationToken cancellationToken = default);
     List<BloxConnection> GetConnections(CancellationToken cancellationToken);
-    BloxConnection CreateNew(BloxDevice device, CancellationToken cancellationToken);
-    void RemoveConnection(BloxConnection connection, CancellationToken cancellationToken);
+    Task<BloxConnection> CreateForDeviceAsync(BloxDevice device, CancellationToken cancellationToken);
+    Task RemoveConnectionAsync(BloxConnection connection, CancellationToken cancellationToken);
 }
