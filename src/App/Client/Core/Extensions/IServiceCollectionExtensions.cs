@@ -28,6 +28,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<IBloxHotspotClient, FakeBloxHotspotClient>();
 
             services.AddSingleton<BloxConnectionFactory>();
+            services.AddSingleton<IBloxConnectionService, BloxConnectionService>();
 
             return services;
         }
@@ -37,8 +38,11 @@ namespace Microsoft.Extensions.DependencyInjection
             var exceptionHandler = serviceProvider.GetRequiredService<IExceptionHandler>();
             try
             {
-                var FxLocalDbService = serviceProvider.GetRequiredService<IFxLocalDbService>();
-                await FxLocalDbService.InitAsync();
+                var localDbService = serviceProvider.GetRequiredService<IFxLocalDbService>();
+                await localDbService.InitAsync();
+
+                var bloxConnectionService = serviceProvider.GetRequiredService<IBloxConnectionService>();
+                await bloxConnectionService.InitializeAsync();
             }
             catch (Exception ex)
             {
