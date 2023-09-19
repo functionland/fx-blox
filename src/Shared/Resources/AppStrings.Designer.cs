@@ -287,6 +287,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect To Wallet.
+        /// </summary>
+        public static string ConnectToWallet {
+            get {
+                return ResourceManager.GetString("ConnectToWallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} field is not a valid credit card number..
         /// </summary>
         public static string CreditCardAttribute_Invalid {

@@ -47,6 +47,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="WalletConnect.Sign" Version="2.1.0" />
 
         <Using Include="Microsoft.AspNetCore.Components" />
         <Using Include="Functionland.FxBlox.Client.Core.Services.Contracts" />
@@ -96,6 +97,7 @@
 
     <ItemGroup>
       <Folder Include="Migrations\" />
+      <Folder Include="npm_packages\" />
       <Folder Include="wwwroot\scripts\" />
       <Folder Include="wwwroot\styles\" />
     </ItemGroup>

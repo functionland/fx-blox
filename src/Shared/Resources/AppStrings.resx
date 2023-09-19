@@ -724,4 +724,7 @@ Please confirm your email by clicking on the link.</value>
   <data name="SystemThemeDescription" xml:space="preserve">
     <value>Use system light/dark mode setting.</value>
   </data>
+  <data name="ConnectToWallet" xml:space="preserve">
+    <value>Connect To Wallet</value>
+  </data>
 </root>
