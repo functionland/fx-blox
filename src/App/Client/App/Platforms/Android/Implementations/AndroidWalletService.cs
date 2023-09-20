@@ -9,9 +9,9 @@ using android = Android;
 
 namespace Functionland.FxBlox.Client.App.Platforms.Android.Implementations
 {
-    public class ConnectToWallet : IConnectToWallet
+    public class AndroidWalletService : WalletService
     {
-        public void Connect(string url)
+        public override void OpenConnectWallet(string url)
         {
             Intent intent = new Intent(Intent.ActionView);
             intent.AddCategory("android.intent.category.DEFAULT");

@@ -2,6 +2,6 @@
 
 public class InMemoryAppStateStore : IAppStateStore
 {
-    public bool IsAvailableForTest { get; set; }
+    public bool IsAvailableForTest { get; set; } = true;
     public string CurrentPagePath { get; set; } = "/";
 }

@@ -10,7 +10,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             // Services being registered here can get injected in Android.
             services.AddSingleton<IPlatformTestService, AndroidPlatformTestService>();
-            services.AddSingleton<IConnectToWallet, ConnectToWallet>();
+            services.AddSingleton<IWalletService, AndroidWalletService>();
             return services;
         }
     }
