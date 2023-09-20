@@ -1,3 +1,21 @@
 ﻿@import '../Styles/abstracts/_variables.scss';
 @import '../Styles/abstracts/_functions.scss';
 @import '../Styles/abstracts/_mixins.scss';
+
+.wizard-page{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.wizard-title {
+    margin-top: $spacing-120;
+    font-size: $font-size-28;
+}
+
+.wizard-description {
+    font-size: $font-size-14;
+    margin-top: $spacing-14;
+    margin-bottom: $spacing-120;
+}

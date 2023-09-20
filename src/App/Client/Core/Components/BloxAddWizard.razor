@@ -1,5 +1,75 @@
 ﻿@inherits AppComponentBase;
 
-<div>
-    Add Blox Wizard
+<div class="wizard-page">
+    @if (WizardStep == BloxAddWizardStep.Welcome)
+    {
+
+        <div class="wizard-title">
+            Welcome to Blox setup
+        </div>
+        <div class="wizard-description">
+            <div>
+                Make sure your Blox is turned on!
+            </div>
+            <div>
+                And is somewhere near you…
+            </div>
+        </div>
+
+        <FxButton Text="Setup a new device"
+            ButtonStyle="FxButtonStyle.Normal"
+              ButtonSize="FxButtonSize.Stretch"
+            OnClick="@(GoToNextStepAsync)"></FxButton>
+
+    }
+    else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
+    {
+        <div class="wizard-title">
+            Setup your wallet
+        </div>
+        <div class="wizard-description">
+            <div>
+                Select the network:
+            </div>
+            <BitDropdown Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
+        </div>
+
+        <FxButton Text="Connect to wallet"
+                  ButtonStyle="FxButtonStyle.Normal"
+              ButtonSize="FxButtonSize.Stretch"
+                  OnClick="@(GoToNextStepAsync)"></FxButton>
+    } 
+    else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
+    {
+        <div class="wizard-title">
+            Connect to Blox hotspot
+        </div>
+        <div class="wizard-description">
+            <div>
+                Make sure your blox is turned on and its hotspot is available.
+            </div>
+        </div>
+
+        <FxButton Text="Connect to hotspot"
+                  ButtonStyle="FxButtonStyle.Normal"
+                  ButtonSize="FxButtonSize.Stretch"
+                  OnClick="@(ConnectToHotspotClicked)"></FxButton>
+    }
+    else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
+    {
+        <div class="wizard-title">
+            Connect to Blox to Wi-Fi
+        </div>
+        <div class="wizard-description">
+            <div>
+                Select the Wi-Fi for you Blox to connect to:
+            </div>
+            <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifi" />
+        </div>
+
+        <FxButton Text="Connect Blox to Wi-Fi"
+                  ButtonStyle="FxButtonStyle.Normal"
+                  ButtonSize="FxButtonSize.Stretch"
+              OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+    }
 </div>

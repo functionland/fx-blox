@@ -2,7 +2,9 @@
 {
     public partial class MyDevice
     {
+        [AutoInject] private IBloxConnectionService BloxConnectionService { get; set; } = default!;
         private bool _applyAnimation = false;
+
 
         protected override void OnInitialized()
         {

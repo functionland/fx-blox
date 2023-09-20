@@ -25,7 +25,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         private IBloxHotspotClient HotspotClient { get; }
         private IBloxLibp2pClient Libp2pClient { get; }
 
-        public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken)
+        public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = new())
         {
             return await HotspotClient.GetWifiListAsync(cancellationToken);
         }
