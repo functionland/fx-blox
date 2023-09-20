@@ -1,4 +1,5 @@
 ﻿using Functionland.FxBlox.Client.App.Platforms.Windows.Implementations;
+using Functionland.FxBlox.Client.App.Platforms.Windows.Implementations.Test;
 using Functionland.FxBlox.Client.App.Platforms.Windows.PlatformTests;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
 using Functionland.FxBlox.Client.Core.TestInfra.Contracts;
@@ -11,7 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             // Services being registered here can get injected in Windows.
             services.AddSingleton<IWalletService, WindowsWalletService>();
-            services.AddTransient<IPlatformTest, WindowsWalletServiceTransferSomeMoneyPlatformTest>();
+            services.AddSingleton<IPlatformTestService, WindowsPlatformTestService>();
+            services.AddTransient<WindowsWalletServiceTransferSomeMoneyPlatformTest>();
             return services;
         }
     }
