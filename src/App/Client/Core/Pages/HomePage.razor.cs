@@ -7,7 +7,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
 {
     public partial class HomePage
     {
-        [AutoInject] private IConnectToWallet connectToWallet = default!;
+        //[AutoInject] private IConnectToWallet connectToWallet = default!;
         private async Task ConnectToWallet()
         {
             try
@@ -61,7 +61,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
                 var dappClient = await WalletConnectSignClient.Init(dappOptions);
                 var connectData = await dappClient.Connect(dappConnectOptions);
-                connectToWallet.Connect(connectData.Uri);
+                //connectToWallet.Connect(connectData.Uri);
                 var app = await connectData.Approval;
             }
             catch (Exception exp)

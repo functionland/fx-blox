@@ -4,6 +4,9 @@
 
 <PageTitle>@Localizer[nameof(AppStrings.MyDevice)]</PageTitle>
 
-<div class="fx-basic-page @(_applyAnimation ? "fx-page-open-mode" : "")">
-    Blox
-</div>
+<div>Blox</div>
+
+<FxButton Text="Add Blox"
+          ButtonStyle="FxButtonStyle.MenuLine"
+          OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))"
+/>

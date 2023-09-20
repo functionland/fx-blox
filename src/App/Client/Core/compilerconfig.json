@@ -1,4 +1,4 @@
-﻿[  
+﻿[
   {
     "outputFile": "Shared/MainLayout.razor.css",
     "inputFile": "Shared/MainLayout.razor.scss"
@@ -242,6 +242,10 @@
   {
     "outputFile": "Components/BottomNavigation.razor.css",
     "inputFile": "Components/BottomNavigation.razor.scss"
+  },
+  {
+    "outputFile": "Components/BloxAddWizard.razor.css",
+    "inputFile": "Components/BloxAddWizard.razor.scss"
   },
   {
     "outputFile": "Components/EmptyListView.razor.css",
