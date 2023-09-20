@@ -7,11 +7,10 @@ namespace Functionland.FxBlox.Client.Core.Pages
 {
     public partial class HomePage
     {
-        [AutoInject] private IWalletService WalletService { get; set; } = default!;
-        private async Task ConnectToWallet()
+        protected override Task OnInitAsync()
         {
-            var session = await WalletService.ConnectAsync("");
-
+            NavigationManager.NavigateTo("mydevice",false, true);
+            return base.OnInitAsync();
         }
     }
 }
