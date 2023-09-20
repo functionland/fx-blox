@@ -17,7 +17,7 @@ namespace Functionland.FxBlox.Client.Core.Tests
                                    {
                                        services.AddClientSharedServices();
                                        services.AddClientTestServices();
-                                       services.AddSingleton<IWalletService>(new FakeWalletService());
+                                       services.AddSingleton<IWalletService>(new WindowsWalletService());
                                    }
                                ).Build();
 
