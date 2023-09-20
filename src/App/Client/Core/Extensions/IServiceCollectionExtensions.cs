@@ -1,5 +1,6 @@
 ﻿using Functionland.FxBlox.Client.Core.Services.Contracts;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
+using WalletConnectSharp.Storage.Interfaces;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -29,7 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddSingleton<BloxConnectionFactory>();
             services.AddSingleton<IBloxConnectionService, BloxConnectionService>();
-
+            services.AddSingleton<IKeyValueStorage, WalletStorageService>();
             return services;
         }
 
