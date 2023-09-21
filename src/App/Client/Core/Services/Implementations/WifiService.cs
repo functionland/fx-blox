@@ -47,5 +47,10 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
                 }
             };
         }
+
+        public async Task ConnectAsync(WifiInfo hotspot)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2));
+        }
     }
 }

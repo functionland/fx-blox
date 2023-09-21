@@ -14,6 +14,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<BloxInfo> GetBloxInfoAsync(CancellationToken cancellationToken = default)
         {
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             return new BloxInfo() { HardwareId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf" };
         }
 

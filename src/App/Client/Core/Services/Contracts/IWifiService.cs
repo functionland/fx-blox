@@ -10,5 +10,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
     public interface IWifiService
     {
         Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default);
+        Task ConnectAsync(WifiInfo hotspot);
     }
 }

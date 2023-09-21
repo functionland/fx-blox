@@ -10,6 +10,6 @@ namespace Functionland.FxBlox.Client.Core.Models
     {
         public string? HardwareId { get; set; }
         public string? Title { get; set; }
-        public required WifiInfo WifiInfo { get; set; }
+        public required WifiInfo HotspotInfo { get; set; }
     }
 }

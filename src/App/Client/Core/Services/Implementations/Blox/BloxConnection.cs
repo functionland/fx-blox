@@ -43,13 +43,11 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<BloxInfo> GetDeviceInfoAsync(CancellationToken cancellationToken = default)
         {
-            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             return await HotspotClient.GetBloxInfoAsync(cancellationToken);
         }
 
         public async Task ConnectBloxToWifiAsync(string ssid, string password, CancellationToken cancellationToken = default)
         {
-            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             await HotspotClient.ConnectToWifiAsync(ssid, password, cancellationToken);
         }
 
@@ -71,17 +69,5 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             LastStatus = await Libp2pClient.GetBloxStatusAsync(cancellationToken);
             return LastStatus;
         }
-    }
-
-    public class BloxStatus
-    {
-        public decimal CpuUsage { get; set; }
-        public decimal MemoryUsage { get; set; }
-    }
-
-    public enum ConnectionStatus
-    {
-        Disconnected,
-        Connected,
     }
 }

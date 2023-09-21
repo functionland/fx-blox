@@ -50,12 +50,15 @@ public partial class BloxAddWizard
             return;
         }
 
+
         Progress($"Blox found: {hotspot.Essid}");
+
+        await WifiService.ConnectAsync(hotspot);
 
 
         var device = new BloxDevice
         {
-            WifiInfo = hotspot,
+            HotspotInfo = hotspot,
             Title = hotspot.Essid
         };
         
