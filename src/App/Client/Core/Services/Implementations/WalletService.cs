@@ -12,7 +12,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public abstract class WalletService : IWalletService
     {
-        public async Task<SessionStruct> ConnectAsync(string networkChain, CancellationToken cancellationToken)
+        public async Task<SessionStruct> ConnectAsync(string networkChain, CancellationToken cancellationToken = default)
         {
             var dappOptions = new SignClientOptions()
             {
@@ -65,9 +65,9 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         }
 
         public abstract void OpenConnectWallet(string url);
-        public Task TransferSomeMoneyAsync()
+        public async Task TransferSomeMoneyAsync()
         {
-            throw new NotImplementedException();
+            await ConnectAsync("");
         }
     }
 }
