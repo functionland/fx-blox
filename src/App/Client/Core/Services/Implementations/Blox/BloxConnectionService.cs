@@ -45,13 +45,20 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             return ConnectionsCache.ToList();
         }
 
-        public async Task<BloxConnection> CreateForDeviceAsync(BloxDevice device, CancellationToken cancellationToken)
+        public async Task<BloxConnection> CreateForDeviceAsync(BloxDevice device, CancellationToken cancellationToken = default)
         {
             ThrowIfNotInitialized();
             var connection = BloxConnectionFactory.Create(device);
             ConnectionsCache.Add(connection);
             await SaveToStorageAsync();
             return connection;
+        }
+
+        public async Task LoadDeviceInfoAsync(BloxConnection connection, CancellationToken cancellationToken = default)
+        {
+            var bloxInfo = await connection.GetDeviceInfoAsync(cancellationToken);
+            connection.Device.HardwareId = bloxInfo.HardwareId;
+            await SaveToStorageAsync();
         }
 
         public async Task RemoveConnectionAsync(BloxConnection connection, CancellationToken cancellationToken)

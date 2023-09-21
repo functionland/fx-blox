@@ -10,9 +10,10 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
     public interface IBloxHotspotClient : IDisposable
     {
         BloxDevice Device { get; }
-        Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken);
-        Task ConnectToWifiAsync(WifiInfo wifi, string password, CancellationToken cancellationToken);
-        Task<bool> GetStatusAsync(CancellationToken cancellationToken);
+        Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default);
+        Task ConnectToWifiAsync(string ssid, string password, CancellationToken cancellationToken = default);
+        Task<bool> GetStatusAsync(CancellationToken cancellationToken = default);
+        Task<BloxInfo> GetBloxInfoAsync(CancellationToken cancellationToken = default);
         void Initialize(BloxDevice device);
     }
 }

@@ -48,7 +48,11 @@
             <div>
                 Make sure your blox is turned on and its hotspot is available.
             </div>
+
+           
         </div>
+
+        
 
         <FxButton Text="Connect to hotspot"
                   ButtonStyle="FxButtonStyle.Normal"
@@ -64,7 +68,7 @@
             <div>
                 Select the Wi-Fi for you Blox to connect to:
             </div>
-            <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifi" />
+            <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
         </div>
 
         <FxButton Text="Connect Blox to Wi-Fi"
@@ -72,4 +76,7 @@
                   ButtonSize="FxButtonSize.Stretch"
               OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
     }
+    <div>
+        @InProgressText
+    </div>
 </div>

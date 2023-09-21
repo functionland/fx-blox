@@ -32,7 +32,7 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations
 
         public async Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
         {
-            await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
         }
     }
 }

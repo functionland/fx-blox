@@ -8,7 +8,8 @@ namespace Functionland.FxBlox.Client.Core.Models
 {
     public class BloxDevice
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
+        public string? HardwareId { get; set; }
+        public string? Title { get; set; }
+        public required WifiInfo WifiInfo { get; set; }
     }
 }

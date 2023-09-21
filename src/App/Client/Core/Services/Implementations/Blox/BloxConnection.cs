@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Functionland.FxBlox.Client.Core.Models;
 using Functionland.FxBlox.Client.Core.Services.Contracts;
@@ -25,6 +26,10 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         private IBloxHotspotClient HotspotClient { get; }
         private IBloxLibp2pClient Libp2pClient { get; }
 
+        public ConnectionStatus Libp2pStatus { get; private set; } = ConnectionStatus.Disconnected;
+
+        public BloxStatus? LastStatus { get; set; }
+
         public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = new())
         {
             return await HotspotClient.GetWifiListAsync(cancellationToken);
@@ -35,5 +40,48 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             HotspotClient.Dispose();
             Libp2pClient.Dispose();
         }
+
+        public async Task<BloxInfo> GetDeviceInfoAsync(CancellationToken cancellationToken = default)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+            return await HotspotClient.GetBloxInfoAsync(cancellationToken);
+        }
+
+        public async Task ConnectBloxToWifiAsync(string ssid, string password, CancellationToken cancellationToken = default)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+            await HotspotClient.ConnectToWifiAsync(ssid, password, cancellationToken);
+        }
+
+        public async Task<ConnectionStatus> CheckLibp2pConnectionAsync(CancellationToken cancellationToken = default)
+        {
+            var status = await Libp2pClient.CheckConnectionAsync(cancellationToken);
+            Libp2pStatus = status ? ConnectionStatus.Connected : ConnectionStatus.Disconnected;
+
+            return Libp2pStatus;
+        }
+
+        public async Task ConnectToLibp2pAsync(CancellationToken cancellationToken = default)
+        {
+            await Libp2pClient.ConnectAsync(cancellationToken);
+        }
+
+        public async Task<BloxStatus> GetBloxStatusAsync(CancellationToken cancellationToken = default)
+        {
+            LastStatus = await Libp2pClient.GetBloxStatusAsync(cancellationToken);
+            return LastStatus;
+        }
+    }
+
+    public class BloxStatus
+    {
+        public decimal CpuUsage { get; set; }
+        public decimal MemoryUsage { get; set; }
+    }
+
+    public enum ConnectionStatus
+    {
+        Disconnected,
+        Connected,
     }
 }

@@ -5,7 +5,10 @@
 <PageTitle>@Localizer[nameof(AppStrings.MyDevice)]</PageTitle>
 
 <div>Bloxes: @BloxConnectionService.GetConnections().Count</div>
-
+<div>Hardware: @BloxConnectionService.GetConnections().FirstOrDefault()?.Device.HardwareId</div>
+<div>Status: @BloxConnectionService.GetConnections().FirstOrDefault()?.Libp2pStatus</div>
+<div>CPU: @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage</div>
+<div>RAM: @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage</div>
 <FxButton Text="Add Blox"
           ButtonStyle="FxButtonStyle.MenuLine"
           OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))"

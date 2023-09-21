@@ -4,22 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Functionland.FxBlox.Client.Core.Models;
-using Functionland.FxBlox.Client.Core.Services.Contracts;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
-    public class FakeBloxHotspotClient : IBloxHotspotClient
+    public class FakeWifiService : IWifiService
     {
-        public BloxDevice Device { get; private set; } = default!;
-
-        public void Initialize(BloxDevice device)
+        public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default)
         {
-            Device = device;
-        }
-
-        public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+            await Task.Delay(TimeSpan.FromSeconds(3), cancellationToken);
 
             return new List<WifiInfo>()
             {
@@ -43,7 +35,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
                 },
                 new()
                 {
-                    Essid = "Functionland 2",
+                    Essid = "Blox 11",
                     Ssid = "11:c9:6c:ff:ee:11",
                     Rssi = -17
                 },
@@ -54,22 +46,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
                     Rssi = -17
                 }
             };
-        }
-
-        public async Task ConnectToWifiAsync(WifiInfo wifi, string password, CancellationToken cancellationToken)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
-        }
-
-        public async Task<bool> GetStatusAsync(CancellationToken cancellationToken)
-        {
-            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
-            return true;
-        }
-
-        public void Dispose()
-        {
-
         }
     }
 }

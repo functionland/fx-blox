@@ -12,14 +12,24 @@ public class FakeBloxLibp2pClient : IBloxLibp2pClient
         Device = device;
     }
 
-    public async Task ConnectAsync(CancellationToken cancellationToken)
+    public async Task ConnectAsync(CancellationToken cancellationToken = default)
     {
-        await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+        await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
     }
 
-    public async Task<bool> CheckConnectionAsync(CancellationToken cancellationToken)
+    public async Task<BloxStatus> GetBloxStatusAsync(CancellationToken cancellationToken)
     {
-        await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+        await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+        return new BloxStatus
+        {
+            CpuUsage = 0.25m,
+            MemoryUsage = 152132
+        };
+    }
+
+    public async Task<bool> CheckConnectionAsync(CancellationToken cancellationToken = default)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
         return true;
     }
 
