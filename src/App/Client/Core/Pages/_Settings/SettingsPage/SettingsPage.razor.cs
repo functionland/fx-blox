@@ -40,7 +40,7 @@ public partial class SettingsPage
 
     private async Task ConnectToWallet()
     {
-        await WalletService.ConnectAsync(EthereumChain.Goerli);
+        await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
     }
 
     private void UpdateBackButtonDeviceBehavior()

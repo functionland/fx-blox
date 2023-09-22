@@ -405,3 +405,5 @@ custom.aprof
 /src/App/Client/**/**/*.css
 /src/App/Client/Core/wwwroot/styles/app.min.css.map
 /src/App/Client/Core/wwwroot/styles/app.min.css
+/src/App/Client/Core/wwwroot/js/vendors-node_modules_walletconnect_modal-ui_dist_index_js.walletconnect.js
+/src/App/Client/Core/wwwroot/js/walletconnect.js

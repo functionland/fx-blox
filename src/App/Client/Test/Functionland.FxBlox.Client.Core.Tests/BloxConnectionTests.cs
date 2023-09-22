@@ -24,13 +24,13 @@ namespace Functionland.FxBlox.Client.Core.Tests
 
             var factory = serviceProvider.GetRequiredService<BloxConnectionFactory>();
 
-            using var connection = factory.Create(new BloxDevice());
-            
+            using var connection = factory.Create(new BloxDevice() { HotspotInfo = new WifiInfo() { Essid = "", Rssi = 1, Ssid = "" } });
+
             Assert.NotNull(connection.Device);
-            
+
             var wifiList = await connection.GetWifiListAsync(new CancellationToken());
             Assert.True(wifiList.Any());
-            
+
             //Assert.NotNull(connection.Device);
         }
     }
