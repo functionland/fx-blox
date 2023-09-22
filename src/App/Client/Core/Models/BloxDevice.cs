@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Functionland.FxBlox.Client.Core.Models
 {
-    public class BloxDevice
+    public record BloxDevice
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
+        public string? HardwareId { get; set; }
+        public string? Title { get; set; }
+        public required WifiInfo HotspotInfo { get; set; }
     }
 }

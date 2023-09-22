@@ -12,7 +12,7 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Contracts
         string Title { get; }
         string Description { get; }
         Task NavigateToConfigurationPageAsync();
-        Task<BloxStackStatusReport> GetStatusReportAsync(BloxDevice bloxDevice, CancellationToken cancellationToken);
-        Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken);
+        Task<BloxStackStatusReport> GetStatusReportAsync(BloxDevice bloxDevice, CancellationToken cancellationToken = default);
+        Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken = default);
     }
 }

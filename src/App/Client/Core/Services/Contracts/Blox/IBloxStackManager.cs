@@ -9,6 +9,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
 {
     public interface IBloxStackManager
     {
-        Task<BloxStack> GetInstalledStacksAsync(BloxDevice device);
+        Task DeployStackAsync(BloxStack bloxStack, CancellationToken cancellationToken = default);
     }
 }

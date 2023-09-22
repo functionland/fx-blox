@@ -31,6 +31,9 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<BloxConnectionFactory>();
             services.AddSingleton<IBloxConnectionService, BloxConnectionService>();
             services.AddSingleton<IKeyValueStorage, WalletStorageService>();
+
+            services.AddSingleton<IWifiService, FakeWifiService>();
+            services.AddSingleton<IBloxStackManager, BloxStackManager>();
             return services;
         }
 

@@ -1,3 +1,84 @@
 ﻿@import '../Styles/abstracts/_variables.scss';
 @import '../Styles/abstracts/_functions.scss';
 @import '../Styles/abstracts/_mixins.scss';
+
+.wizard-page{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.wizard-title {
+    margin-top: $spacing-120;
+    font-size: $font-size-28;
+}
+
+.wizard-description {
+    font-size: $font-size-14;
+    margin-top: $spacing-14;
+    margin-bottom: $spacing-120;
+}
+
+.progress-items {
+    padding: 10px;
+    cursor: pointer;
+    overflow: auto;
+    height: 100%;
+    text-align: left;
+    align-self: self-start;
+}
+
+.progress-item {
+    border-radius: 4px;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+
+    &:hover {
+        background-color: color(gray-bg-secondary);
+    }
+}
+
+.progress-title {
+    padding-left: 30px;
+    overflow-wrap: anywhere;
+}
+
+.show-details {
+    min-width: 103px;
+    margin-left: 10px;
+    color: cornflowerblue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.icon-success {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($success-mode);
+}
+
+.icon-error {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($error-mode);
+}
+
+.icon-warning {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($warning-mode);
+}
+
+.icon-info {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($info-mode);
+}

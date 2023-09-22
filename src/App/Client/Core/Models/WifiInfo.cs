@@ -10,6 +10,12 @@ namespace Functionland.FxBlox.Client.Core.Models
     {
         public required string Ssid { get; set; }
         public required string Essid { get; set; }
-        public required int Rssi { get; set; }
+        public required int? Rssi { get; set; }
+
+        public bool IsBloxHotspot()
+        {
+            // ToDo: What's the real logic?
+            return Essid.Contains("Blox");
+        }
     }
 }

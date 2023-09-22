@@ -8,10 +8,10 @@ using Functionland.FxBlox.Client.Core.Models;
 
 namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations
 {
-    public class FakeFxStack : IFxStack
+    public class FakeRocketPoolStack : IFxStack
     {
-        public string Title => "Fake Stack";
-        public string Description => "Fake Stack is a FxStack for testing purposes.";
+        public string Title => "RocketPool Stack";
+        public string Description => "RocketPool Stack Description";
         public Task NavigateToConfigurationPageAsync()
         {
             return Task.CompletedTask;
@@ -32,7 +32,7 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations
 
         public async Task DeployAsync(BloxDevice bloxDevice, CancellationToken cancellationToken)
         {
-            await Task.Delay(TimeSpan.FromSeconds(5), cancellationToken);
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
         }
     }
 }
