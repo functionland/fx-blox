@@ -9,7 +9,7 @@ using android = Android;
 
 namespace Functionland.FxBlox.Client.App.Platforms.Android.Implementations
 {
-    public class AndroidWalletService : WalletService
+    public partial class AndroidWalletService : WalletService
     {
         public override void OpenConnectWallet(string url)
         {

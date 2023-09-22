@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WalletConnectSharp.Storage.Interfaces;
 
 namespace Functionland.FxBlox.Client.App.Platforms.Windows.Implementations
 {
-    public class WindowsWalletService : WalletService
+    public partial class WindowsWalletService : WalletService
     {
         public override void OpenConnectWallet(string url)
         {
-          
+           
         }
     }
 }
