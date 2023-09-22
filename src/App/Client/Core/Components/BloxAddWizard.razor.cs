@@ -9,6 +9,7 @@ public partial class BloxAddWizard
     [AutoInject] private IBloxConnectionService BloxConnectionService { get; set; } = default!;
     [AutoInject] private BloxConnectionFactory BloxConnectionFactory { get; set; } = default!;
     [AutoInject] private IWifiService WifiService { get; set; } = default!;
+    [AutoInject] private IWalletService WalletService { get; set; } = default!;
     public BloxAddWizardStep WizardStep { get; set; } = BloxAddWizardStep.Welcome;
     public string? SelectedNetwork { get; set; }
     public string? SelectedWifiForBlox { get; set; }
@@ -100,7 +101,8 @@ public partial class BloxAddWizard
         Progress($"Found {wifiListOfBlox.Count} Wi-Fi(s) near '{device.Title}'.", ProgressType.Done);
 
         await Task.Delay(TimeSpan.FromSeconds(2));
-        //await GoToNextStepAsync();
+        ProgressItems.Clear();
+        await GoToNextStepAsync();
 
     }
 
@@ -124,18 +126,22 @@ public partial class BloxAddWizard
 
         var ssid = SelectedWifiForBlox;
         await BloxConnection.ConnectBloxToWifiAsync(ssid, password);
+        Progress("Blox Wi-Fi configured.", ProgressType.Done);
+
         // Now we have lost the connection to the blox via hotspot.
 
-        Progress("Connecting to Blox via blockchain (Libp2p)...");
+        Progress("Connecting to Blox via blockchain (Libp2p)...", createNew: true);
         await BloxConnection.ConnectToLibp2pAsync();
+        Progress("Connected to Blox via blockchain (Libp2p).", ProgressType.Done);
 
-        Progress("Checking the Blox Libp2p connection...");
+        Progress("Checking the Blox Libp2p connection...", createNew: true);
         var status = await BloxConnection.CheckLibp2pConnectionAsync();
+        Progress("Connected to Blox via blockchain successfully.", ProgressType.Done);
 
-        Progress("Connected to Blox via blockchain successfully.");
-
+        Progress("Navigating to Blox Home", createNew: true);
         await Task.Delay(TimeSpan.FromSeconds(2));
 
+        ProgressItems.Clear();
         NavigationManager.NavigateTo("mydevice");
     }
 
@@ -163,5 +169,22 @@ public partial class BloxAddWizard
             }
 
         };
+    }
+
+    private async Task ConnectToWalletClicked()
+    {
+        if (SelectedNetwork is null)
+        {
+            // ToDo: Ask user to select a network.
+            return;
+        }
+
+        Progress("Waiting for wallet approval...");
+        await WalletService.ConnectAsync(SelectedNetwork);
+        Progress("Wallet approved.", ProgressType.Done);
+
+        await Task.Delay(TimeSpan.FromSeconds(2));
+        ProgressItems.Clear();
+        await GoToNextStepAsync();
     }
 }

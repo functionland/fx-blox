@@ -36,8 +36,14 @@
 
         <FxButton Text="Connect to wallet"
                   ButtonStyle="FxButtonStyle.Normal"
-              ButtonSize="FxButtonSize.Stretch"
-                  OnClick="@(GoToNextStepAsync)"></FxButton>
+                  ButtonSize="FxButtonSize.Stretch"
+                  OnClick="@(ConnectToWalletClicked)"></FxButton>
+
+        <div class="progress-container">
+            <div class="progress-part">
+                <ProgressList ProgressItems="ProgressItems" />
+            </div>
+        </div>
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
@@ -80,6 +86,12 @@
         <FxButton Text="Connect Blox to Wi-Fi"
                   ButtonStyle="FxButtonStyle.Normal"
                   ButtonSize="FxButtonSize.Stretch"
-              OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+                  OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+
+        <div class="progress-container">
+            <div class="progress-part">
+                <ProgressList ProgressItems="ProgressItems" />
+            </div>
+        </div>
     }
 </div>

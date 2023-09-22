@@ -76,5 +76,6 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    /*background-image: url($info-mode);*/
+    /*@include Icon($zones, color(app-bg));*/
+    /*background-image: url($options-horizontal-disabled);*/
 }
