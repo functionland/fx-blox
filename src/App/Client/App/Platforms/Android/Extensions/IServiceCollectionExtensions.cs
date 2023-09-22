@@ -1,5 +1,6 @@
 ﻿using Functionland.FxBlox.Client.App.Platforms.Android.Implementations;
 using Functionland.FxBlox.Client.App.Platforms.Android.Implementations.Test;
+using Functionland.FxBlox.Client.App.Platforms.Android.PlatformTests;
 using Functionland.FxBlox.Client.Core.TestInfra.Contracts;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -11,6 +12,7 @@ namespace Microsoft.Extensions.DependencyInjection
             // Services being registered here can get injected in Android.
             services.AddSingleton<IPlatformTestService, AndroidPlatformTestService>();
             services.AddSingleton<IWalletService, AndroidWalletService>();
+            services.AddTransient<AndroidWalletServiceTransferSomeMoneyPlatformTest>();
             return services;
         }
     }

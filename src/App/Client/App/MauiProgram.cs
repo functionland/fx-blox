@@ -3,7 +3,11 @@
 using Functionland.FxBlox.Client.Core;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
 using Functionland.FxBlox.Shared.Services.Contracts;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.Maui.Controls;
 
 namespace Functionland.FxBlox.Client.App
 {
@@ -11,6 +15,8 @@ namespace Functionland.FxBlox.Client.App
     {
         public static MauiAppBuilder CreateMauiAppBuilder()
         {
+            AppCenter.Start("50ca1258-51c7-4d39-9e6a-fa3a417d774b",
+                     typeof(Analytics), typeof(Crashes));
 #if !BlazorHybrid
             throw new InvalidOperationException("Please switch to blazor hybrid as described in readme.md");
 #endif
