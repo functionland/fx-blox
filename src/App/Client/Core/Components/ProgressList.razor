@@ -1,0 +1,31 @@
+﻿@inherits AppComponentBase;
+
+<div class="progress-items">
+    @foreach (var progress in ProgressItems)
+    {
+        <div class="progress-item">
+            @if (progress.ProgressType == ProgressType.Done)
+            {
+                <div class="icon-success"></div>
+            }
+            @if (progress.ProgressType == ProgressType.Running)
+            {
+                <div class="icon-waiting"></div>
+            }
+            @if (progress.ProgressType == ProgressType.Fail)
+            {
+                <div class="icon-error"></div>
+            }
+
+            <div class="progress-title">@progress.Title</div>
+            @if (!string.IsNullOrEmpty(progress.Description))
+            {
+                <div class="show-details"
+                     @*@onclick="()=>ShowDescription(progress)"*@
+                >
+                    (show details)
+                </div>
+            }
+        </div>
+    }
+</div>
