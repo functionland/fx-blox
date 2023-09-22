@@ -1,0 +1,81 @@
+﻿@import '../Styles/abstracts/_variables.scss';
+@import '../Styles/abstracts/_functions.scss';
+@import '../Styles/abstracts/_mixins.scss';
+
+
+.progress-items {
+    padding: 3px;
+    cursor: pointer;
+    width: 100%;
+    /*background-color: color(gray-bg-primary);*/
+}
+
+.progress-item {
+    border-radius: 4px;
+    width: 100%;
+    /*font-family: Open Sans;*/
+    font-size: 14px;
+    /*font-style: normal;
+    font-weight: 300;
+    line-height: 28px;*/ /* 175% */
+    /*letter-spacing: 0.2px;*/
+
+    display: flex;
+    padding: 3px;
+    margin: 1px;
+
+    &:hover {
+        background-color: color(green-bg);
+    }
+}
+
+.progress-title {
+    padding-left: 30px;
+    overflow-wrap: anywhere;
+}
+
+.show-details {
+    min-width: 103px;
+    margin-left: 10px;
+    color: cornflowerblue;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.icon-success {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($success-mode);
+}
+
+.icon-error {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($error-mode);
+}
+
+.icon-warning {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($warning-mode);
+}
+
+.icon-info {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-image: url($info-mode);
+}
+
+.icon-waiting {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*@include Icon($zones, color(app-bg));*/
+    /*background-image: url($options-horizontal-disabled);*/
+}

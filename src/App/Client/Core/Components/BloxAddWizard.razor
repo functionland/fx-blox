@@ -3,23 +3,33 @@
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
-
-        <div class="wizard-title">
-            Welcome to Blox setup
-        </div>
-        <div class="wizard-description">
-            <div>
-                Make sure your Blox is turned on!
-            </div>
-            <div>
-                And is somewhere near you…
-            </div>
+        <div class="wizard-image">
+            <img src="https://picsum.photos/146/172" alt="" />
         </div>
 
-        <FxButton Text="Setup a new device"
-            ButtonStyle="FxButtonStyle.Normal"
-              ButtonSize="FxButtonSize.Stretch"
-            OnClick="@(GoToNextStepAsync)"></FxButton>
+        <div class="wizard-content">
+            <div class="wizard-title">
+                Welcome to Blox setup
+            </div>
+            <div class="wizard-description">
+                <div>
+                    Make sure your Blox is turned on!
+                </div>
+                <div>
+                    And is somewhere near you…
+                </div>
+            </div>
+        </div>
+
+        <div class="wizard-action-wrapper">
+            <FxButton Text="Setup a new device"
+                      ButtonStyle="FxButtonStyle.Normal"
+                      ButtonSize="FxButtonSize.Stretch"
+                      OnClick="@(GoToNextStepAsync)"></FxButton>
+        </div>
+        
+
+        
 
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
@@ -36,8 +46,14 @@
 
         <FxButton Text="Connect to wallet"
                   ButtonStyle="FxButtonStyle.Normal"
-              ButtonSize="FxButtonSize.Stretch"
-                  OnClick="@(GoToNextStepAsync)"></FxButton>
+                  ButtonSize="FxButtonSize.Stretch"
+                  OnClick="@(ConnectToWalletClicked)"></FxButton>
+
+        <div class="progress-container">
+            <div class="progress-part">
+                <ProgressList ProgressItems="ProgressItems" />
+            </div>
+        </div>
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
@@ -55,39 +71,15 @@
                   ButtonSize="FxButtonSize.Stretch"
                   OnClick="@(ConnectToHotspotClicked)"></FxButton>
 
-        <div class="progress-items">
-            @foreach (var progress in ProgressItems)
-            {
-                <div class="progress-item">
-                    @if (progress.ProgressType == ProgressType.Done)
-                    {
-                        <div class="icon-success"></div>
-                    }
-                    @if (progress.ProgressType == ProgressType.Running)
-                    {
-                        <div class="icon-info"></div>
-                    }
-                    @if (progress.ProgressType == ProgressType.Fail)
-                    {
-                        <div class="icon-error"></div>
-                    }
-
-                    <div class="progress-title">@progress.Title</div>
-                    @if (!string.IsNullOrEmpty(progress.Description))
-                    {
-                        <div class="show-details"
-                             @*@onclick="()=>ShowDescription(progress)"*@
-                             >
-                            (show details)
-                        </div>
-                    }
-                </div>
-            }
+        <div class="progress-container">
+            <div class="progress-part">
+                <ProgressList 
+                    ProgressItems="ProgressItems"
+                />
+            </div>
         </div>
-
         
-
-       
+        
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
@@ -104,6 +96,12 @@
         <FxButton Text="Connect Blox to Wi-Fi"
                   ButtonStyle="FxButtonStyle.Normal"
                   ButtonSize="FxButtonSize.Stretch"
-              OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+                  OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+
+        <div class="progress-container">
+            <div class="progress-part">
+                <ProgressList ProgressItems="ProgressItems" />
+            </div>
+        </div>
     }
 </div>

@@ -3,10 +3,33 @@
 @import '../Styles/abstracts/_mixins.scss';
 
 .wizard-page{
+    width: 100%;
+    height: 100%;
+    padding: 0 21px;
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     align-items: center;
+    overflow: auto;
+
+    .wizard-image {
+        flex-grow: 1; 
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .wizard-content {
+        flex-grow: 1;
+    }
+
+    .wizard-action-wrapper {
+        width: 100%;
+        padding: 16px 0;
+
+    }
 }
 
 .wizard-title {
@@ -20,65 +43,17 @@
     margin-bottom: $spacing-120;
 }
 
-.progress-items {
-    padding: 10px;
-    cursor: pointer;
-    overflow: auto;
-    height: 100%;
+.progress-container {
+    padding: 5px;
     text-align: left;
     align-self: self-start;
+    width: 100%;
 }
 
-.progress-item {
-    border-radius: 4px;
-    display: flex;
-    padding: 5px;
-    margin: 5px;
-
-    &:hover {
-        background-color: color(gray-bg-secondary);
-    }
-}
-
-.progress-title {
-    padding-left: 30px;
-    overflow-wrap: anywhere;
-}
-
-.show-details {
-    min-width: 103px;
-    margin-left: 10px;
-    color: cornflowerblue;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-.icon-success {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-image: url($success-mode);
-}
-
-.icon-error {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-image: url($error-mode);
-}
-
-.icon-warning {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-image: url($warning-mode);
-}
-
-.icon-info {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    background-image: url($info-mode);
+.progress-part {
+    
+    background-color: var(--gray-bg-primary);
+    margin: 10px 50px;
+    position: relative;
+    height: 120px;
 }
