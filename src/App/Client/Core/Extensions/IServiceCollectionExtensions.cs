@@ -34,6 +34,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddSingleton<IWifiService, FakeWifiService>();
             services.AddSingleton<IBloxStackManager, BloxStackManager>();
+
+            services.AddScoped<IWalletService, FakeWalletService>();
+
             return services;
         }
 
