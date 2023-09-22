@@ -3,10 +3,25 @@
 @import '../Styles/abstracts/_mixins.scss';
 
 .wizard-page{
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .wizard-image {
+
+    }
+
+    .wizard-content {
+        flex-grow: 1;
+
+    }
+
+    .wizard-action-wrapper {
+
+    }
 }
 
 .wizard-title {

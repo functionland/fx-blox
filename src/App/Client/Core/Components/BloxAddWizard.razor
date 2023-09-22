@@ -3,23 +3,33 @@
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
+        <div class="wizard-image">
 
-        <div class="wizard-title">
-            Welcome to Blox setup
-        </div>
-        <div class="wizard-description">
-            <div>
-                Make sure your Blox is turned on!
-            </div>
-            <div>
-                And is somewhere near you…
-            </div>
         </div>
 
-        <FxButton Text="Setup a new device"
-            ButtonStyle="FxButtonStyle.Normal"
-              ButtonSize="FxButtonSize.Stretch"
-            OnClick="@(GoToNextStepAsync)"></FxButton>
+        <div class="wizard-content">
+            <div class="wizard-title">
+                Welcome to Blox setup
+            </div>
+            <div class="wizard-description">
+                <div>
+                    Make sure your Blox is turned on!
+                </div>
+                <div>
+                    And is somewhere near you…
+                </div>
+            </div>
+        </div>
+
+        <div class="wizard-action-wrapper">
+            <FxButton Text="Setup a new device"
+                      ButtonStyle="FxButtonStyle.Normal"
+                      ButtonSize="FxButtonSize.Stretch"
+                      OnClick="@(GoToNextStepAsync)"></FxButton>
+        </div>
+        
+
+        
 
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
