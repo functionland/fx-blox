@@ -727,4 +727,7 @@ Please confirm your email by clicking on the link.</value>
   <data name="ConnectToWallet" xml:space="preserve">
     <value>Connect To Wallet</value>
   </data>
+  <data name="DoTransaction" xml:space="preserve">
+    <value>Do Transaction</value>
+  </data>
 </root>

@@ -38,7 +38,8 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             {
                 var rawReult = Preferences.Get(key, null);
                 if (rawReult is null) return default;
-                return JsonSerializer.Deserialize<T>(rawReult);
+                var result = JsonSerializer.Deserialize<T>(rawReult);
+                return result;
             }
 
             T typeDefaultValue = default!;
@@ -87,6 +88,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             if (!typeof(T).IsValueType)
             {
                 Preferences.Set(key, JsonSerializer.Serialize<T>(value));
+                return;
             }
 
             T typeDefaultValue = default!;

@@ -224,4 +224,9 @@
         <Exec Command="npx sass .:. Styles/app.scss:wwwroot/styles/app.min.css --style compressed --load-path=. --update" StandardOutputImportance="high" StandardErrorImportance="high" />
     </Target>
 
+	<Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+		<Exec Command="npm install" WorkingDirectory="npm_packages" />
+		<Exec Command="npm run build" WorkingDirectory="npm_packages" />
+	</Target>
+	
 </Project>

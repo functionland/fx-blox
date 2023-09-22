@@ -8,12 +8,14 @@ namespace Functionland.FxBlox.Client.App.Platforms.Android.Implementations.Test;
 
 public partial class AndroidPlatformTestService : PlatformTestService
 {
+    [AutoInject] public AndroidWalletServiceConnectToWalletPlatformTest AndroidWalletServiceConnectToWalletPlatformTest { get; set; } = default!;
     [AutoInject] public AndroidWalletServiceTransferSomeMoneyPlatformTest AndroidWalletServiceTransferSomeMoneyPlatformTest { get; set; } = default!;
     protected override List<IPlatformTest> OnGetTests()
     {
         return new List<IPlatformTest>()
         {
-          AndroidWalletServiceTransferSomeMoneyPlatformTest
+          AndroidWalletServiceTransferSomeMoneyPlatformTest,
+          AndroidWalletServiceConnectToWalletPlatformTest
         };
     }
 }

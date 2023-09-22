@@ -8,11 +8,8 @@ using WalletConnectSharp.Storage.Interfaces;
 
 namespace Functionland.FxBlox.Client.App.Platforms.Windows.Implementations
 {
-    public partial class WindowsWalletService : WalletService
-    {
-        public override void OpenConnectWallet(string url)
-        {
-           
-        }
-    }
+    //public partial class WindowsWalletService : JavaScriptWalletService
+    //{
+       
+    //}
 }

@@ -458,6 +458,15 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do Transaction.
+        /// </summary>
+        public static string DoTransaction {
+            get {
+                return ResourceManager.GetString("DoTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email &apos;{0}&apos; is already taken..
         /// </summary>
         public static string DuplicateEmail {

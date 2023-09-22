@@ -19,15 +19,21 @@
                   ButtonStyle="FxButtonStyle.MenuLine" 
                   OnClick="@(() => NavigationManager.NavigateTo("settings/about", false, true))" />
 
-        @if (SelectedCulture is not null)
-        {
-            <BitDropdown Items="GetCultures()" Class="culture-drp" @bind-Value="SelectedCulture" OnSelectItem="WrapHandled(OnCultureChanged)" />
-        }
+       
 
         @if(AppStateStore.IsAvailableForTest) {
             <FxButton Text="@Localizer[nameof(AppStrings.TestExplorer)]"
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="@(() => NavigationManager.NavigateTo("settings/testexplorer", false, true))" />
+        }
+
+        <FxButton Text="Test Connect To Wallet"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="ConnectToWallet" />
+
+        @if (SelectedCulture is not null)
+        {
+            <BitDropdown Items="GetCultures()" Class="culture-drp" @bind-Value="SelectedCulture" OnSelectItem="WrapHandled(OnCultureChanged)" />
         }
 
         <FxDivider FxDividerSize="FxDividerSize.Thin"
