@@ -208,6 +208,7 @@
     <ItemGroup>
       <Folder Include="Migrations\" />
       <Folder Include="npm_packages\" />
+      <Folder Include="Pages\MyDevicePage\" />
       <Folder Include="wwwroot\scripts\" />
       <Folder Include="wwwroot\styles\" />
     </ItemGroup>

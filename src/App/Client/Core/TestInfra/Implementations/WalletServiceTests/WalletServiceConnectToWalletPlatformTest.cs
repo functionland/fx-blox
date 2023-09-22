@@ -13,7 +13,7 @@ namespace Functionland.FxBlox.Client.Core.TestInfra.Implementations.WalletServic
         public override string Description => "WalletServiceConnecToWallet";
         protected override async Task OnRunAsync()
         {
-            await WalletService.ConnectAsync(EthereumChain.Goerli);
+            await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
         }
     }
 }

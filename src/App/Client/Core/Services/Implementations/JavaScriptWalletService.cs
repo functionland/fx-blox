@@ -16,7 +16,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             _js = jsRuntime;
         }
 
-        public async Task<SessionStruct> ConnectAsync(EthereumChain ethereumChain, CancellationToken cancellationToken = default)
+        public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
             var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
             Preferences.Set("sessionTopic", sessionStruct);

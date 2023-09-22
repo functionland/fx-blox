@@ -12,7 +12,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public abstract class WalletService : IWalletService
     {
-        public async Task<SessionStruct> ConnectAsync(string networkChain, CancellationToken cancellationToken = default)
+        public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
             var dappOptions = new SignClientOptions()
             {
@@ -67,7 +67,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         public abstract void OpenConnectWallet(string url);
         public async Task TransferSomeMoneyAsync()
         {
-            await ConnectAsync("");
+           
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public abstract class FakeWalletService : IWalletService
     {
-        public async Task<SessionStruct> ConnectAsync(EthereumChain ethereumChain, CancellationToken cancellationToken = default)
+        public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
             await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             return new SessionStruct();
