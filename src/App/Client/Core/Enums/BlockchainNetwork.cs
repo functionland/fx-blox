@@ -8,7 +8,7 @@ namespace Functionland.FxBlox.Client.Core.Enums
 {
     public enum BlockchainNetwork
     {
-        EthereumMainnet,
-        EthereumTestnet
+        EthereumMainnet = 1,
+        EthereumTestnet = 5
     }
 }

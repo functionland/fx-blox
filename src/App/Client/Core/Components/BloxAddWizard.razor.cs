@@ -51,7 +51,7 @@ public partial class BloxAddWizard
 
         if (progressType is not null)
             progress.ProgressType = progressType.Value;
-        
+
         StateHasChanged();
     }
 
@@ -80,19 +80,19 @@ public partial class BloxAddWizard
             HotspotInfo = hotspot,
             Title = hotspot.Essid
         };
-        
+
         BloxConnection = await BloxConnectionService.CreateForDeviceAsync(device);
 
         Progress($"Loading hardware information from: '{device.Title}'...", createNew: true);
         await BloxConnectionService.LoadDeviceInfoAsync(BloxConnection);
         Progress($"Hardware information loaded from: '{device.Title}'.", ProgressType.Done);
-        
+
         Progress($"Loading available Wi-Fi(s) near '{device.Title}'...", createNew: true);
         var wifiListOfBlox = await BloxConnection.GetWifiListAsync();
         AvailableWifiList = wifiListOfBlox
                             .Select(w => new BitDropdownItem()
                             {
-                                Value = w.Ssid, 
+                                Value = w.Ssid,
                                 Text = w.Essid,
                                 Data = w
                             })
@@ -180,7 +180,7 @@ public partial class BloxAddWizard
         }
 
         Progress("Waiting for wallet approval...");
-        await WalletService.ConnectAsync(SelectedNetwork);
+        await WalletService.ConnectAsync(Enum.Parse<BlockchainNetwork>(SelectedNetwork));
         Progress("Wallet approved.", ProgressType.Done);
 
         await Task.Delay(TimeSpan.FromSeconds(2));

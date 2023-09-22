@@ -26,4 +26,8 @@
     <ProjectReference Include="..\..\Core\Functionland.FxBlox.Client.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+
 </Project>

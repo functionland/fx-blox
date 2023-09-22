@@ -2,7 +2,6 @@ using Functionland.FxBlox.Client.Core.Models;
 using Functionland.FxBlox.Client.Core.Services.Contracts;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
 using Functionland.FxBlox.Client.Core.Tests.Extensions;
-using Functionland.FxBlox.Client.Core.Tests.Implementations;
 using Microsoft.Extensions.Hosting;
 
 namespace Functionland.FxBlox.Client.Core.Tests
@@ -17,7 +16,7 @@ namespace Functionland.FxBlox.Client.Core.Tests
                                    {
                                        services.AddClientSharedServices();
                                        services.AddClientTestServices();
-                                       services.AddSingleton<IWalletService>(new WindowsWalletService());
+                                       services.AddSingleton<IWalletService>(new FakeWalletService());
                                    }
                                ).Build();
 

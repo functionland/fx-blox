@@ -11,9 +11,9 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddClientWindowsServices(this IServiceCollection services)
         {
             // Services being registered here can get injected in Windows.
-            services.AddSingleton<IWalletService, WindowsWalletService>();
             services.AddSingleton<IPlatformTestService, WindowsPlatformTestService>();
             services.AddTransient<WindowsWalletServiceTransferSomeMoneyPlatformTest>();
+            services.AddTransient<WindowsWalletServiceConnectToWalletPlatformTest>();
             return services;
         }
     }

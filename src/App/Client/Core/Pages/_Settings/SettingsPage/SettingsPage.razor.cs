@@ -1,10 +1,13 @@
-﻿namespace Functionland.FxBlox.Client.Core.Pages;
+﻿using Org.BouncyCastle.Crypto.Operators;
+
+namespace Functionland.FxBlox.Client.Core.Pages;
 
 public partial class SettingsPage
 {
     private bool _applyAnimation = false;
     
     [AutoInject] private ThemeInterop ThemeInterop = default!;
+    [AutoInject] private IWalletService WalletService = default!;
 
     private FxTheme DesiredTheme { get; set; }
 
@@ -33,6 +36,11 @@ public partial class SettingsPage
             CurrentTheme = Localizer.GetString(nameof(AppStrings.System));
 
         GetAppVersion();
+    }
+
+    private async Task ConnectToWallet()
+    {
+        await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
     }
 
     private void UpdateBackButtonDeviceBehavior()
