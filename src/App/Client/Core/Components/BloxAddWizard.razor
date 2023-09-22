@@ -4,7 +4,7 @@
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
         <div class="wizard-image">
-            <img src="https://picsum.photos/146/172" alt="" />
+            <img src="https://picsum.photos/id/96/146/172" alt="" />
         </div>
 
         <div class="wizard-content">
@@ -27,81 +27,106 @@
                       ButtonSize="FxButtonSize.Stretch"
                       OnClick="@(GoToNextStepAsync)"></FxButton>
         </div>
-        
-
-        
-
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-        <div class="wizard-title">
-            Setup your wallet
-        </div>
-        <div class="wizard-description">
-            <div>
-                Select the network:
-            </div>
-            <BitDropdown Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
+        <div class="wizard-image">
+            <img src="https://picsum.photos/id/119/146/172" alt="" />
         </div>
 
-        <FxButton Text="Connect to wallet"
-                  ButtonStyle="FxButtonStyle.Normal"
-                  ButtonSize="FxButtonSize.Stretch"
-                  OnClick="@(ConnectToWalletClicked)"></FxButton>
-
-        <div class="progress-container">
-            <div class="progress-part">
-                <ProgressList ProgressItems="ProgressItems" />
+        <div class="wizard-content">
+            <div class="wizard-title">
+                Setup your wallet
+            </div>
+            <div class="wizard-description">
+                <div>
+                    Select the network:
+                </div>
+                <BitDropdown Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
             </div>
         </div>
+
+        <div class="wizard-action-wrapper">
+            @if (ProgressItems.Count <= 0)
+            {
+                <FxButton Text="Connect to wallet"
+                          ButtonStyle="FxButtonStyle.Normal"
+                          ButtonSize="FxButtonSize.Stretch"
+                          OnClick="@(ConnectToWalletClicked)"></FxButton>
+            }
+            else
+            {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
+        </div>    
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-        <div class="wizard-title">
-            Connect to Blox hotspot
+        <div class="wizard-image">
+            <img src="https://picsum.photos/id/137/146/172" alt="" />
         </div>
-        <div class="wizard-description">
-            <div>
-                Make sure your blox is turned on and its hotspot is available.
+
+        <div class="wizard-content">
+            <div class="wizard-title">
+                Connect to Blox hotspot
+            </div>
+            <div class="wizard-description">
+                <div>
+                    Make sure your blox is turned on and its hotspot is available.
+                </div>
             </div>
         </div>
 
-        <FxButton Text="Connect to hotspot"
-                  ButtonStyle="FxButtonStyle.Normal"
-                  ButtonSize="FxButtonSize.Stretch"
-                  OnClick="@(ConnectToHotspotClicked)"></FxButton>
-
-        <div class="progress-container">
-            <div class="progress-part">
-                <ProgressList 
-                    ProgressItems="ProgressItems"
-                />
-            </div>
-        </div>
-        
-        
+        <div class="wizard-action-wrapper">
+            @if (ProgressItems.Count <= 0)
+            {
+                <FxButton Text="Connect to hotspot"
+                          ButtonStyle="FxButtonStyle.Normal"
+                          ButtonSize="FxButtonSize.Stretch"
+                          OnClick="@(ConnectToHotspotClicked)"></FxButton>
+            }
+            else
+            {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
+        </div>       
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-        <div class="wizard-title">
-            Connect to Blox to Wi-Fi
-        </div>
-        <div class="wizard-description">
-            <div>
-                Select the Wi-Fi for you Blox to connect to:
-            </div>
-            <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
+        <div class="wizard-image">
+            <img src="https://picsum.photos/id/160/146/172" alt="" />
         </div>
 
-        <FxButton Text="Connect Blox to Wi-Fi"
-                  ButtonStyle="FxButtonStyle.Normal"
-                  ButtonSize="FxButtonSize.Stretch"
-                  OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
-
-        <div class="progress-container">
-            <div class="progress-part">
-                <ProgressList ProgressItems="ProgressItems" />
+        <div class="wizard-content">
+            <div class="wizard-title">
+                Connect to Blox to Wi-Fi
             </div>
+            <div class="wizard-description">
+                <div>
+                    Select the Wi-Fi for you Blox to connect to:
+                </div>
+                <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
+            </div>
+        </div>
+
+        <div class="wizard-action-wrapper">
+            @if (ProgressItems.Count <= 0)
+            {
+                <FxButton Text="Connect Blox to Wi-Fi"
+                          ButtonStyle="FxButtonStyle.Normal"
+                          ButtonSize="FxButtonSize.Stretch"
+                          OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+            }
+            else
+            {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
         </div>
     }
 </div>

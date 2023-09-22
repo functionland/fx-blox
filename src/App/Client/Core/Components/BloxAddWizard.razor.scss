@@ -11,49 +11,37 @@
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
+}
 
-    .wizard-image {
-        flex-grow: 1; 
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
+.wizard-image {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
 
+.wizard-content {
+    flex-grow: 2;
+
+    .wizard-title {
+        font-size: $font-size-28;
     }
 
-    .wizard-content {
-        flex-grow: 1;
-    }
-
-    .wizard-action-wrapper {
-        width: 100%;
-        padding: 16px 0;
-
+    .wizard-description {
+        font-size: $font-size-14;
+        margin-top: $spacing-14;
     }
 }
 
-.wizard-title {
-    margin-top: $spacing-120;
-    font-size: $font-size-28;
-}
-
-.wizard-description {
-    font-size: $font-size-14;
-    margin-top: $spacing-14;
-    margin-bottom: $spacing-120;
-}
-
-.progress-container {
-    padding: 5px;
-    text-align: left;
-    align-self: self-start;
+.wizard-action-wrapper {
     width: 100%;
-}
+    padding: 16px 0;
 
-.progress-part {
-    
-    background-color: var(--gray-bg-primary);
-    margin: 10px 50px;
-    position: relative;
-    height: 120px;
+    .progress-container {
+        padding: $spacing-16;
+        background-color: var(--gray-bg-primary);
+        width: 100%;
+        min-height: $spacing-40;
+    }
 }
