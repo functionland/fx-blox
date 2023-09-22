@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Functionland.FxBlox.Client.Core.Models
 {
-    public class BloxDevice
+    public record BloxDevice
     {
         public string? HardwareId { get; set; }
         public string? Title { get; set; }

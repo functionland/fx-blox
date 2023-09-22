@@ -13,3 +13,29 @@
           ButtonStyle="FxButtonStyle.MenuLine"
           OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))"
 />
+
+<h2>
+    Stacks:
+</h2>
+<div>
+    @if (CurrentConnection is not null)
+    {
+        if (CurrentConnection.Stacks.Any())
+        {
+            foreach (var stack in CurrentConnection.Stacks)
+            {
+                <div>
+                    @($"{stack.Stack.Title}  {stack.Status}")
+                </div>
+            }
+        }
+        else
+        {
+            <div>No stack installed yet.</div>
+        }
+        
+        <FxButton Text="Add Stack"
+                  ButtonStyle="FxButtonStyle.Outline"
+                  OnClick="AddStackClicked"/>
+    }
+</div>

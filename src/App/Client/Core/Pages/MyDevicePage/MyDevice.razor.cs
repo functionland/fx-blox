@@ -1,10 +1,15 @@
-﻿namespace Functionland.FxBlox.Client.Core.Pages
+﻿using Functionland.FxBlox.Client.Core.BloxStacks.Implementations;
+using Functionland.FxBlox.Client.Core.Models;
+
+namespace Functionland.FxBlox.Client.Core.Pages
 {
     public partial class MyDevice
     {
         [AutoInject] private IBloxConnectionService BloxConnectionService { get; set; } = default!;
+        [AutoInject] private IBloxStackManager BloxStackManager { get; set; } = default!;
         private bool _applyAnimation = false;
 
+        private BloxConnection? CurrentConnection { get; set; }
 
         protected override void OnInitialized()
         {
@@ -19,6 +24,7 @@
 
         private async Task RefreshBloxStatusesAsync()
         {
+            CurrentConnection = BloxConnectionService.GetConnections().FirstOrDefault();
             var connections = BloxConnectionService.GetConnections();
             foreach (var connection in connections)
             {
@@ -36,6 +42,36 @@
                 _applyAnimation = true;
                 StateHasChanged();
             }
+        }
+
+        private async Task AddStackClicked()
+        {
+            if (CurrentConnection is null)
+                return;
+
+            var bloxStack = new BloxStack
+            {
+                Device = CurrentConnection.Device,
+                Stack = new FakeRocketPoolStack(),
+                Status = BloxStackStatus.None
+            };
+
+            CurrentConnection?.Stacks?.Add(bloxStack);
+
+            bloxStack.Status = BloxStackStatus.Deploying;
+            StateHasChanged();
+            try
+            {
+                await BloxStackManager.DeployStackAsync(bloxStack);
+                bloxStack.Status = BloxStackStatus.Running;
+            }
+            catch (Exception ex)
+            {
+                bloxStack.Status = BloxStackStatus.Faulted;
+                // ToDo: Show exception
+            }
+
+            StateHasChanged();
         }
     }
 }

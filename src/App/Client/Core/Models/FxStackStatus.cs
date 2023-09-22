@@ -3,7 +3,7 @@
 public enum BloxStackStatus
 {
     None,
-    Initializing,
+    Deploying,
     Running,
     Restarting,
     Stopped,
