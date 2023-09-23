@@ -22,7 +22,13 @@
 }
 
 .progress-one {
-    border-left: 160px solid #06b597;
+    border-left: 186px solid #06b597;
+}
+.progress-two {
+    border-left: 372px solid #06b597;
+}
+.progress-three {
+    border-left: 558px solid #06b597;
 }
 
 .wizard-image {
@@ -31,7 +37,6 @@
     height: 300px;
     margin-top: 30px;
 }
-
 .welcome-img {
     background: url("./images/backgrounds/welcome-background.png") center/cover
         no-repeat;
@@ -40,9 +45,20 @@
     height: 360px;
     margin: 70px 0 10px;
 }
-
 .setup-img {
-    background: url("./images/backgrounds/base-img.svg") center no-repeat;
+    background: url("./images/backgrounds/base-img-dark.svg") center no-repeat;
+}
+.hotspot-img {
+    background: url("./images/backgrounds/hotspot-img-dark.svg") center
+        no-repeat;
+    background-size: 160px;
+    margin-bottom: 70px;
+    margin-top: 90px;
+    width: 300px;
+}
+.wifi-img {
+    background: url("./images/backgrounds/wifi-img.svg") center no-repeat;
+    background-size: 160px;
 }
 
 .wizard-content {
@@ -81,7 +97,7 @@
             margin-bottom: 10px;
         }
     }
-    
+
     .intro-des {
         div {
             margin-bottom: 0px;

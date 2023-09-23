@@ -66,15 +66,16 @@
                 <div class="progress-container">
                     <ProgressList ProgressItems="ProgressItems" />
                     <FxButton Text="Cancel"
-                          ButtonStyle="FxButtonStyle.Outline"
-                          ButtonSize="FxButtonSize.Stretch"></FxButton>
+                        ButtonStyle="FxButtonStyle.Outline"
+                        ButtonSize="FxButtonSize.Stretch">
+                    </FxButton>
                 </div>
             }
         </div>    
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-        <div class="progress-bar progress-one"></div>
+        <div class="progress-bar progress-two"></div>
 
         <div class="wizard-image hotspot-img"></div>
 
@@ -83,7 +84,7 @@
                 Connect to Blox hotspot
             </div>
             <div class="wizard-description">
-                <div>
+                <div class="center-text">
                     Make sure your blox is turned on and its hotspot is available.
                 </div>
             </div>
@@ -93,34 +94,36 @@
             @if (ProgressItems.Count <= 0)
             {
                 <FxButton Text="Connect to hotspot"
-                          ButtonStyle="FxButtonStyle.Normal"
-                          ButtonSize="FxButtonSize.Stretch"
-                          OnClick="@(ConnectToHotspotClicked)"></FxButton>
+                    ButtonStyle="FxButtonStyle.Normal"
+                    ButtonSize="FxButtonSize.Stretch"
+                    OnClick="@(ConnectToHotspotClicked)">
+                </FxButton>
             }
             else
             {
                 <div class="progress-container">
                     <ProgressList ProgressItems="ProgressItems" />
                     <FxButton Text="Cancel"
-                          ButtonStyle="FxButtonStyle.Outline"
-                          ButtonSize="FxButtonSize.Stretch"></FxButton>
+                        ButtonStyle="FxButtonStyle.Outline"
+                        ButtonSize="FxButtonSize.Stretch">
+                    </FxButton>
                 </div>
             }
         </div>       
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-        <div class="progress-bar"></div>
+        <div class="progress-bar progress-three"></div>
 
-        <div class="wizard-image setup-img"></div>
+        <div class="wizard-image wifi-img"></div>
 
         <div class="wizard-content">
             <div class="wizard-title">
-                Connect to Blox to Wi-Fi
+                Connect Blox to Wi-Fi
             </div>
             <div class="wizard-description">
                 <div>
-                    Select the Wi-Fi for you Blox to connect to:
+                    Select the Wi-Fi for you Blox to connect:
                 </div>
                 <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
             </div>
@@ -130,17 +133,19 @@
             @if (ProgressItems.Count <= 0)
             {
                 <FxButton Text="Connect Blox to Wi-Fi"
-                          ButtonStyle="FxButtonStyle.Normal"
-                          ButtonSize="FxButtonSize.Stretch"
-                          OnClick="@(ConnectBloxToWifiClicked)"></FxButton>
+                    ButtonStyle="FxButtonStyle.Normal"
+                    ButtonSize="FxButtonSize.Stretch"
+                    OnClick="@(ConnectBloxToWifiClicked)">
+                </FxButton>
             }
             else
             {
                 <div class="progress-container">
                     <ProgressList ProgressItems="ProgressItems" />
                     <FxButton Text="Cancel"
-                          ButtonStyle="FxButtonStyle.Outline"
-                          ButtonSize="FxButtonSize.Stretch"></FxButton>
+                        ButtonStyle="FxButtonStyle.Outline"
+                        ButtonSize="FxButtonSize.Stretch">
+                    </FxButton>
                 </div>
             }
         </div>
