@@ -61,13 +61,20 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task ConnectToLibp2pAsync(CancellationToken cancellationToken = default)
         {
-            await Libp2pClient.ConnectAsync(cancellationToken);
+            ArgumentException.ThrowIfNullOrEmpty(Device.PeerId);
+            await Libp2pClient.ConnectAsync(Device.PeerId, cancellationToken);
         }
 
         public async Task<BloxStatus> GetBloxStatusAsync(CancellationToken cancellationToken = default)
         {
             LastStatus = await Libp2pClient.GetBloxStatusAsync(cancellationToken);
             return LastStatus;
+        }
+
+        public async Task<string> ExchangeAsync(string peerId, string seed, CancellationToken cancellationToken = default)
+        {
+            Device.PeerId = await HotspotClient.ExchangeAsync(peerId, seed, cancellationToken);
+            return Device.PeerId;
         }
     }
 }
