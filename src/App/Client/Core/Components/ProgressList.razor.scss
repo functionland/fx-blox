@@ -3,79 +3,80 @@
 @import '../Styles/abstracts/_mixins.scss';
 
 
-.progress-items {
-    padding: 3px;
-    cursor: pointer;
+.progress-list-container {
+    padding: $spacing-4 $spacing-8;
+    border: 1px solid color(gray-border);
+    border-radius: $border-radius-4;
     width: 100%;
-    /*background-color: color(gray-bg-primary);*/
 }
 
 .progress-item {
-    border-radius: 4px;
     width: 100%;
-    /*font-family: Open Sans;*/
-    font-size: 14px;
-    /*font-style: normal;
+    min-height: $spacing-30;
+    font-size: $font-size-14;
     font-weight: 300;
-    line-height: 28px;*/ /* 175% */
-    /*letter-spacing: 0.2px;*/
-
     display: flex;
-    padding: 3px;
-    margin: 1px;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: $spacing-4 $spacing-4;
 
-    &:hover {
-        background-color: color(green-bg);
+    .progress-item-icon {
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
     }
-}
 
-.progress-title {
-    padding-left: 30px;
-    overflow-wrap: anywhere;
-}
+    .progress-title {
+        padding-left: $spacing-8;
+    }
 
-.show-details {
-    min-width: 103px;
-    margin-left: 10px;
-    color: cornflowerblue;
+    .show-details {
+        min-width: 103px;
+        margin-left: $spacing-6;
+        color: $green-dark-base;
 
-    &:hover {
-        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
 .icon-success {
-    width: 20px;
-    height: 20px;
-    position: absolute;
     background-image: url($success-mode);
 }
 
+.icon-waiting {
+    background-image: url($in-progress-mode);
+    animation: spinner 1.4s linear infinite;
+    transition: all linear 0.7s;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
 .icon-error {
-    width: 20px;
-    height: 20px;
-    position: absolute;
     background-image: url($error-mode);
 }
 
 .icon-warning {
-    width: 20px;
-    height: 20px;
-    position: absolute;
     background-image: url($warning-mode);
 }
 
 .icon-info {
-    width: 20px;
-    height: 20px;
-    position: absolute;
     background-image: url($info-mode);
 }
 
-.icon-waiting {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    /*@include Icon($zones, color(app-bg));*/
-    /*background-image: url($options-horizontal-disabled);*/
-}

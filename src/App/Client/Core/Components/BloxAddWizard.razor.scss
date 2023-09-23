@@ -94,9 +94,11 @@
     padding: 16px 0;
 
     .progress-container {
-        padding: $spacing-16;
-        background-color: var(--gray-bg-primary);
         width: 100%;
         min-height: $spacing-40;
+
+        ::deep .progress-list-container {
+            margin-bottom: $spacing-12;
+        }
     }
 }

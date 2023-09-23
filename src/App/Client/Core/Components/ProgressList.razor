@@ -1,20 +1,20 @@
 ﻿@inherits AppComponentBase;
 
-<div class="progress-items">
+<div class="progress-list-container">
     @foreach (var progress in ProgressItems)
     {
         <div class="progress-item">
             @if (progress.ProgressType == ProgressType.Done)
             {
-                <div class="icon-success"></div>
+                <div class="progress-item-icon icon-success"></div>
             }
             @if (progress.ProgressType == ProgressType.Running)
             {
-                <div class="icon-waiting"></div>
+                <div class="progress-item-icon icon-waiting"></div>
             }
             @if (progress.ProgressType == ProgressType.Fail)
             {
-                <div class="icon-error"></div>
+                <div class="progress-item-icon icon-error"></div>
             }
 
             <div class="progress-title">@progress.Title</div>
