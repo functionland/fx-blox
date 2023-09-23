@@ -8,19 +8,26 @@
     margin: 0;
     box-sizing: border-box;
     width: 100%;
-    height: 90%;
-    display: grid;
-    grid-template-rows: 2fr 1.5fr 1fr 2fr;
     margin-top: 30px;
-    // overflow: hidden;
+    // overflow-y: scroll;
+    font-size: 16px;
+}
+
+.grid-container {
+    height: 90%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
+    // border: 1px solid red;
+    margin-bottom: 20px;
 
     & > div {
         // border: 1px solid yellow;
+        width: 100%;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        font-size: 18px;
     }
 }
 
@@ -33,19 +40,19 @@
 }
 
 .state-info {
-    line-height: 30px;
+    line-height: 40px;
 
     .blox-id-value {
-        max-width: 350px;
+        max-width: 320px;
         border: 1px solid rgb(62, 62, 62);
-        background-color: #222;
+        background-color: #2222225b;
         border-radius: 5px;
         padding: 3px 5px;
         overflow-x: scroll;
+        min-width: 40px;
 
         &::-webkit-scrollbar-thumb {
             width: 1px !important;
-            cursor: pointer;
         }
     }
 
@@ -66,23 +73,25 @@
     div {
         // border: 2px solid red;
         width: 40%;
-        height: 80%;
+        // height: ;
+        height: max(80%, 60px);
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 25px;
         background: linear-gradient(
             135deg,
             rgba(6, 181, 152, 0.7),
             rgba(9, 147, 147, 0.6)
         );
         border-radius: 10px;
+        font-size: min(4vw, 25px);
     }
 }
 
 .installed-stacks {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
     align-items: start;
     padding: 0 20px;
 
@@ -102,9 +111,14 @@
         border: 1px solid black;
         background: #22222280;
         border-radius: 10px;
-        display: flex;
-        flex-direction: column;
         gap: 5px;
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        p{
+            margin: 4px;
+        }
 
         div {
             // border: 1px solid red;
@@ -114,10 +128,7 @@
             padding-left: 10px;
             background-color: var(--gray-bg-primary);
             border-radius: 6px;
+            margin-bottom: 5px;
         }
     }
-
-    // .add-blox {
-    //     border: 1px solid red;
-    // }
 }
