@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using WalletConnectSharp.Sign.Models;
 
@@ -19,7 +21,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
             var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
-            Preferences.Set("sessionTopic", sessionStruct);
+            Preferences.Set("sessionStruct", sessionStruct);
             return new SessionStruct();
         }
 
@@ -30,7 +32,41 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task TransferSomeMoneyAsync()
         {
-            var session = Preferences.Get("sessionTopic", string.Empty);
+            var session = Preferences.Get("sessionStruct", string.Empty);
+            var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+            var topic = sessionStruct.Topic;
+            var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+            var toWalletId = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb";
+            var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
+            var hexAmount = $"0x{amount}";
+            var transaction = await _js.InvokeAsync<string>("WalletConnect.TransferMoney", topic, currentWallet.Address, toWalletId, currentWallet.ChainId, hexAmount);
         }
+
+        public class Caip25Address
+        {
+            public string Address;
+            public string ChainId;
+        }
+
+        public Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain)
+        {
+            var defaultNamespace = currentSession.Namespaces[chain];
+
+            if (defaultNamespace.Accounts.Length == 0)
+                return null;
+
+            var fullAddress = defaultNamespace.Accounts[0];
+            var addressParts = fullAddress.Split(":");
+
+            var address = addressParts[2];
+            var chainId = string.Join(':', addressParts.Take(2));
+
+            return new Caip25Address()
+            {
+                Address = address,
+                ChainId = chainId,
+            };
+        }
+
     }
 }

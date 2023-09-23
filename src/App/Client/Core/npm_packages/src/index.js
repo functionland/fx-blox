@@ -2,11 +2,9 @@
 
 export async function ConnectToWallet(ethereumChain) {
     try {
-       
-        const projectId = "94a4ca39db88ee0be8f6df95fdfb560a";
 
         const web3Modal = new WalletConnectModalSign({
-            projectId,
+            projectId: "94a4ca39db88ee0be8f6df95fdfb560a",
             metadata: {
                 name: "Functionland Blox",
                 description: "Functionland Blox Description ....",
@@ -14,6 +12,21 @@ export async function ConnectToWallet(ethereumChain) {
                 icons: ["https://fx.land/blox-icon.png"],
             },
         });
+
+
+        try {
+            var existSession = await web3Modal.getSession();
+            console.log(existSession);
+
+            if (existSession && existSession.topic) {
+                console.log("disconnect");
+                await web3Modal.disconnect({ topic: session.topic });
+            }
+        }
+        catch (err) {
+            console.error(err);
+        }
+
 
         const session = await web3Modal.connect({
             requiredNamespaces: {
@@ -25,9 +38,63 @@ export async function ConnectToWallet(ethereumChain) {
             },
         });
 
-     
-        return session.toString();
+
+        return JSON.stringify(session);
     } catch (err) {
         console.error(err);
+        return err.message;
     }
+}
+
+export async function TransferMoney(topic, fromwalletid, towalletid, chainId, amount) {
+    try {
+
+        const web3Modal = new WalletConnectModalSign({
+            projectId: "94a4ca39db88ee0be8f6df95fdfb560a",
+            metadata: {
+                name: "Functionland Blox",
+                description: "Functionland Blox Description ....",
+                url: "https://fx.land/",
+                icons: ["https://fx.land/blox-icon.png"],
+            },
+        });
+
+        var existsession = null;
+
+        try {
+            existsession = await web3Modal.getSession();
+            if (existsession && existsession.topic) {
+                topic = existsession.topic;
+            }
+        }
+        catch (err) {
+
+        }
+
+        const transaction = {
+            from: fromwalletid,
+            to: towalletid,
+            data: "0x",
+            gasPrice: "0x029104e28c",
+            gasLimit: "0x5208",
+            value: amount,
+        };
+
+        var requestModel = {
+            topic: topic,
+            chainId: chainId,
+            request: {
+                method: "eth_sendTransaction",
+                params: [transaction],
+            },
+        };
+
+        const result = await web3Modal.request(requestModel);
+
+        return result;
+    } catch (err) {
+        console.log(err);
+        return err.message;
+    }
+
 }

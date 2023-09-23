@@ -31,6 +31,9 @@
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="ConnectToWallet" />
 
+        <FxButton Text="Test Transfer Money"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="TransferMoney" />
         @if (SelectedCulture is not null)
         {
             <BitDropdown Items="GetCultures()" Class="culture-drp" @bind-Value="SelectedCulture" OnSelectItem="WrapHandled(OnCultureChanged)" />

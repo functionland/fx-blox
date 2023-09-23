@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@walletconnect/modal-sign-html": "^2.6.2"
+    "@walletconnect/modal-sign-html": "^2.6.2",
+    "@walletconnect/sign-client": "^2.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.22.20",
