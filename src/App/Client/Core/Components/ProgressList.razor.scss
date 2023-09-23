@@ -50,8 +50,8 @@
 
 .icon-waiting {
     background-image: url($in-progress-mode);
-    animation: spinner 1.4s linear infinite;
-    transition: all linear 0.7s;
+    animation: spinner 3s linear infinite;
+    /*transition: all linear 2.7s;*/
 }
 
 @keyframes spinner {

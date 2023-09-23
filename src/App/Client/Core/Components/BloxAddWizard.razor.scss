@@ -19,16 +19,22 @@
     width: 100%;
     height: 5px;
     background-color: #495057;
+    color: #cae9e3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
 }
 
-.progress-one {
-    border-left: 186px solid #06b597;
+.progress-fill {
+    width: 100%;
+    height: 100%;
+    background: #06b597;
 }
-.progress-two {
-    border-left: 372px solid #06b597;
-}
-.progress-three {
-    border-left: 558px solid #06b597;
+
+.progress-empty {
+    width: 100%;
+    height: 100%;
+    background: transparent;
 }
 
 .wizard-image {
@@ -36,42 +42,26 @@
     width: 146px;
     height: 300px;
     margin-top: 30px;
+
+    // background: url(color(wizard-img)) center no-repeat;
+    background: url("./images/backgrounds/base-img-light.svg") center no-repeat;
 }
+
 .welcome-img {
-    background: url("./images/backgrounds/welcome-background.png") center/cover
-        no-repeat;
+    // background: url($welcome-img) center/cover no-repeat;
+    background: url("./images/backgrounds/welcome-background.png") center no-repeat;
 
     width: 360px;
     height: 360px;
     margin: 70px 0 10px;
 }
-.setup-img {
-    background: url("./images/backgrounds/base-img-dark.svg") center no-repeat;
-}
-.hotspot-img {
-    background: url("./images/backgrounds/hotspot-img-dark.svg") center
-        no-repeat;
-    background-size: 160px;
-    margin-bottom: 70px;
-    margin-top: 90px;
-    width: 300px;
-}
-.wifi-img {
-    background: url("./images/backgrounds/wifi-img.svg") center no-repeat;
-    background-size: 160px;
-}
 
 .wizard-content {
     flex-grow: 2;
-    // border: 1px solid red;
     margin-top: 25px;
 
     & > div {
         padding: 5px 0;
-    }
-
-    .center-text {
-        text-align: center;
     }
 
     .wizard-welcome {
@@ -82,7 +72,7 @@
     }
 
     .wizard-title {
-        font-size: $font-size-40;
+        font-size: $font-size-28;
         font-weight: 600;
         font-family: "Montserrat";
         font-weight: 600;
@@ -103,6 +93,10 @@
             margin-bottom: 0px;
         }
     }
+}
+
+.center-text {
+    text-align: center;
 }
 
 .wizard-action-wrapper {

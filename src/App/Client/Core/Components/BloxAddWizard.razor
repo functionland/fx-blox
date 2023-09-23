@@ -36,7 +36,11 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-        <div class="progress-bar progress-one"></div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-empty"></div>
+            <div class="progress-empty"></div>
+        </div>
 
         <div class="wizard-image setup-img"></div>
 
@@ -75,7 +79,11 @@
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-        <div class="progress-bar progress-two"></div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-fill"></div>
+            <div class="progress-empty"></div>
+        </div>
 
         <div class="wizard-image hotspot-img"></div>
 
@@ -113,7 +121,11 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-        <div class="progress-bar progress-three"></div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <div class="progress-fill"></div>
+            <div class="progress-fill"></div>
+        </div>
 
         <div class="wizard-image wifi-img"></div>
 
