@@ -1,17 +1,22 @@
 ﻿@inherits AppComponentBase;
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
-        <div class="wizard-image">
-            <img src="https://picsum.photos/id/96/146/172" alt="" />
-        </div>
+        <div class="wizard-image welcome-img"></div>
 
-        <div class="wizard-content">
-            <div class="wizard-title">
-                Welcome to Blox setup
+        <div class="wizard-content center-text">
+            <div class="wizard-welcome">
+                WELCOME
             </div>
-            <div class="wizard-description">
+            <div class="wizard-title">
+                Blox app setup
+            </div>
+            <div class="wizard-description center-text intro-des">
                 <div>
                     Make sure your Blox is turned on!
                 </div>
@@ -23,16 +28,17 @@
 
         <div class="wizard-action-wrapper">
             <FxButton Text="Setup a new device"
-                      ButtonStyle="FxButtonStyle.Normal"
-                      ButtonSize="FxButtonSize.Stretch"
-                      OnClick="@(GoToNextStepAsync)"></FxButton>
+                ButtonStyle="FxButtonStyle.Normal"
+                ButtonSize="FxButtonSize.Stretch"
+                OnClick="@(GoToNextStepAsync)">
+            </FxButton>
         </div>
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-        <div class="wizard-image">
-            <img src="https://picsum.photos/id/119/146/172" alt="" />
-        </div>
+        <div class="progress-bar progress-one"></div>
+
+        <div class="wizard-image setup-img"></div>
 
         <div class="wizard-content">
             <div class="wizard-title">
@@ -42,7 +48,7 @@
                 <div>
                     Select the network:
                 </div>
-                <BitDropdown Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
+                <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
             </div>
         </div>
 
@@ -50,9 +56,10 @@
             @if (ProgressItems.Count <= 0)
             {
                 <FxButton Text="Connect to wallet"
-                          ButtonStyle="FxButtonStyle.Normal"
-                          ButtonSize="FxButtonSize.Stretch"
-                          OnClick="@(ConnectToWalletClicked)"></FxButton>
+                    ButtonStyle="FxButtonStyle.Normal"
+                    ButtonSize="FxButtonSize.Stretch"
+                    OnClick="@(ConnectToWalletClicked)">
+                </FxButton>
             }
             else
             {
@@ -64,9 +71,9 @@
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-        <div class="wizard-image">
-            <img src="https://picsum.photos/id/137/146/172" alt="" />
-        </div>
+        <div class="progress-bar progress-one"></div>
+
+        <div class="wizard-image hotspot-img"></div>
 
         <div class="wizard-content">
             <div class="wizard-title">
@@ -97,9 +104,9 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-        <div class="wizard-image">
-            <img src="https://picsum.photos/id/160/146/172" alt="" />
-        </div>
+        <div class="progress-bar"></div>
+
+        <div class="wizard-image setup-img"></div>
 
         <div class="wizard-content">
             <div class="wizard-title">

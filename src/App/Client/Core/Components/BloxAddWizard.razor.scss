@@ -1,8 +1,8 @@
-﻿@import '../Styles/abstracts/_variables.scss';
-@import '../Styles/abstracts/_functions.scss';
-@import '../Styles/abstracts/_mixins.scss';
+﻿@import "../Styles/abstracts/_variables.scss";
+@import "../Styles/abstracts/_functions.scss";
+@import "../Styles/abstracts/_mixins.scss";
 
-.wizard-page{
+.wizard-page {
     width: 100%;
     height: 100%;
     padding: 0 21px;
@@ -13,24 +13,79 @@
     overflow: auto;
 }
 
+.progress-bar {
+    margin-top: 55px;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #495057;
+}
+
+.progress-one {
+    border-left: 160px solid #06b597;
+}
+
 .wizard-image {
     flex-grow: 1;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
+    width: 146px;
+    height: 300px;
+    margin-top: 30px;
+}
+
+.welcome-img {
+    background: url("./images/backgrounds/welcome-background.png") center/cover
+        no-repeat;
+
+    width: 360px;
+    height: 360px;
+    margin: 70px 0 10px;
+}
+
+.setup-img {
+    background: url("./images/backgrounds/base-img.svg") center no-repeat;
 }
 
 .wizard-content {
     flex-grow: 2;
+    // border: 1px solid red;
+    margin-top: 25px;
+
+    & > div {
+        padding: 5px 0;
+    }
+
+    .center-text {
+        text-align: center;
+    }
+
+    .wizard-welcome {
+        font-size: $font-size-14;
+        letter-spacing: 1px;
+        font-family: "Montserrat";
+        text-align: center;
+    }
 
     .wizard-title {
-        font-size: $font-size-28;
+        font-size: $font-size-40;
+        font-weight: 600;
+        font-family: "Montserrat";
+        font-weight: 600;
     }
 
     .wizard-description {
         font-size: $font-size-14;
         margin-top: $spacing-14;
+        line-height: 25px;
+
+        div {
+            margin-bottom: 10px;
+        }
+    }
+    
+    .intro-des {
+        div {
+            margin-bottom: 0px;
+        }
     }
 }
 
