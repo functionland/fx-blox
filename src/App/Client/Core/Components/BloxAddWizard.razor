@@ -7,15 +7,14 @@
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
-        <div class="wizard-image welcome-img"></div>
+        <div class="wizard-image welcome-image"></div>
+
+        <div class="wizard-title">
+            <div class="wizard-welcome">WELCOME</div>
+            <div>Blox app setup</div>
+        </div>
 
         <div class="wizard-content center-text">
-            <div class="wizard-welcome">
-                WELCOME
-            </div>
-            <div class="wizard-title">
-                Blox app setup
-            </div>
             <div class="wizard-description center-text intro-des">
                 <div>
                     Make sure your Blox is turned on!
@@ -36,24 +35,27 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-        <div class="progress-bar">
+    @*     <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
             <div class="progress-empty"></div>
-        </div>
+        </div> *@
 
         <div class="wizard-image setup-img"></div>
-
+        <div class="wizard-title">Setup your wallet</div>
         <div class="wizard-content">
-            <div class="wizard-title">
-                Setup your wallet
-            </div>
-            <div class="wizard-description">
+            @if(ProgressItems.Count <= 0) {
+                <div class="wizard-description">
                 <div>
                     Select the network:
                 </div>
                 <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
             </div>
+            } else {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
         </div>
 
         <div class="wizard-action-wrapper">
@@ -67,35 +69,35 @@
             }
             else
             {
-                <div class="progress-container">
-                    <ProgressList ProgressItems="ProgressItems" />
-                    <FxButton Text="Cancel"
-                        ButtonStyle="FxButtonStyle.Outline"
-                        ButtonSize="FxButtonSize.Stretch">
-                    </FxButton>
-                </div>
+                <FxButton Text="Cancel"
+                    ButtonStyle="FxButtonStyle.Outline"
+                    ButtonSize="FxButtonSize.Stretch">
+                </FxButton>
             }
         </div>    
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-        <div class="progress-bar">
+     @*    <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
-        </div>
+        </div> *@
 
         <div class="wizard-image hotspot-img"></div>
-
+        <div class="wizard-title">Connect to Blox hotspot</div>
         <div class="wizard-content">
-            <div class="wizard-title">
-                Connect to Blox hotspot
-            </div>
-            <div class="wizard-description">
-                <div class="center-text">
-                    Make sure your blox is turned on and its hotspot is available.
+            @if(ProgressItems.Count <= 0) {
+                <div class="wizard-description">
+                    <div class="center-text">
+                        Make sure your blox is turned on and its hotspot is available.
+                    </div>
                 </div>
-            </div>
+            } else {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
         </div>
 
         <div class="wizard-action-wrapper">
@@ -109,36 +111,36 @@
             }
             else
             {
-                <div class="progress-container">
-                    <ProgressList ProgressItems="ProgressItems" />
-                    <FxButton Text="Cancel"
-                        ButtonStyle="FxButtonStyle.Outline"
-                        ButtonSize="FxButtonSize.Stretch">
-                    </FxButton>
-                </div>
+                <FxButton Text="Cancel"
+                    ButtonStyle="FxButtonStyle.Outline"
+                    ButtonSize="FxButtonSize.Stretch">
+                </FxButton>
             }
         </div>       
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-        <div class="progress-bar">
+     @*    <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
-        </div>
+        </div> *@
 
         <div class="wizard-image wifi-img"></div>
-
+        <div class="wizard-title">Connect Blox to Wi-Fi</div>
         <div class="wizard-content">
-            <div class="wizard-title">
-                Connect Blox to Wi-Fi
-            </div>
-            <div class="wizard-description">
-                <div>
-                    Select the Wi-Fi for you Blox to connect:
+            @if(ProgressItems.Count <= 0) {
+                <div class="wizard-description">
+                    <div>
+                        Select the Wi-Fi for you Blox to connect:
+                    </div>
+                    <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
                 </div>
-                <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
-            </div>
+            } else {
+                <div class="progress-container">
+                    <ProgressList ProgressItems="ProgressItems" />
+                </div>
+            }
         </div>
 
         <div class="wizard-action-wrapper">
@@ -152,13 +154,10 @@
             }
             else
             {
-                <div class="progress-container">
-                    <ProgressList ProgressItems="ProgressItems" />
-                    <FxButton Text="Cancel"
+                <FxButton Text="Cancel"
                         ButtonStyle="FxButtonStyle.Outline"
                         ButtonSize="FxButtonSize.Stretch">
-                    </FxButton>
-                </div>
+                </FxButton>
             }
         </div>
     }
