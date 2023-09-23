@@ -49,7 +49,14 @@
                 <div>
                     Select the network:
                 </div>
-                <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
+                @* <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" /> *@
+                <ul class="list-wrapper">
+                    @foreach(var item in GetBlockchainNetworks()) {
+                        <li class="list-item">
+                            <div class="item-text">@item.Text</div>
+                        </li>
+                    }
+                </ul>
             </div>
             } else {
                 <div class="progress-container">
@@ -134,7 +141,14 @@
                     <div>
                         Select the Wi-Fi for you Blox to connect:
                     </div>
-                    <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
+                    @* <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" /> *@
+                    <ul class="list-wrapper">
+                    @foreach(var item in AvailableWifiList) {
+                        <li class="list-item">
+                            <div class="item-text">@item.Text</div>
+                        </li>
+                    }
+                </ul>
                 </div>
             } else {
                 <div class="progress-container">

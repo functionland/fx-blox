@@ -11,6 +11,13 @@
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: color(app-bg);
 }
 
 .progress-bar {
@@ -114,4 +121,50 @@
 .wizard-action-wrapper {
     width: 100%;
     padding: 16px 0;
+}
+
+ul.list-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: $font-size-14;
+    font-weight: 300;
+    border: 1px solid color(gray-border);
+    border-radius: $border-radius-4;
+    list-style-type: none;
+
+    li.list-item {
+        width: 100%;
+        padding: $spacing-2 $spacing-4;
+        height: 60px;
+        cursor: pointer;
+
+        .item-text {
+            border-bottom: 1px solid color(gray-border);
+            padding: $spacing-14 $spacing-12;
+            width: 100%;
+            height: 100%;
+            margin: 0 !important;
+            border-radius: $border-radius-4;
+        }
+
+        .item-text:hover {
+            background: $green-light-bg;
+        }
+    }
+
+    .list-item:last-child {
+        .item-text {
+            border-bottom: none;
+        }
+    }
+
+    .selected-list-item {
+        width: 24px;
+        height: 24px;
+        background-image: url($success-mode);
+        background-repeat: no-repeat;
+        background-position: right 2px;
+        background-size: 24px;
+    }
 }
