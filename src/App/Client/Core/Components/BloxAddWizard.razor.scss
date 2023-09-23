@@ -1,8 +1,8 @@
-﻿@import '../Styles/abstracts/_variables.scss';
-@import '../Styles/abstracts/_functions.scss';
-@import '../Styles/abstracts/_mixins.scss';
+﻿@import "../Styles/abstracts/_variables.scss";
+@import "../Styles/abstracts/_functions.scss";
+@import "../Styles/abstracts/_mixins.scss";
 
-.wizard-page{
+.wizard-page {
     width: 100%;
     height: 100%;
     padding: 0 21px;
@@ -11,49 +11,104 @@
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
-
-    .wizard-image {
-        flex-grow: 1; 
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: center;
-
-    }
-
-    .wizard-content {
-        flex-grow: 1;
-    }
-
-    .wizard-action-wrapper {
-        width: 100%;
-        padding: 16px 0;
-
-    }
 }
 
-.wizard-title {
-    margin-top: $spacing-120;
-    font-size: $font-size-28;
-}
-
-.wizard-description {
-    font-size: $font-size-14;
-    margin-top: $spacing-14;
-    margin-bottom: $spacing-120;
-}
-
-.progress-container {
-    padding: 5px;
-    text-align: left;
-    align-self: self-start;
+.progress-bar {
+    margin-top: 55px;
+    border-radius: 10px;
     width: 100%;
+    height: 5px;
+    background-color: #495057;
+    color: #cae9e3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
 }
 
-.progress-part {
-    
-    background-color: var(--gray-bg-primary);
-    margin: 10px 50px;
-    position: relative;
-    height: 120px;
+.progress-fill {
+    width: 100%;
+    height: 100%;
+    background: #06b597;
+}
+
+.progress-empty {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.wizard-image {
+    flex-grow: 1;
+    width: 146px;
+    height: 300px;
+    margin-top: 30px;
+
+    // background: url(color(wizard-img)) center no-repeat;
+    background: url("./images/backgrounds/base-img-light.svg") center no-repeat;
+}
+
+.welcome-img {
+    // background: url($welcome-img) center/cover no-repeat;
+    background: url("./images/backgrounds/welcome-background.png") center no-repeat;
+
+    width: 360px;
+    height: 360px;
+    margin: 70px 0 10px;
+}
+
+.wizard-content {
+    flex-grow: 2;
+    margin-top: 25px;
+
+    & > div {
+        padding: 5px 0;
+    }
+
+    .wizard-welcome {
+        font-size: $font-size-14;
+        letter-spacing: 1px;
+        font-family: "Montserrat";
+        text-align: center;
+    }
+
+    .wizard-title {
+        font-size: $font-size-28;
+        font-weight: 600;
+        font-family: "Montserrat";
+        font-weight: 600;
+    }
+
+    .wizard-description {
+        font-size: $font-size-14;
+        margin-top: $spacing-14;
+        line-height: 25px;
+
+        div {
+            margin-bottom: 10px;
+        }
+    }
+
+    .intro-des {
+        div {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.center-text {
+    text-align: center;
+}
+
+.wizard-action-wrapper {
+    width: 100%;
+    padding: 16px 0;
+
+    .progress-container {
+        width: 100%;
+        min-height: $spacing-40;
+
+        ::deep .progress-list-container {
+            margin-bottom: $spacing-12;
+        }
+    }
 }
