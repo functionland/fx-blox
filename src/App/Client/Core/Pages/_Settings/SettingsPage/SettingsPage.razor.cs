@@ -43,6 +43,12 @@ public partial class SettingsPage
         await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
     }
 
+    private async Task TransferMoney()
+    {
+        await WalletService.TransferSomeMoneyAsync();
+    }
+
+    
     private void UpdateBackButtonDeviceBehavior()
     {
         NavigationManager.NavigateTo("mydevice", false, true);
