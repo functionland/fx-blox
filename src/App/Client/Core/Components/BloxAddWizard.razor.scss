@@ -131,39 +131,56 @@ ul.list-wrapper {
     margin: 0;
     padding: 0;
     width: 100%;
-    font-size: $font-size-14;
-    font-weight: 300;
     border: 1px solid color(gray-border);
     border-radius: $border-radius-4;
     list-style-type: none;
 
     li.list-item {
         width: 100%;
-        padding: $spacing-2 $spacing-4;
         height: 60px;
         cursor: pointer;
+        padding: 0 $spacing-12;
 
-        .item-text {
+        .item-box {
             border-bottom: 1px solid color(gray-border);
-            padding: $spacing-14 $spacing-12;
+            padding: 0 $spacing-4;
             width: 100%;
             height: 100%;
             margin: 0 !important;
             border-radius: $border-radius-4;
-            transition: background-color 0.15s;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
 
-            &:hover {
-                background: color(green-border);
+            .item-text {
+                font-size: $font-size-14;
+                font-weight: 300;
             }
 
-            &:active {
-                background: color(green-bg);
+            .item-check {
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $light-silver-gray;
+            }
+
+            .item-check-selected {
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 24px;
+                background-image: url($success-mode);
+                background-color: transparent;
             }
         }
     }
 
+    .list-item:hover {
+        background: $green-light-bg;
+    }
+
     .list-item:last-child {
-        .item-text {
+        .item-box {
             border-bottom: none;
         }
     }
