@@ -35,11 +35,11 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-    @*     <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
             <div class="progress-empty"></div>
-        </div> *@
+        </div>
 
         <div class="wizard-image setup-img"></div>
         <div class="wizard-title">Setup your wallet</div>
@@ -49,14 +49,7 @@
                 <div>
                     Select the network:
                 </div>
-                @* <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" /> *@
-                <ul class="list-wrapper">
-                    @foreach(var item in GetBlockchainNetworks()) {
-                        <li class="list-item">
-                            <div class="item-text">@item.Text</div>
-                        </li>
-                    }
-                </ul>
+                <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
             </div>
             } else {
                 <div class="progress-container">
@@ -85,11 +78,11 @@
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-     @*    <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
-        </div> *@
+        </div>
 
         <div class="wizard-image hotspot-img"></div>
         <div class="wizard-title">Connect to Blox hotspot</div>
@@ -127,11 +120,11 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-     @*    <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
-        </div> *@
+        </div>
 
         <div class="wizard-image wifi-img"></div>
         <div class="wizard-title">Connect Blox to Wi-Fi</div>
@@ -141,14 +134,7 @@
                     <div>
                         Select the Wi-Fi for you Blox to connect:
                     </div>
-                    @* <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" /> *@
-                    <ul class="list-wrapper">
-                    @foreach(var item in AvailableWifiList) {
-                        <li class="list-item">
-                            <div class="item-text">@item.Text</div>
-                        </li>
-                    }
-                </ul>
+                    <BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />
                 </div>
             } else {
                 <div class="progress-container">
