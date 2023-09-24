@@ -92,7 +92,7 @@
     }
 
     .installed-stacks-title {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         letter-spacing: 0.5px;
         margin-bottom: 10px;
@@ -108,7 +108,14 @@
         overflow-y: auto;
         overflow-x: hidden;
         margin-bottom: 10px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
 
+        .add-stack-button{
+            width: 150px;
+        } 
+        
         p {
             margin: 4px;
             text-align: center;
