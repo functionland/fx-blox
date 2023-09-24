@@ -9,22 +9,23 @@
     <div class="page-title" @onclick="HandleTitleClick">@Localizer[nameof(AppStrings.Settings)]</div>
 
     <div class="settings-wrapper">
-        
+
         <FxButton Text="@Localizer[nameof(AppStrings.Appearance)]"
                   OnClick="@(() => NavigationManager.NavigateTo("settings/theme", false, true))"
                   MetaDataText="@(Localizer[nameof(AppStrings.Current)] + ": " + CurrentTheme + " " + Localizer[nameof(AppStrings.Mode).ToLower()])"
                   ButtonStyle="FxButtonStyle.MenuLine" />
-     
+
         <FxButton Text="@Localizer[nameof(AppStrings.About)]"
-                  ButtonStyle="FxButtonStyle.MenuLine" 
+                  ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="@(() => NavigationManager.NavigateTo("settings/about", false, true))" />
 
-       
 
-        @if(AppStateStore.IsAvailableForTest) {
+
+        @if (AppStateStore.IsAvailableForTest)
+        {
             <FxButton Text="@Localizer[nameof(AppStrings.TestExplorer)]"
-                  ButtonStyle="FxButtonStyle.MenuLine"
-                  OnClick="@(() => NavigationManager.NavigateTo("settings/testexplorer", false, true))" />
+                      ButtonStyle="FxButtonStyle.MenuLine"
+                      OnClick="@(() => NavigationManager.NavigateTo("settings/testexplorer", false, true))" />
         }
 
         <FxButton Text="Test Connect To Wallet"
@@ -34,12 +35,17 @@
         <FxButton Text="Test Transfer Money"
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="TransferMoney" />
-
+        @if (SucessFullTransfer)
+        {
+            <FxButton Text="Open Transfer Transaction"
+            ButtonStyle="FxButtonStyle.MenuLine"
+            OnClick="OpenTransferTransaction" />
+        }
         <FxButton Text="Test Sign Message"
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="TestSignMessage" />
 
-        
+
 
         <FxDivider FxDividerSize="FxDividerSize.Thin"
                    FxDividerMode="FxDividerMode.Solid"

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Functionland.FxBlox.Client.Core.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using WalletConnectSharp.Sign.Controllers;
 using WalletConnectSharp.Sign.Models;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
@@ -20,8 +22,17 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
-            var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
-            Preferences.Set("sessionStruct", sessionStruct);
+            try
+            {
+                var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
+                Preferences.Set("sessionStruct", sessionStruct);
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(sessionStruct);
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             return new SessionStruct();
         }
 
@@ -32,34 +43,44 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<string> TransferSomeMoneyAsync()
         {
-            var session = Preferences.Get("sessionStruct", string.Empty);
-            var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
-            var topic = sessionStruct.Topic;
-            var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
-            var toWalletId = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb";
-            var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
-            var hexAmount = $"0x{amount}";
-            var transaction = await _js.InvokeAsync<string>("WalletConnect.TransferMoney", topic, currentWallet.Address, toWalletId, currentWallet.ChainId, hexAmount);
-            return transaction;
+            try
+            {
+                var session = Preferences.Get("sessionStruct", string.Empty);
+                var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+                var topic = sessionStruct.Topic;
+                var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+                var toWalletId = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb";
+                var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
+                var hexAmount = $"0x{amount}";
+                var transaction = await _js.InvokeAsync<string>("WalletConnect.TransferMoney", topic, currentWallet.Address, toWalletId, currentWallet.ChainId, hexAmount);
+                return transaction;
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
+
         }
 
         public async Task<string> SignMessage(string message)
         {
-            var session = Preferences.Get("sessionStruct", string.Empty);
-            var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
-            var topic = sessionStruct.Topic;
-            var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+            try
+            {
+                var session = Preferences.Get("sessionStruct", string.Empty);
+                var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+                var topic = sessionStruct.Topic;
+                var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
 
-            var transaction = await _js.InvokeAsync<string>("WalletConnect.SignMessage", message, currentWallet.Address, topic, currentWallet.ChainId);
-            
-            return transaction;
+                var transaction = await _js.InvokeAsync<string>("WalletConnect.SignMessage", message, currentWallet.Address, topic, currentWallet.ChainId);
+
+                return transaction;
+            }
+            catch (Exception ex)
+            {
+                return string.Empty;
+            }
         }
 
-        public class Caip25Address
-        {
-            public string Address;
-            public string ChainId;
-        }
 
         public Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain)
         {

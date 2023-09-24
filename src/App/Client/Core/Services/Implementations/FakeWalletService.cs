@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Functionland.FxBlox.Client.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,11 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         {
             await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
             return new SessionStruct();
+        }
+
+        public Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain)
+        {
+            throw new NotImplementedException();
         }
 
         public virtual void OpenConnectWallet(string url)

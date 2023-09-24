@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Functionland.FxBlox.Client.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
         Task<string> TransferSomeMoneyAsync();
 
         Task<string> SignMessage(string message);
+        Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain);
     }
 }

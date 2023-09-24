@@ -1,11 +1,12 @@
 ﻿using Org.BouncyCastle.Crypto.Operators;
+using WalletConnectSharp.Sign.Models;
 
 namespace Functionland.FxBlox.Client.Core.Pages;
 
 public partial class SettingsPage
 {
     private bool _applyAnimation = false;
-    
+
     [AutoInject] private ThemeInterop ThemeInterop = default!;
     [AutoInject] private IJavaScriptWalletService WalletService = default!;
 
@@ -14,16 +15,18 @@ public partial class SettingsPage
     private string? CurrentTheme { get; set; }
     private string? CurrentVersion { get; set; }
 
+    private string transaction;
+    private bool SucessFullTransfer = false;
     private int _counter = 0;
     private const int MaxCount = 7;
 
     protected override async Task OnInitAsync()
     {
         AppStateStore.CurrentPagePath = "settings";
-        GoBackService.SetState(Task ()=>
+        GoBackService.SetState(Task () =>
         {
-             UpdateBackButtonDeviceBehavior();
-             return Task.CompletedTask;
+            UpdateBackButtonDeviceBehavior();
+            return Task.CompletedTask;
         }, true, false);
 
         DesiredTheme = await ThemeInterop.GetThemeAsync();
@@ -45,14 +48,43 @@ public partial class SettingsPage
 
     private async Task TransferMoney()
     {
-      var transaction =  await WalletService.TransferSomeMoneyAsync();
+        transaction = await WalletService.TransferSomeMoneyAsync();
+        if (!string.IsNullOrEmpty(transaction))
+        {
+            SucessFullTransfer = true;
+        }
     }
 
     private async Task TestSignMessage()
     {
-       var sign = await WalletService.SignMessage("Sign this message");
+        var sign = await WalletService.SignMessage("Sign this message");
     }
 
+    private async Task OpenTransferTransaction()
+    {
+        if (string.IsNullOrEmpty(transaction)) return;
+
+        var session = Preferences.Get("sessionStruct", string.Empty);
+        var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+        var currentWallet = WalletService.GetCurrentAddress(sessionStruct, "eip155");
+
+        var chainId = currentWallet.ChainId;
+        Uri uri = null;
+
+        if (chainId.EndsWith("1"))
+        {
+            uri = new Uri($"https://etherscan.io/tx/{transaction}");
+        }
+        else if (chainId.EndsWith("5"))
+        {
+            uri = new Uri($"https://goerli.etherscan.io/tx/{transaction}");
+        }
+       
+        if(uri == null) return;
+
+        await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
+
+    }
 
     private void UpdateBackButtonDeviceBehavior()
     {
