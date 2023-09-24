@@ -19,7 +19,9 @@
                   ButtonStyle="FxButtonStyle.MenuLine" 
                   OnClick="@(() => NavigationManager.NavigateTo("settings/about", false, true))" />
 
-       
+        <FxButton Text="Add Blox"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))" />
 
         @if(AppStateStore.IsAvailableForTest) {
             <FxButton Text="@Localizer[nameof(AppStrings.TestExplorer)]"
