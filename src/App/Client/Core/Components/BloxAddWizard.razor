@@ -4,12 +4,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 
-<script>
-    document.querySelector(".password-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-    });
-</script>
-
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
@@ -46,25 +40,6 @@
             <div class="progress-empty"></div>
             <div class="progress-empty"></div>
         </div>
-
-        // Temp placement
-        <div class="gray-section">
-            <div class="wifi-password-section">
-                <div class="close-section">
-                    <div class="close-btn"></div>
-                </div>
-
-                <div class="wifi-name">Enter password for “wifi-name”</div>
-
-                <form class="password-form">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" autocomplete="off" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            
-        </div>
-        // Temp placement
 
         <div class="wizard-image setup-img"></div>
         <div class="wizard-title">Setup your wallet</div>
@@ -160,6 +135,25 @@
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
         </div> 
+
+        // Temp placement
+        <div class="gray-section">
+            <div class="wifi-password-section">
+                <div class="close-section">
+                    <div class="close-btn"></div>
+                </div>
+
+                <div class="wifi-name">Enter password for “wifi-name”</div>
+
+                <form class="password-form">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" autocomplete="off" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+        // Temp placement
 
         <div class="wizard-image wifi-img"></div>
         <div class="wizard-title">Connect Blox to Wi-Fi</div>
