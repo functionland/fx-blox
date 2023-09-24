@@ -49,13 +49,13 @@
                 <div>
                     Select the network:
                 </div>
-                <BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />
+                @*<BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />*@
                 <ul class="list-wrapper">
-                    @foreach(var item in GetBlockchainNetworks()) {
-                        <li class="list-item">
+                    @foreach(var item in BlockchainNetworks) {
+                        <li class="list-item" @onclick="() => BlockchainNetworkClicked(item)">
                             <div class="item-box">
-                                <div class="item-text">@item.Text</div>
-                                <div class="item-check item-check-selected"></div>
+                                <div class="item-text">@item.Item</div>
+                                <div class="item-check @(item.IsSelected ? "item-check-selected" : string.Empty)"></div>
                             </div>
                         </li>
                     }

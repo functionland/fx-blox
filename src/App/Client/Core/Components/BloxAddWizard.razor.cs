@@ -1,5 +1,6 @@
 ﻿
 
+using Functionland.FxBlox.Client.Core.Enums;
 using Functionland.FxBlox.Client.Core.Models;
 
 namespace Functionland.FxBlox.Client.Core.Components;
@@ -11,7 +12,7 @@ public partial class BloxAddWizard
     [AutoInject] private IWifiService WifiService { get; set; } = default!;
     [AutoInject] private IWalletService WalletService { get; set; } = default!;
     public BloxAddWizardStep WizardStep { get; set; } = BloxAddWizardStep.Welcome;
-    public string? SelectedNetwork { get; set; }
+    public BlockchainNetwork? SelectedNetwork { get; set; }
     public string? SelectedWifiForBlox { get; set; }
     public List<ProgressItem> ProgressItems { get; set; } = new();
 
@@ -158,23 +159,17 @@ public partial class BloxAddWizard
         ConnectBloxToWifi
     }
 
-    private List<BitDropdownItem> GetBlockchainNetworks()
+    private List<ListItem<BlockchainNetwork>> BlockchainNetworks = new List<ListItem<BlockchainNetwork>>()
     {
-        return new List<BitDropdownItem>
+        new()
         {
-            new()
-            {
-                Value = BlockchainNetwork.EthereumMainnet.ToString(),
-                Text = "Ethereum Mainnet"
-            },
-            new()
-            {
-                Value = BlockchainNetwork.EthereumTestnet.ToString(),
-                Text = "Ethereum Testnet"
-            }
-
-        };
-    }
+            Item = BlockchainNetwork.EthereumMainnet
+        },
+        new()
+        {
+            Item = BlockchainNetwork.EthereumMainnet
+        }
+    };
 
     private async Task ConnectToWalletClicked()
     {
@@ -185,11 +180,25 @@ public partial class BloxAddWizard
         }
 
         Progress("Waiting for wallet approval...");
-        await WalletService.ConnectAsync(Enum.Parse<BlockchainNetwork>(SelectedNetwork));
+        await WalletService.ConnectAsync(SelectedNetwork.Value);
         Progress("Wallet approved.", ProgressType.Done);
 
         await Task.Delay(TimeSpan.FromSeconds(2));
         ProgressItems.Clear();
         await GoToNextStepAsync();
+    }
+
+    private void BlockchainNetworkClicked(ListItem<BlockchainNetwork> item)
+    {
+        BlockchainNetworks.ForEach(i=>i.IsSelected = false);
+        item.IsSelected = true;
+        SelectedNetwork = item.Item;
+    }
+
+    private class ListItem<T>
+    {
+        public T Item { get; set; }
+        public bool IsSelected { get; set; } = false;
+
     }
 }
