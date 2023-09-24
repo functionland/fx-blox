@@ -134,6 +134,8 @@ ul.list-wrapper {
     border: 1px solid color(gray-border);
     border-radius: $border-radius-4;
     list-style-type: none;
+    max-height: 150px;
+    overflow: auto;
 
     li.list-item {
         width: 100%;

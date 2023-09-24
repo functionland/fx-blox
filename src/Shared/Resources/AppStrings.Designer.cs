@@ -944,7 +944,7 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to My Device.
+        ///   Looks up a localized string similar to Blox.
         /// </summary>
         public static string MyDevice {
             get {

@@ -7,7 +7,7 @@
     margin: 0;
     box-sizing: border-box;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 70px;
     // overflow-y: scroll;
     font-size: 16px;
 }
@@ -35,27 +35,26 @@
 
 .state-info {
     line-height: 40px;
+    margin-bottom: 20px;
 
     .blox-id-value {
         // max-width: 320px;
-        width: 100%;
-        border: 1px solid rgb(62, 62, 62);
-        background-color: #2222225b;
+        width: 320px;
+        border: 1px solid color(green-border);
         border-radius: 5px;
-        padding: 0px 8px;
+        padding: 0px 4px;
         overflow: hidden;
         min-width: 40px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-size: 12px;
     }
 
     .blox-state {
-        color: rgb(0, 176, 0);
-    }
-
-    span {
-        font-weight: 600;
+        color: rgb(19, 135, 87);
+        font-weight: 900;
+        text-transform: uppercase;
     }
 }
 
@@ -101,8 +100,8 @@
 
     .installed-stacks-list {
         padding: 4px 5px;
-        border: 1px solid black;
-        background: #22222280;
+        border: 1px solid color(green-border);
+        // background: #22222280;
         border-radius: 10px 5px 5px 10px;
         gap: 5px;
         max-height: 200px;
@@ -112,6 +111,9 @@
 
         p {
             margin: 4px;
+            text-align: center;
+            font-size: 16px;
+            color: $primary-color;
         }
 
         div {
