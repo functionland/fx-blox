@@ -36,6 +36,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IBloxStackManager, BloxStackManager>();
 
             services.AddScoped<IWalletService, FakeWalletService>();
+            services.AddScoped<IJavaScriptWalletService, JavaScriptWalletService>();
 
             return services;
         }

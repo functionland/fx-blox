@@ -7,7 +7,7 @@ public partial class SettingsPage
     private bool _applyAnimation = false;
     
     [AutoInject] private ThemeInterop ThemeInterop = default!;
-    [AutoInject] private IWalletService WalletService = default!;
+    [AutoInject] private IJavaScriptWalletService WalletService = default!;
 
     private FxTheme DesiredTheme { get; set; }
 

@@ -10,7 +10,7 @@ using WalletConnectSharp.Sign.Models;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
-    public partial class JavaScriptWalletService : IWalletService
+    public partial class JavaScriptWalletService : IJavaScriptWalletService
     {
         private readonly IJSRuntime _js;
         public JavaScriptWalletService(IJSRuntime jsRuntime)
