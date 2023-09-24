@@ -11,6 +11,13 @@
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
+    // position: absolute;
+    // top: 0;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    z-index: 100;
+    background-color: color(app-bg);
 }
 
 .progress-bar {
@@ -18,80 +25,96 @@
     border-radius: 10px;
     width: 100%;
     height: 5px;
-    background-color: #495057;
+    background-color: color(gray-border);
     color: #cae9e3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     overflow: hidden;
-}
 
-.progress-fill {
-    width: 100%;
-    height: 100%;
-    background: #06b597;
-}
+    .progress-fill {
+        width: 100%;
+        height: 100%;
+        background: #06b597;
+    }
 
-.progress-empty {
-    width: 100%;
-    height: 100%;
-    background: transparent;
+    .progress-empty {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+    }
 }
 
 .wizard-image {
-    flex-grow: 1;
-    width: 146px;
-    height: 300px;
-    margin-top: 30px;
-
-    // background: url(color(wizard-img)) center no-repeat;
-    background: url("./images/backgrounds/base-img-light.svg") center no-repeat;
+    margin-top: $spacing-24;
+    background: url($base-img) center no-repeat;
+    // background-image: url("./images/backgrounds/base-img-light.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 146px 190px;
+    width: 100%;
+    min-height: 190px;
 }
 
-.welcome-img {
+.welcome-image {
     // background: url($welcome-img) center/cover no-repeat;
-    background: url("./images/backgrounds/welcome-background.png") center no-repeat;
+    background-image: url("./images/backgrounds/welcome-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 300px 270px;
+    width: 100%;
+    min-height: 270px;
+    margin: 70px 0 40px;
+}
 
-    width: 360px;
-    height: 360px;
-    margin: 70px 0 10px;
+.wizard-title {
+    font-size: $font-size-28;
+    font-weight: 600;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.wizard-welcome {
+    font-size: $font-size-12;
+    letter-spacing: 1px;
+    font-family: "Montserrat";
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .wizard-content {
-    flex-grow: 2;
+    flex-grow: 1;
     margin-top: 25px;
+    width: 100%;
 
     & > div {
         padding: 5px 0;
     }
+}
 
-    .wizard-welcome {
-        font-size: $font-size-14;
-        letter-spacing: 1px;
-        font-family: "Montserrat";
-        text-align: center;
+.wizard-description {
+    font-size: $font-size-14;
+    margin-top: $spacing-14;
+    line-height: 25px;
+
+    div {
+        margin-bottom: 10px;
     }
+}
 
-    .wizard-title {
-        font-size: $font-size-28;
-        font-weight: 600;
-        font-family: "Montserrat";
-        font-weight: 600;
+.progress-container {
+    width: 100%;
+    min-height: $spacing-40;
+
+    ::deep .progress-list-container {
+        margin-bottom: $spacing-12;
     }
+}
 
-    .wizard-description {
-        font-size: $font-size-14;
-        margin-top: $spacing-14;
-        line-height: 25px;
+.intro-des {
+    margin-top: 0;
 
-        div {
-            margin-bottom: 10px;
-        }
-    }
-
-    .intro-des {
-        div {
-            margin-bottom: 0px;
-        }
+    div {
+        margin-bottom: 0px;
     }
 }
 
@@ -102,13 +125,166 @@
 .wizard-action-wrapper {
     width: 100%;
     padding: 16px 0;
+}
 
-    .progress-container {
+ul.list-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid color(gray-border);
+    border-radius: $border-radius-4;
+    list-style-type: none;
+
+    li.list-item {
         width: 100%;
-        min-height: $spacing-40;
+        height: 60px;
+        cursor: pointer;
+        padding: 0 $spacing-12;
 
-        ::deep .progress-list-container {
-            margin-bottom: $spacing-12;
+        .item-box {
+            border-bottom: 1px solid color(gray-border);
+            padding: 0 $spacing-4;
+            width: 100%;
+            height: 100%;
+            margin: 0 !important;
+            border-radius: $border-radius-4;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: space-between;
+
+            .item-text {
+                font-size: $font-size-14;
+                font-weight: 300;
+            }
+
+            .item-check {
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                background-color: $light-silver-gray;
+            }
+
+            .item-check-selected {
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 24px;
+                background-image: url($success-mode);
+                background-color: transparent;
+            }
+        }
+    }
+
+    .list-item:hover {
+        background: $green-light-bg;
+    }
+
+    .list-item:last-child {
+        .item-box {
+            border-bottom: none;
+        }
+    }
+
+    .selected-list-item {
+        width: 24px;
+        height: 24px;
+        background-image: url($success-mode);
+        background-repeat: no-repeat;
+        background-position: right 2px;
+        background-size: 24px;
+    }
+}
+
+.gray-section {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 101;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.wifi-password-section {
+    border: 1px solid black;
+    box-shadow: 0 -5px 5px 5px rgba(0, 0, 0, 0.18);
+    background-color: color(app-bg);
+    padding: 8px 15px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: "Montserrat";
+
+    .close-section {
+        // border: 1px solid red;
+        display: flex;
+        justify-content: end;
+    }
+
+    .close-btn {
+        width: 20px;
+        height: 20px;
+        background: url("./images/icons/close-icon.svg") right no-repeat;
+        // border: 1px solid blue;
+        cursor: pointer;
+        transition: filter 0.1s;
+
+        &:hover {
+            filter: brightness(2);
+        }
+
+        &:active {
+            filter: brightness(1.1);
+        }
+    }
+
+    .password-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+            font-size: 14px;
+        }
+
+        input {
+            height: 40px;
+            font-size: 24px;
+            color: color(gray-border);
+            background-color: color(gray-bg-primary);
+            border: 1px solid color(green-border);
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+
+        button {
+            width: 150px;
+            margin: auto;
+            margin-top: 15px;
+            border-radius: 5px;
+            background: color(green-bg);
+            border: 1px solid $primary-color;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.15s;
+            font-size: 16px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:active {
+                opacity: 0.6;
+            }
         }
     }
 }

@@ -4,38 +4,67 @@
 
 <PageTitle>@Localizer[nameof(AppStrings.MyDevice)]</PageTitle>
 
-<div>Bloxes: @BloxConnectionService.GetConnections().Count</div>
-<div>Hardware: @BloxConnectionService.GetConnections().FirstOrDefault()?.Device.HardwareId</div>
-<div>Status: @BloxConnectionService.GetConnections().FirstOrDefault()?.Libp2pStatus</div>
-<div>CPU: @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage</div>
-<div>RAM: @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage</div>
-<FxButton Text="Add Blox"
-          ButtonStyle="FxButtonStyle.MenuLine"
-          OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))"
-/>
+<div class="page-container">
+    <div class="info-container">
+        @if (!BloxConnectionService.GetConnections().Any()){
+            <div class="empty-space"></div>
+        }
 
-<h2>
-    Stacks:
-</h2>
-<div>
-    @if (CurrentConnection is not null)
-    {
-        if (CurrentConnection.Stacks.Any())
-        {
-            foreach (var stack in CurrentConnection.Stacks)
+        <div class="page-img"></div>
+
+        <div class="state-info">
+            <div class="active-bloxes">Number of active Bloxes: <span>@BloxConnectionService.GetConnections().Count</span></div>
+
+            @if (BloxConnectionService.GetConnections().Any())
             {
-                <div>
-                    @($"{stack.Stack.Title}  {stack.Status}")
-                </div>
+                <div class="blox-id-title">Blox App Peer ID:</div>
+                <div class="blox-id-value">@(BloxConnectionService.GetConnections().FirstOrDefault()?.Device.HardwareId)</div>
+                @* <div class="blox-id-value">92843752582y59h25ph2ip5uh2uip35h2pih523oiu5h32h52i3uh52h35iu23h5</div> *@
             }
-        }
-        else
+
+            <div class="blox-state">@BloxConnectionService.GetConnections().FirstOrDefault()?.Libp2pStatus</div>
+        </div>
+
+        <div class="hardware-info">
+            @if (BloxConnectionService.GetConnections().Any() && BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus != null)
+            {
+                <div class="cpu-info">CPU: @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%</div>
+                <div class="ram-info">RAM: @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage ?? 0) MB</div>
+            }
+        </div>
+    </div>
+
+    <div class="installed-stacks">
+
+        @if (CurrentConnection is not null)
         {
-            <div>No stack installed yet.</div>
+            <div class="installed-stacks-title">
+                Installed Stacks:
+            </div>
+
+            <div class="installed-stacks-list">
+                @if (CurrentConnection.Stacks.Any())
+                {
+                    foreach (var stack in CurrentConnection.Stacks)
+                    {
+                        <div>
+                            @($"{stack.Stack.Title}  {stack.Status}")
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p>No stack installed yet.</p>
+                }
+                <FxButton Text="Add Stack"
+                          ButtonStyle="FxButtonStyle.MenuLine"
+                          OnClick="AddStackClicked" />
+            </div>
         }
-        
-        <FxButton Text="Add Stack"
-                  ButtonStyle="FxButtonStyle.Outline"
-                  OnClick="AddStackClicked"/>
-    }
+
+    </div>
+    <FxButton Text="Add Blox"
+              class="add-blox"
+              ButtonStyle="FxButtonStyle.MenuLine"
+              OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))" />
 </div>

@@ -170,15 +170,20 @@
 
 .fxbutton-menuline {
     width: 100%;
-    margin: 4px 21px;
+    /*margin: 4px 21px;*/
     height: 60px;
     color: color(gray-content1) !important;
     border: none !important;
     background-color: color(gray-bg-primary) !important;
+    transition: background-color 0.15s;
+}
+
+.fxbutton-menuline:hover {
+    background-color: color(gray-bg-secondary) !important;
 }
 
 .fxbutton-menuline:active {
-    background-color: color(gray-bg-secondary) !important;
+    background-color: color(gray-bg-primary) !important;
 }
 
 .fxbutton-menuline .fxbutton-content {

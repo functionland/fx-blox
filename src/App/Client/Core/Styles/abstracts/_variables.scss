@@ -1,7 +1,8 @@
 // base variable
 $base-unit: px;
 $font-path: "fonts";
-$icon-base-url: "images/icons/lightDesignSystem/";
+/*$icon-base-url: "images/icons/lightDesignSystem/";*/
+$icon-base-url: "images/icons/darkDesignSystem/";
 
 //main brand colors
 $primary-color: #06B597;
@@ -11,7 +12,7 @@ $blue-crayola: #187AF9;
 $viridian-green: #099393;
 $granite-gray: #676767;
 $silver-gray: #B2B2B2;
-
+$light-silver-gray: #e2e2e2;
 //dark colors
 $gray-dark-content1: #F8F9FA;
 $gray-dark-content2: #E9ECEF;
@@ -79,7 +80,7 @@ $colors-light: (
     "error-border": $error-border-light,
     "success-border": $success-border-light,
     "warning-border": $warning-border-light,
-    "info-border": $info-border-light
+    "info-border": $info-border-light,
 );
 
 $colors-dark: (
@@ -101,7 +102,7 @@ $colors-dark: (
     "error-border": $border-notifications-dark,
     "success-border": $border-notifications-dark,
     "warning-border": $border-notifications-dark,
-    "info-border": $border-notifications-dark
+    "info-border": $border-notifications-dark,
 );
 
 
@@ -202,6 +203,11 @@ $right-arrow: $icon-base-url + "right-arrow.svg";
 $right-arrow-hover: $icon-base-url + "right-arrow-hover.svg";
 $right-arrow-pressed: $icon-base-url + "right-arrow-pressed.svg";
 $right-arrow-disabled: $icon-base-url + "right-arrow-disabled.svg";
+
+//background
+
+$base-img : $icon-base-url + "base-img.svg"; 
+// $base-img-light : $icon-base-url + "base-img-light.svg"; 
 
 //outline icons
 $extract: "\e900";

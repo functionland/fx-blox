@@ -12,7 +12,7 @@ public class FakeBloxLibp2pClient : IBloxLibp2pClient
         Device = device;
     }
 
-    public async Task ConnectAsync(CancellationToken cancellationToken = default)
+    public async Task ConnectAsync(string peerId, CancellationToken cancellationToken = default)
     {
         await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
     }

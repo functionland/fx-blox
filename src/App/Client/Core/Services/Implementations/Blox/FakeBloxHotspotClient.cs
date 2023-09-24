@@ -23,6 +23,12 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             Device = device;
         }
 
+        public async Task<string> ExchangeAsync(string peerId, string seed, CancellationToken cancellationToken = default)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+            return "blox-peer-Id-65464";
+        }
+
         public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken)
         {
             await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);

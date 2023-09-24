@@ -1,4 +1,133 @@
-﻿@import '../Styles/abstracts/_variables.scss';
-@import '../Styles/abstracts/_functions.scss';
-@import '../Styles/components/_bit-accordion.scss';
+﻿@import "../Styles/abstracts/_variables.scss";
+@import "../Styles/abstracts/_functions.scss";
+@import "../Styles/components/_bit-accordion.scss";
 
+.page-container {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 30px;
+    // overflow-y: scroll;
+    font-size: 16px;
+}
+
+.info-container {
+    height: 90%;
+    width: 100%;
+    margin-bottom: 20px;
+
+    & > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.page-img {
+    width: 150px;
+    height: 200px;
+    background: url($base-img) center no-repeat;
+    margin: auto;
+}
+
+.state-info {
+    line-height: 40px;
+
+    .blox-id-value {
+        // max-width: 320px;
+        width: 100%;
+        border: 1px solid rgb(62, 62, 62);
+        background-color: #2222225b;
+        border-radius: 5px;
+        padding: 0px 8px;
+        overflow: hidden;
+        min-width: 40px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .blox-state {
+        color: rgb(0, 176, 0);
+    }
+
+    span {
+        font-weight: 600;
+    }
+}
+
+.hardware-info {
+    display: flex;
+    flex-direction: row !important;
+    gap: 10%;
+
+    div {
+        width: 40%;
+        height: 90px;
+        // height: max(80%, 60px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+            135deg,
+            rgba(6, 181, 152, 0.7),
+            rgba(9, 147, 147, 0.6)
+        );
+        border-radius: 10px;
+        font-size: min(4vw, 25px);
+    }
+}
+
+.installed-stacks {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: start;
+    padding: 0 20px;
+
+    div {
+        width: 100%;
+    }
+
+    .installed-stacks-title {
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+
+    .installed-stacks-list {
+        padding: 4px 5px;
+        border: 1px solid black;
+        background: #22222280;
+        border-radius: 10px 5px 5px 10px;
+        gap: 5px;
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 10px;
+
+        p {
+            margin: 4px;
+        }
+
+        div {
+            // border: 1px solid red;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            background-color: var(--gray-bg-primary);
+            border-radius: 6px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.empty-space {
+    height: 60px;
+    width: 100%;
+}

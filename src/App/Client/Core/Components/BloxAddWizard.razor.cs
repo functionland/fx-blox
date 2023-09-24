@@ -83,6 +83,12 @@ public partial class BloxAddWizard
 
         BloxConnection = await BloxConnectionService.CreateForDeviceAsync(device);
 
+        var peerId = "app-peer-id-586454";
+        var seed = "adgdlahasdkgjf";
+        Progress($"Exchanging keys with Blox: '{device.Title}'...", createNew: true);
+        await BloxConnection.ExchangeAsync(peerId, seed);
+        Progress($"Exchanged keys with Blox: '{device.Title}'.", ProgressType.Done);
+
         Progress($"Loading hardware information from: '{device.Title}'...", createNew: true);
         await BloxConnectionService.LoadDeviceInfoAsync(BloxConnection);
         Progress($"Hardware information loaded from: '{device.Title}'.", ProgressType.Done);
@@ -129,7 +135,6 @@ public partial class BloxAddWizard
         Progress("Blox Wi-Fi configured.", ProgressType.Done);
 
         // Now we have lost the connection to the blox via hotspot.
-
         Progress("Connecting to Blox via blockchain (Libp2p)...", createNew: true);
         await BloxConnection.ConnectToLibp2pAsync();
         Progress("Connected to Blox via blockchain (Libp2p).", ProgressType.Done);

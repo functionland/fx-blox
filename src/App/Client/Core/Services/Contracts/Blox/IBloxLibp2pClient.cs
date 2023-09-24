@@ -8,6 +8,6 @@ public interface IBloxLibp2pClient : IDisposable
     void Initialize(BloxDevice device);
     Task<bool> CheckConnectionAsync(CancellationToken cancellationToken = default);
 
-    Task ConnectAsync(CancellationToken cancellationToken = default);
+    Task ConnectAsync(string peerId, CancellationToken cancellationToken = default);
     Task<BloxStatus> GetBloxStatusAsync(CancellationToken cancellationToken = default);
 }
