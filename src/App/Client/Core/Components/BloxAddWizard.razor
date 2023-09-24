@@ -53,7 +53,10 @@
                 <ul class="list-wrapper">
                     @foreach(var item in GetBlockchainNetworks()) {
                         <li class="list-item">
-                            <div class="item-text">@item.Text</div>
+                            <div class="item-box">
+                                <div class="item-text">@item.Text</div>
+                                <div class="item-check item-check-selected"></div>
+                            </div>
                         </li>
                     }
                 </ul>
@@ -145,7 +148,10 @@
                     <ul class="list-wrapper">
                     @foreach(var item in AvailableWifiList) {
                         <li class="list-item">
-                            <div class="item-text">@item.Text</div>
+                            <div class="item-box">
+                                <div class="item-text">@item.Text</div>
+                                <div class="item-check"></div>
+                            </div>
                         </li>
                     }
                 </ul>
