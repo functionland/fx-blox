@@ -97,10 +97,7 @@ public partial class BloxAddWizard
         Progress($"Loading available Wi-Fi(s) near '{device.Title}'...", createNew: true);
         var wifiListOfBlox = await BloxConnection.GetWifiListAsync();
         AvailableWifiList = wifiListOfBlox
-                            .Select(w => new ListItem<WifiInfo>()
-                            {
-                                Item = w
-                            })
+                            .Select(w => new ListItem<WifiInfo>(w))
                             .ToList();
 
         Progress($"Found {wifiListOfBlox.Count} Wi-Fi(s) near '{device.Title}'.", ProgressType.Done);
@@ -157,17 +154,22 @@ public partial class BloxAddWizard
         ConnectBloxToWifi
     }
 
-    private List<ListItem<BlockchainNetwork>> BlockchainNetworks { get; set; } = new List<ListItem<BlockchainNetwork>>()
+    private List<ListItem<BlockchainNetwork>> BlockchainNetworks { get; set; }
+        = new()
+        {
+            new(BlockchainNetwork.EthereumTestnet),
+            new(BlockchainNetwork.EthereumMainnet)
+        };
+
+    private string ToReadable(BlockchainNetwork network)
     {
-        new()
+        return network switch
         {
-            Item = BlockchainNetwork.EthereumMainnet
-        },
-        new()
-        {
-            Item = BlockchainNetwork.EthereumMainnet
-        }
-    };
+            BlockchainNetwork.EthereumMainnet => "Ethereum Mainnet",
+            BlockchainNetwork.EthereumTestnet => "Ethereum Testnet",
+            _ => throw new InvalidOperationException($"Unknown network to display: {network}")
+        };
+    }
 
     private async Task ConnectToWalletClicked()
     {

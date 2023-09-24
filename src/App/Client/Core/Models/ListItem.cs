@@ -8,6 +8,10 @@ namespace Functionland.FxBlox.Client.Core.Models
 {
     public class ListItem<T>
     {
+        public ListItem(T item)
+        {
+            Item = item;
+        }
         public T Item { get; set; }
         public bool IsSelected { get; set; } = false;
 
