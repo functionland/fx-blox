@@ -16,8 +16,8 @@
 .grid-container {
     height: 90%;
     width: 100%;
-    // display: grid;
-    // grid-template-rows: 2fr 2fr 1fr;
+    display: grid;
+    grid-template-rows: 2fr 2fr 1fr;
     // border: 1px solid red;
     margin-bottom: 20px;
 
@@ -71,13 +71,18 @@
     gap: 10%;
 
     div {
+        // border: 2px solid red;
         width: 40%;
-        height: 90px;
-        // height: max(80%, 60px);
+        // height: ;
+        height: max(80%, 60px);
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient( 135deg, rgba(6, 181, 152, 0.7), rgba(9, 147, 147, 0.6) );
+        background: linear-gradient(
+            135deg,
+            rgba(6, 181, 152, 0.7),
+            rgba(9, 147, 147, 0.6)
+        );
         border-radius: 10px;
         font-size: min(4vw, 25px);
     }
@@ -105,14 +110,13 @@
         padding: 4px 5px;
         border: 1px solid black;
         background: #22222280;
-        border-radius: 10px 5px 5px 10px;
+        border-radius: 10px;
         gap: 5px;
         max-height: 200px;
         overflow-y: auto;
         overflow-x: hidden;
-        margin-bottom: 10px;
 
-        p {
+        p{
             margin: 4px;
         }
 
