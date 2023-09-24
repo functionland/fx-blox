@@ -13,11 +13,11 @@ public partial class BloxAddWizard
     [AutoInject] private IWalletService WalletService { get; set; } = default!;
     public BloxAddWizardStep WizardStep { get; set; } = BloxAddWizardStep.Welcome;
     public BlockchainNetwork? SelectedNetwork { get; set; }
-    public string? SelectedWifiForBlox { get; set; }
+    public WifiInfo? SelectedWifiForBlox { get; set; }
     public List<ProgressItem> ProgressItems { get; set; } = new();
 
     private BloxConnection? BloxConnection { get; set; }
-    public List<BitDropdownItem> AvailableWifiList { get; set; } = new();
+    public List<ListItem<WifiInfo>> AvailableWifiList { get; set; } = new();
 
     public async Task GoToNextStepAsync()
     {
@@ -97,11 +97,9 @@ public partial class BloxAddWizard
         Progress($"Loading available Wi-Fi(s) near '{device.Title}'...", createNew: true);
         var wifiListOfBlox = await BloxConnection.GetWifiListAsync();
         AvailableWifiList = wifiListOfBlox
-                            .Select(w => new BitDropdownItem()
+                            .Select(w => new ListItem<WifiInfo>()
                             {
-                                Value = w.Ssid,
-                                Text = w.Essid,
-                                Data = w
+                                Item = w
                             })
                             .ToList();
 
@@ -131,7 +129,7 @@ public partial class BloxAddWizard
 
         Progress("Configuring the Blox Wi-Fi...");
 
-        var ssid = SelectedWifiForBlox;
+        var ssid = SelectedWifiForBlox.Ssid;
         await BloxConnection.ConnectBloxToWifiAsync(ssid, password);
         Progress("Blox Wi-Fi configured.", ProgressType.Done);
 
@@ -159,7 +157,7 @@ public partial class BloxAddWizard
         ConnectBloxToWifi
     }
 
-    private List<ListItem<BlockchainNetwork>> BlockchainNetworks = new List<ListItem<BlockchainNetwork>>()
+    private List<ListItem<BlockchainNetwork>> BlockchainNetworks { get; set; } = new List<ListItem<BlockchainNetwork>>()
     {
         new()
         {
@@ -195,10 +193,11 @@ public partial class BloxAddWizard
         SelectedNetwork = item.Item;
     }
 
-    private class ListItem<T>
-    {
-        public T Item { get; set; }
-        public bool IsSelected { get; set; } = false;
 
+    private void WifiClicked(ListItem<WifiInfo> item)
+    {
+        AvailableWifiList.ForEach(i => i.IsSelected = false);
+        item.IsSelected = true;
+        SelectedWifiForBlox = item.Item;
     }
 }
