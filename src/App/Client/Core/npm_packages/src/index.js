@@ -3,6 +3,8 @@
 export async function ConnectToWallet(ethereumChain) {
     try {
 
+        clearWalletConnectCache();
+
         const web3Modal = new WalletConnectModalSign({
             projectId: "94a4ca39db88ee0be8f6df95fdfb560a",
             metadata: {
@@ -12,19 +14,6 @@ export async function ConnectToWallet(ethereumChain) {
                 icons: ["https://fx.land/blox-icon.png"],
             },
         });
-
-
-        try {
-            var existSession = await web3Modal.getSession();
-            
-            if (existSession && existSession.topic) {
-                console.log("disconnect");
-                await web3Modal.disconnect({ topic: existSession.topic });
-            }
-        }
-        catch (err) {
-            console.error(err);
-        }
 
         var connectArgument = {
             requiredNamespaces: {
@@ -133,10 +122,25 @@ export async function SignMessage(message, address, topic, chainId) {
         };
 
         const result = await web3Modal.request(requestModel);
-     
+
         return result;
     } catch (err) {
         console.log(err);
         return err.message;
+    }
+}
+
+function clearWalletConnectCache() {
+
+    var index = 0;
+    while (true) {
+        var key = localStorage.key(index);
+        if (!key) {
+            break;
+        }
+
+        if (key.toLowerCase().startsWith("wc") || key.toLowerCase().startsWith("wallet")) {
+            localStorage.removeItem(key);
+        }
     }
 }
