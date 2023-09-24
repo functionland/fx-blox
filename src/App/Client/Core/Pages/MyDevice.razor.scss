@@ -3,7 +3,6 @@
 @import "../Styles/components/_bit-accordion.scss";
 
 .page-container {
-    // border: 1px solid red;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -13,16 +12,12 @@
     font-size: 16px;
 }
 
-.grid-container {
+.info-container {
     height: 90%;
     width: 100%;
-    display: grid;
-    grid-template-rows: 2fr 2fr 1fr;
-    // border: 1px solid red;
     margin-bottom: 20px;
 
     & > div {
-        // border: 1px solid yellow;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -34,8 +29,7 @@
 .page-img {
     width: 150px;
     height: 200px;
-    // border: 1px solid rgb(0, 255, 76);
-    background: url("./images/backgrounds/base-img-dark.svg") center no-repeat;
+    background: url($base-img) center no-repeat;
     margin: auto;
 }
 
@@ -43,17 +37,17 @@
     line-height: 40px;
 
     .blox-id-value {
-        max-width: 320px;
+        // max-width: 320px;
+        width: 100%;
         border: 1px solid rgb(62, 62, 62);
         background-color: #2222225b;
         border-radius: 5px;
-        padding: 3px 5px;
-        overflow-x: scroll;
+        padding: 0px 8px;
+        overflow: hidden;
         min-width: 40px;
-
-        &::-webkit-scrollbar-thumb {
-            width: 1px !important;
-        }
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .blox-state {
@@ -71,10 +65,9 @@
     gap: 10%;
 
     div {
-        // border: 2px solid red;
         width: 40%;
-        // height: ;
-        height: max(80%, 60px);
+        height: 90px;
+        // height: max(80%, 60px);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -110,13 +103,14 @@
         padding: 4px 5px;
         border: 1px solid black;
         background: #22222280;
-        border-radius: 10px;
+        border-radius: 10px 5px 5px 10px;
         gap: 5px;
         max-height: 200px;
         overflow-y: auto;
         overflow-x: hidden;
+        margin-bottom: 10px;
 
-        p{
+        p {
             margin: 4px;
         }
 
@@ -131,4 +125,9 @@
             margin-bottom: 5px;
         }
     }
+}
+
+.empty-space {
+    height: 60px;
+    width: 100%;
 }

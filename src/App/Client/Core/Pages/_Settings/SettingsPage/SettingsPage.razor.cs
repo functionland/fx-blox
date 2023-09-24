@@ -45,10 +45,15 @@ public partial class SettingsPage
 
     private async Task TransferMoney()
     {
-        await WalletService.TransferSomeMoneyAsync();
+      var transaction =  await WalletService.TransferSomeMoneyAsync();
     }
 
-    
+    private async Task TestSignMessage()
+    {
+       var sign = await WalletService.SignMessage("Sign this message");
+    }
+
+
     private void UpdateBackButtonDeviceBehavior()
     {
         NavigationManager.NavigateTo("mydevice", false, true);

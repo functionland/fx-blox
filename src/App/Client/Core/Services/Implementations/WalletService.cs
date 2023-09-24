@@ -65,9 +65,17 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         }
 
         public abstract void OpenConnectWallet(string url);
-        public async Task TransferSomeMoneyAsync()
-        {
 
+        public async Task<string> SignMessage(string message)
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            return message;
+        }
+
+        public async Task<string> TransferSomeMoneyAsync()
+        {
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            return "0x9f4261b706ff88567033fc2191be20fccdd555f442d2ca3016e9120b0d80971a";
         }
     }
 }

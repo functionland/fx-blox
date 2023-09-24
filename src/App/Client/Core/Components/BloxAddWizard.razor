@@ -14,8 +14,8 @@
             <div>Blox app setup</div>
         </div>
 
-        <div class="wizard-content center-text">
-            <div class="wizard-description center-text intro-des">
+        <div class="wizard-content center-text intro-des">
+            <div class="wizard-description center-text">
                 <div>
                     Make sure your Blox is turned on!
                 </div>
@@ -35,11 +35,11 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-    @*     <div class="progress-bar">
+         <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
             <div class="progress-empty"></div>
-        </div> *@
+        </div>
 
         <div class="wizard-image setup-img"></div>
         <div class="wizard-title">Setup your wallet</div>
@@ -88,11 +88,11 @@
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-     @*    <div class="progress-bar">
+         <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
-        </div> *@
+        </div> 
 
         <div class="wizard-image hotspot-img"></div>
         <div class="wizard-title">Connect to Blox hotspot</div>
@@ -130,11 +130,30 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-     @*    <div class="progress-bar">
+         <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
-        </div> *@
+        </div> 
+
+        // Temp placement
+        <div class="gray-section">
+            <div class="wifi-password-section">
+                <div class="close-section">
+                    <div class="close-btn"></div>
+                </div>
+
+                <div class="wifi-name">Enter password for “wifi-name”</div>
+
+                <form class="password-form">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" autocomplete="off" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            
+        </div>
+        // Temp placement
 
         <div class="wizard-image wifi-img"></div>
         <div class="wizard-title">Connect Blox to Wi-Fi</div>

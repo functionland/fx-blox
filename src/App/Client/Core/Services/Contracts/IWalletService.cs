@@ -12,6 +12,8 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
         Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = new());
         void OpenConnectWallet(string url);
 
-        Task TransferSomeMoneyAsync();
+        Task<string> TransferSomeMoneyAsync();
+
+        Task<string> SignMessage(string message);
     }
 }
