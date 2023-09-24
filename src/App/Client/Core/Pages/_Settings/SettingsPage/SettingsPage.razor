@@ -34,10 +34,12 @@
         <FxButton Text="Test Transfer Money"
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="TransferMoney" />
-        @if (SelectedCulture is not null)
-        {
-            <BitDropdown Items="GetCultures()" Class="culture-drp" @bind-Value="SelectedCulture" OnSelectItem="WrapHandled(OnCultureChanged)" />
-        }
+
+        <FxButton Text="Test Sign Message"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="TestSignMessage" />
+
+        
 
         <FxDivider FxDividerSize="FxDividerSize.Thin"
                    FxDividerMode="FxDividerMode.Solid"

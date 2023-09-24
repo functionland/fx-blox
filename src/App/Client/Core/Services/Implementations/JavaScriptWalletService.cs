@@ -30,7 +30,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             throw new NotImplementedException();
         }
 
-        public async Task TransferSomeMoneyAsync()
+        public async Task<string> TransferSomeMoneyAsync()
         {
             var session = Preferences.Get("sessionStruct", string.Empty);
             var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
@@ -40,6 +40,19 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
             var hexAmount = $"0x{amount}";
             var transaction = await _js.InvokeAsync<string>("WalletConnect.TransferMoney", topic, currentWallet.Address, toWalletId, currentWallet.ChainId, hexAmount);
+            return transaction;
+        }
+
+        public async Task<string> SignMessage(string message)
+        {
+            var session = Preferences.Get("sessionStruct", string.Empty);
+            var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+            var topic = sessionStruct.Topic;
+            var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+
+            var transaction = await _js.InvokeAsync<string>("WalletConnect.SignMessage", message, currentWallet.Address, topic, currentWallet.ChainId);
+            
+            return transaction;
         }
 
         public class Caip25Address
@@ -67,6 +80,5 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
                 ChainId = chainId,
             };
         }
-
     }
 }
