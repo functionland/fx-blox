@@ -68,7 +68,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             };
         }
 
-        public async Task ConnectToWifiAsync(string ssid, string password, CancellationToken cancellationToken)
+        public async Task ConnectToWifiAsync(string ssid, string? password, CancellationToken cancellationToken)
         {
             await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
         }

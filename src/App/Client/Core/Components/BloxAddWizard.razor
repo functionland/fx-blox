@@ -16,10 +16,10 @@
 
         <div class="wizard-content center-text intro-des">
             <div class="wizard-description center-text">
-                <div>
+                <div class="description-title">
                     Make sure your Blox is turned on!
                 </div>
-                <div>
+                <div class="description-title">
                     And is somewhere near you…
                 </div>
             </div>
@@ -46,7 +46,7 @@
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                <div>
+                <div class="description-title">
                     Select the network:
                 </div>
                 @*<BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />*@
@@ -99,7 +99,7 @@
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                    <div class="center-text">
+                    <div class="description-title center-text">
                         Make sure your blox is turned on and its hotspot is available.
                     </div>
                 </div>
@@ -137,22 +137,7 @@
         </div> 
 
         // Temp placement
-        <div class="gray-section">
-            <div class="wifi-password-section">
-                <div class="close-section">
-                    <div class="close-btn"></div>
-                </div>
-
-                <div class="wifi-name">Enter password for “wifi-name”</div>
-
-                <form class="password-form">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" autocomplete="off" required>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-            
-        </div>
+        <InputModal @ref="_passwordModalRef"/>
         // Temp placement
 
         <div class="wizard-image wifi-img"></div>
@@ -160,7 +145,7 @@
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                    <div>
+                    <div class="description-title">
                         Select the Wi-Fi for you Blox to connect:
                     </div>
                     @*<BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />*@
@@ -201,3 +186,5 @@
         </div>
     }
 </div>
+
+        <FxToast @ref="_toastRef"/>

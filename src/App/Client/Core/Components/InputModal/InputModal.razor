@@ -1,0 +1,58 @@
+﻿@namespace Functionland.FxBlox.Client.Core.Components
+@inherits AppComponentBase
+
+
+<FxBottomSheet OnClose="Close"
+               ShowCloseButton="true"
+               IsFullScreenMode="false"
+               @bind-IsOpen="_isModalOpen">
+
+    <div class="input-modal">
+        @if (!string.IsNullOrEmpty(_headTitle) || !string.IsNullOrWhiteSpace(_headTitle))
+        {
+            <h6>@_headTitle</h6>
+        }
+
+        <h3>@_title</h3>
+
+        <FxTextInput Label="@_label"
+                     @ref="_inputRef"
+                     Margin="40px 0 0 0"
+                     @bind-Text="@_inputValue"
+                     Placeholder="@_placeholder"
+                     Type="@_inputType" />
+
+        @if (_inLineBtn)
+        {
+            <div class="inline-button">
+                <FxButton Text="@Localizer[nameof(AppStrings.Cancel)]"
+                          OnClick="Close"
+                          Margin="16px 10px 21px 0"
+                          ButtonSize="@_buttonSize"
+                          ButtonStyle="FxButtonStyle.Outline" />
+
+                <FxButton Text="@_doneBtnText"
+                          OnClick="Confirm"
+                          Margin="16px 0 21px 10px"
+                          ButtonSize="@_buttonSize"
+                          ButtonStyle="FxButtonStyle.Normal" />
+            </div>
+        }
+        else
+        {
+            <FxButton Text="@Localizer[nameof(AppStrings.Cancel)]"
+                      OnClick="Close"
+                      Margin="32px 0 0 0"
+                      ButtonSize="@_buttonSize"
+                      ButtonStyle="FxButtonStyle.Outline" />
+
+            <FxButton Text="@_doneBtnText"
+                      OnClick="Confirm"
+                      Margin="16px 0 21px 0"
+                      ButtonSize="@_buttonSize"
+                      ButtonStyle="FxButtonStyle.Normal" />
+        }
+
+    </div>
+
+</FxBottomSheet>

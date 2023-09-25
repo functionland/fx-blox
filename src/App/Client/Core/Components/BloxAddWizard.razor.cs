@@ -15,6 +15,8 @@ public partial class BloxAddWizard
     public BlockchainNetwork? SelectedNetwork { get; set; }
     public WifiInfo? SelectedWifiForBlox { get; set; }
     public List<ProgressItem> ProgressItems { get; set; } = new();
+    private InputModal? _passwordModalRef;
+    private FxToast _toastRef = default!;
 
     private BloxConnection? BloxConnection { get; set; }
     public List<ListItem<WifiInfo>> AvailableWifiList { get; set; } = new();
@@ -121,8 +123,39 @@ public partial class BloxAddWizard
             throw new InvalidOperationException("BloxConnection is null");
         }
 
-        // ToDo: Ask for password in a popup
-        var password = "123";
+        if (_passwordModalRef is null)
+        {
+            return;
+        }
+
+        var result = await _passwordModalRef.ShowAsync($"Enter password for \"{(SelectedWifiForBlox?.Essid ?? "")}\"",
+            string.Empty,
+            string.Empty,
+            "Enter password",
+            "Connect",
+            "Password:",
+            FxTextInputType.Password,
+            FxButtonSize.Stretch,
+            true);
+
+        string? password;
+
+        if (result.ResultType == InputModalResultType.Confirm)
+        {
+            if (string.IsNullOrWhiteSpace(result.Result))
+            {
+                await _toastRef.HandleShow("Password is required.",
+                    "Password can't be empty",
+                    FxToastType.Error);
+                return;
+            }
+
+            password = result.Result;
+        }
+        else
+        {
+            return;
+        }
 
         Progress("Configuring the Blox Wi-Fi...");
 
@@ -190,7 +223,7 @@ public partial class BloxAddWizard
 
     private void BlockchainNetworkClicked(ListItem<BlockchainNetwork> item)
     {
-        BlockchainNetworks.ForEach(i=>i.IsSelected = false);
+        BlockchainNetworks.ForEach(i => i.IsSelected = false);
         item.IsSelected = true;
         SelectedNetwork = item.Item;
     }

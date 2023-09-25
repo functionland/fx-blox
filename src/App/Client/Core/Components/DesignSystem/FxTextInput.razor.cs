@@ -34,6 +34,9 @@
         [Parameter]
         public string? ErrorMessage { get; set; }
 
+        [Parameter]
+        public FxTextInputType Type { get; set; } = FxTextInputType.Text;
+
         private ElementReference _input;
 
         public async Task FocusInputAsync()

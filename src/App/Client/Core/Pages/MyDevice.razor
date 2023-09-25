@@ -4,6 +4,9 @@
 
 <PageTitle>@Localizer[nameof(AppStrings.MyDevice)]</PageTitle>
 
+<link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css">
+<script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
+
 <div class="page-container">
     <div class="info-container">
 
@@ -25,9 +28,49 @@
             {
                 <div class="cpu-info">CPU: @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%</div>
                 <div class="ram-info">RAM: @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage ?? 0) MB</div>
+                
             }
         </div>
     </div>
+
+@*     @if (BloxConnectionService.GetConnections().Any() && BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus != null)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
+                    <RadzenArcGauge Style="width: 100%; height: 250px;">
+                        <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
+                            <RadzenArcGaugeScaleValue Value=@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage) ShowValue=true>
+                                <Template>
+                                    <h4>
+                                        @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage
+                                    </h4>
+                                </Template>
+                            </RadzenArcGaugeScaleValue>
+                        </RadzenArcGaugeScale>
+                    </RadzenArcGauge>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
+                    <RadzenArcGauge Style="width: 100%; height: 250px;">
+                        <RadzenArcGaugeScale Step="20" Min="0" Max="152132" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
+                            <RadzenArcGaugeScaleValue Value=@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage) ShowValue=true>
+                                <Template>
+                                    <h4>
+                                        @BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage
+                                    </h4>
+                                </Template>
+                            </RadzenArcGaugeScaleValue>
+                        </RadzenArcGaugeScale>
+                    </RadzenArcGauge>
+                </div>
+            </div>
+        </div>
+    } *@
 
     <div class="installed-stacks">
 

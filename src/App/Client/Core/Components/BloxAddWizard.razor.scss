@@ -46,7 +46,7 @@
 
 .wizard-image {
     margin-top: $spacing-24;
-    background: url($base-img) center no-repeat;
+    @include Background(var(--base-img));
     // background-image: url("./images/backgrounds/base-img-light.svg");
     background-position: center;
     background-repeat: no-repeat;
@@ -85,18 +85,20 @@
     flex-grow: 1;
     margin-top: $spacing-25;
     width: 100%;
-
-    & > div {
-        padding: $spacing-5 0;
-    }
+    overflow: hidden;
+    padding: 5px 0;
 }
 
 .wizard-description {
     font-size: $font-size-14;
-    margin-top: $spacing-14;
-    line-height: $line-height-25;
+    line-height: 25px;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: stretch;
+    align-items: flex-start;
 
-    div {
+    .description-title {
         margin-bottom: $spacing-10;
     }
 }
@@ -134,7 +136,6 @@ ul.list-wrapper {
     border: $border-size-1 solid color(gray-border);
     border-radius: $border-radius-4;
     list-style-type: none;
-    max-height: $spacing-150;
     overflow: auto;
 
     li.list-item {
@@ -160,8 +161,8 @@ ul.list-wrapper {
             }
 
             .item-check {
-                width: $spacing-22;
-                height: $spacing-22;
+                width: $spacing-20;
+                height: $spacing-20;
                 border-radius: 50%;
                 background-color: $light-silver-gray;
             }
@@ -175,7 +176,6 @@ ul.list-wrapper {
             }
         }
     }
-
     /*.list-item:hover {
         background: $green-light-bg;
     }*/
@@ -260,33 +260,6 @@ ul.list-wrapper {
             border: 1px solid color(green-border);
             border-radius: 5px;
             padding-left: 10px;
-        }
-
-        button {
-            width: 150px;
-            margin: auto;
-            margin-top: 15px;
-            border-radius: 5px;
-            background: color(green-bg);
-            border: 1px solid $primary-color;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 30px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            opacity: 0.8;
-            transition: opacity 0.15s;
-            font-size: 16px;
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &:active {
-                opacity: 0.6;
-            }
         }
     }
 }

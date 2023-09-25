@@ -42,6 +42,15 @@
     &::placeholder {
         color: color(gray-content1)
     }
+
+    &::-ms-reveal {
+        display: none;
+    }
+}
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+    display: none;
 }
 
 input:focus {
