@@ -43,9 +43,34 @@
                 {
                     foreach (var stack in CurrentConnection.Stacks)
                     {
-                        <div>
+                        @* <div>
                             @($"{stack.Stack.Title}  {stack.Status}")
+                        </div> *@
+
+                        <div class="new-stack">
+                            <div class="stack-title">
+                                @stack.Stack.Title
+                            </div>
+                            <div class="stack-status">
+                                @if (stack.Status.ToString() == "Running")
+                                {
+                                    <div>
+                                        0.000034 ETH
+                                    </div>
+                                    <div class="status-icon running-state"></div>
+                                    
+                                }
+                                else
+                                {
+                                    <div>
+                                        @stack.Status
+                                    </div>
+                                    <div class="status-icon loading-state"></div>
+                                }
+                            </div>
                         </div>
+
+
                     }
                 }
                 else

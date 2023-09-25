@@ -201,9 +201,9 @@ $right-arrow: $icon-base-url + "right-arrow.svg";
 $right-arrow-hover: $icon-base-url + "right-arrow-hover.svg";
 $right-arrow-pressed: $icon-base-url + "right-arrow-pressed.svg";
 $right-arrow-disabled: $icon-base-url + "right-arrow-disabled.svg";
+$stack-icon: $icon-base-url + "stack-icon.svg";
 
 //background
-
 $base-img: $icon-base-url + "base-img.svg";
 // $base-img-light : $icon-base-url + "base-img-light.svg";
 
@@ -362,6 +362,7 @@ $line-height-20: 20 + $base-unit;
 $line-height-16: 16 + $base-unit;
 $line-height-14: 14 + $base-unit;
 $line-height-10: 10 + $base-unit;
+$line-height-9: 9 + $base-unit;
 
 //letter-spacings
 $letter-spacing-2: 2 + $base-unit;
@@ -425,6 +426,7 @@ $spacing-31: 31 + $base-unit;
 $spacing-34: 34 + $base-unit;
 $spacing-40: 40 + $base-unit;
 $spacing-48: 48 + $base-unit;
+$spacing-50: 50 + $base-unit;
 $spacing-55: 55 + $base-unit;
 $spacing-56: 56 + $base-unit;
 $spacing-60: 60 + $base-unit;
@@ -436,6 +438,7 @@ $spacing-90: 90 + $base-unit;
 $spacing-120: 120 + $base-unit;
 $spacing-146: 146 + $base-unit;
 $spacing-150: 150 + $base-unit;
+$spacing-180: 180 + $base-unit;
 $spacing-190: 190 + $base-unit;
 $spacing-200: 200 + $base-unit;
 $spacing-230: 230 + $base-unit;
