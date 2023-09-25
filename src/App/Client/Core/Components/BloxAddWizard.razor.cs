@@ -18,6 +18,8 @@ public partial class BloxAddWizard
 
     private BloxConnection? BloxConnection { get; set; }
     public List<ListItem<WifiInfo>> AvailableWifiList { get; set; } = new();
+    private bool IsPasswordModalOpen { get; set; } = false;
+    private string Password { get; set; } = string.Empty;
 
     public async Task GoToNextStepAsync()
     {
@@ -121,9 +123,11 @@ public partial class BloxAddWizard
             throw new InvalidOperationException("BloxConnection is null");
         }
 
-        // ToDo: Ask for password in a popup
-        var password = "123";
+        IsPasswordModalOpen = true;
+    }
 
+    private async Task ConnectToWifi(string password)
+    {
         Progress("Configuring the Blox Wi-Fi...");
 
         var ssid = SelectedWifiForBlox.Ssid;
@@ -190,7 +194,7 @@ public partial class BloxAddWizard
 
     private void BlockchainNetworkClicked(ListItem<BlockchainNetwork> item)
     {
-        BlockchainNetworks.ForEach(i=>i.IsSelected = false);
+        BlockchainNetworks.ForEach(i => i.IsSelected = false);
         item.IsSelected = true;
         SelectedNetwork = item.Item;
     }
@@ -201,5 +205,18 @@ public partial class BloxAddWizard
         AvailableWifiList.ForEach(i => i.IsSelected = false);
         item.IsSelected = true;
         SelectedWifiForBlox = item.Item;
+    }
+
+    private void OnPasswordModalOpenChanged(bool isOpen)
+    {
+        IsPasswordModalOpen = isOpen;
+    }
+
+    private async Task OnPasswordSubmitAsync(string password)
+    {
+        IsPasswordModalOpen = false;
+        Password = password;
+
+        await ConnectToWifi(Password);
     }
 }

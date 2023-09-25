@@ -9,6 +9,8 @@ using Microsoft.AppCenter.Crashes;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Maui.Controls;
 
+using Radzen;
+
 namespace Functionland.FxBlox.Client.App
 {
     public static class MauiProgram
@@ -49,6 +51,7 @@ namespace Functionland.FxBlox.Client.App
             services.AddSharedServices();
             services.AddClientSharedServices();
             services.AddClientAppServices();
+            services.AddRadzenComponents();
 
             return builder;
         }
