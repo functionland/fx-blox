@@ -5,61 +5,61 @@ $font-path: "fonts";
 $icon-base-url: "images/icons/darkDesignSystem/";
 
 //main brand colors
-$primary-color: #06B597;
-$pure-white: #FFFFFF;
+$primary-color: #06b597;
+$pure-white: #ffffff;
 $main-dark: #212529;
-$blue-crayola: #187AF9;
+$blue-crayola: #187af9;
 $viridian-green: #099393;
 $granite-gray: #676767;
-$silver-gray: #B2B2B2;
+$silver-gray: #b2b2b2;
 $light-silver-gray: #e2e2e2;
 //dark colors
-$gray-dark-content1: #F8F9FA;
-$gray-dark-content2: #E9ECEF;
-$gray-dark-content3: #CED4DA;
-$gray-dark-border: #868E96;
+$gray-dark-content1: #f8f9fa;
+$gray-dark-content2: #e9ecef;
+$gray-dark-content3: #ced4da;
+$gray-dark-border: #868e96;
 $gray-dark-hover: #49505745;
 $gray-dark-bg-secondary: #495057;
-$gray-dark-bg-primary: #343A40;
-$gray-dark-app-bg: #343A40;
+$gray-dark-bg-primary: #343a40;
+$gray-dark-app-bg: #343a40;
 $green-dark-pressed: #038082;
-$green-dark-base: #049B8F;
-$green-dark-hover: #06B597;
-$green-dark-border: #035B4C;
-$green-dark-bg: #02362D;
-$success-dark: #37B24D;
-$info-dark: #1C7ED6;
-$warning-dark: #FCC419;
-$error-dark: #FA5252;
+$green-dark-base: #049b8f;
+$green-dark-hover: #06b597;
+$green-dark-border: #035b4c;
+$green-dark-bg: #02362d;
+$success-dark: #37b24d;
+$info-dark: #1c7ed6;
+$warning-dark: #fcc419;
+$error-dark: #fa5252;
 $input-dark-disable: $gray-dark-border;
 $diable-item-dark: #212529;
-$disable-icon-item-dark: #343A40;
+$disable-icon-item-dark: #343a40;
 $border-notifications-dark: #495057;
 //light colors
-$gray-light-content1: #343A40;
+$gray-light-content1: #343a40;
 $gray-light-content2: #495057;
-$gray-light-content3: #6F767D;
+$gray-light-content3: #6f767d;
 $gray-light-hover: #e9ecef7a;
-$gray-light-bg-primary: #F8F9FA;
+$gray-light-bg-primary: #f8f9fa;
 $gray-light-app-bg: $pure-white;
 $green-light-base: $green-dark-base;
 $green-light-hover: $green-dark-hover;
 $gray-light-border: $gray-dark-content3;
 $green-light-pressed: $green-dark-pressed;
 $gray-light-bg-secondary: $gray-dark-content2;
-$green-light-border: #97F7CC;
-$green-light-bg: #CAFBE0;
-$warning-light: #FAB005;
-$warning-border-light: #FCC419;
-$error-light: #FA4343;
-$error-border-light: #FF6B6B; 
+$green-light-border: #3ba58e;
+$green-light-bg: #cafbe0;
+$warning-light: #fab005;
+$warning-border-light: #fcc419;
+$error-light: #fa4343;
+$error-border-light: #ff6b6b;
 $info-light: $info-dark;
-$info-border-light: #339AF0;
+$info-border-light: #339af0;
 $success-light: $success-dark;
-$success-border-light : #51CF66;
+$success-border-light: #51cf66;
 $input-light-disable: $gray-dark-content3;
-$diable-item-light: #F8F9FA;
-$disable-icon-item-light: #E9ECEF;
+$diable-item-light: #f8f9fa;
+$disable-icon-item-light: #e9ecef;
 
 $colors-light: (
     "app-bg": $pure-white,
@@ -105,9 +105,7 @@ $colors-dark: (
     "info-border": $border-notifications-dark,
 );
 
-
 //svg icons
-
 
 $back: $icon-base-url + "back.svg";
 $copy: $icon-base-url + "copy.svg";
@@ -206,8 +204,8 @@ $right-arrow-disabled: $icon-base-url + "right-arrow-disabled.svg";
 
 //background
 
-$base-img : $icon-base-url + "base-img.svg"; 
-// $base-img-light : $icon-base-url + "base-img-light.svg"; 
+$base-img: $icon-base-url + "base-img.svg";
+// $base-img-light : $icon-base-url + "base-img-light.svg";
 
 //outline icons
 $extract: "\e900";
@@ -298,35 +296,34 @@ $open-sans-semi-bold: "OpenSans-SemiBold";
 $montserrat-medium: "Montserrat-Medium";
 $montserrat-semi-bold: "Montserrat-SemiBold";
 
-
 @font-face {
     font-family: $montserrat-semi-bold;
     font-weight: 600;
-    src: url("#{$font-path}/Montserrat-SemiBold.ttf") format("truetype"),
+    src: url("#{$font-path}/Montserrat-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: $montserrat-medium;
     font-weight: 500;
-    src: url("#{$font-path}/Montserrat-Medium.ttf") format("truetype"),
+    src: url("#{$font-path}/Montserrat-Medium.ttf") format("truetype");
 }
 
 @font-face {
     font-family: $open-sans-light;
     font-weight: 300;
-    src: url("#{$font-path}/OpenSans-Light.ttf") format("truetype"),
+    src: url("#{$font-path}/OpenSans-Light.ttf") format("truetype");
 }
 
 @font-face {
     font-family: $open-sans-regular;
     font-weight: 400;
-    src: url("#{$font-path}/OpenSans-Regular.ttf") format("truetype"),
+    src: url("#{$font-path}/OpenSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: $open-sans-semi-bold;
     font-weight: 600;
-    src: url("#{$font-path}/OpenSans-SemiBold.ttf") format("truetype"),
+    src: url("#{$font-path}/OpenSans-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
@@ -334,9 +331,8 @@ $montserrat-semi-bold: "Montserrat-SemiBold";
     font-style: normal;
     font-weight: normal;
     font-display: block;
-    src: url('#{$font-path}/FxL-Outline.ttf') format('truetype');
+    src: url("#{$font-path}/FxL-Outline.ttf") format("truetype");
 }
-
 
 //font-sizes
 $font-size-52: 52 + $base-unit;
@@ -344,6 +340,7 @@ $font-size-40: 40 + $base-unit;
 $font-size-36: 36 + $base-unit;
 $font-size-32: 32 + $base-unit;
 $font-size-28: 28 + $base-unit;
+$font-size-25: 25 + $base-unit;
 $font-size-24: 24 + $base-unit;
 $font-size-20: 20 + $base-unit;
 $font-size-18: 18 + $base-unit;
@@ -360,6 +357,7 @@ $line-height-36: 36 + $base-unit;
 $line-height-30: 30 + $base-unit;
 $line-height-28: 28 + $base-unit;
 $line-height-24: 24 + $base-unit;
+$line-height-25: 25 + $base-unit;
 $line-height-20: 20 + $base-unit;
 $line-height-16: 16 + $base-unit;
 $line-height-14: 14 + $base-unit;
@@ -373,20 +371,28 @@ $letter-spacing-0: 0 + $base-unit;
 
 //dark box shadows
 $box-shadow-dark-xs: 0px 1px 1px rgba(0, 0, 0, 0.12);
-$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16),
+    0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12),
+    0px 3px 5px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08),
+    0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
 
 //light box shadows
 $box-shadow-light-xs: 0px 1px 1px rgba(0, 0, 0, 0.06);
-$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
-$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1), 0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
-$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04), 0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
+$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1),
+    0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
+$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04),
+    0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
 
 //border-radius
 $border-radius-3: 3 + $base-unit;
 $border-radius-4: 4 + $base-unit;
+$border-radius-5: 5 + $base-unit;
 $border-radius-6: 6 + $base-unit;
+$border-radius-10: 10 + $base-unit;
 $border-radius-20: 20 + $base-unit;
 
 //border-sizes
@@ -399,6 +405,7 @@ $border-size-4: 4 + $base-unit;
 $spacing-0: 0 + $base-unit;
 $spacing-2: 2 + $base-unit;
 $spacing-4: 4 + $base-unit;
+$spacing-5: 5 + $base-unit;
 $spacing-6: 6 + $base-unit;
 $spacing-8: 8 + $base-unit;
 $spacing-10: 10 + $base-unit;
@@ -406,8 +413,11 @@ $spacing-12: 12 + $base-unit;
 $spacing-14: 14 + $base-unit;
 $spacing-16: 16 + $base-unit;
 $spacing-18: 18 + $base-unit;
+$spacing-20: 20 + $base-unit;
 $spacing-21: 21 + $base-unit;
+$spacing-22: 22 + $base-unit;
 $spacing-24: 24 + $base-unit;
+$spacing-25: 25 + $base-unit;
 $spacing-28: 28 + $base-unit;
 $spacing-32: 32 + $base-unit;
 $spacing-30: 30 + $base-unit;
@@ -415,11 +425,23 @@ $spacing-31: 31 + $base-unit;
 $spacing-34: 34 + $base-unit;
 $spacing-40: 40 + $base-unit;
 $spacing-48: 48 + $base-unit;
+$spacing-55: 55 + $base-unit;
 $spacing-56: 56 + $base-unit;
+$spacing-60: 60 + $base-unit;
 $spacing-64: 64 + $base-unit;
+$spacing-70: 70 + $base-unit;
 $spacing-72: 72 + $base-unit;
 $spacing-80: 80 + $base-unit;
+$spacing-90: 90 + $base-unit;
 $spacing-120: 120 + $base-unit;
+$spacing-146: 146 + $base-unit;
+$spacing-150: 150 + $base-unit;
+$spacing-190: 190 + $base-unit;
+$spacing-200: 200 + $base-unit;
+$spacing-230: 230 + $base-unit;
+$spacing-270: 270 + $base-unit;
+$spacing-300: 300 + $base-unit;
+$spacing-320: 320 + $base-unit;
 $spacing-333: 333 + $base-unit;
 
 //icon sizes

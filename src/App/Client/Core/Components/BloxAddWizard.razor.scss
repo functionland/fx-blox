@@ -5,7 +5,7 @@
 .wizard-page {
     width: 100%;
     height: 100%;
-    padding: 0 21px;
+    padding: 0 $spacing-21;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -21,10 +21,10 @@
 }
 
 .progress-bar {
-    margin-top: 55px;
-    border-radius: 10px;
+    margin-top: $spacing-55;
+    border-radius: $border-radius-10;
     width: 100%;
-    height: 5px;
+    height: $spacing-5;
     background-color: color(gray-border);
     color: #cae9e3;
     display: grid;
@@ -50,9 +50,9 @@
     // background-image: url("./images/backgrounds/base-img-light.svg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 146px 190px;
+    background-size: $spacing-146 $spacing-190;
     width: 100%;
-    min-height: 190px;
+    min-height: $spacing-190;
 }
 
 .welcome-image {
@@ -60,10 +60,10 @@
     background-image: url("./images/backgrounds/welcome-background.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 300px 270px;
+    background-size: $spacing-230 $spacing-270;
     width: 100%;
-    min-height: 270px;
-    margin: 70px 0 40px;
+    min-height: $spacing-270;
+    margin: $spacing-70 0 $spacing-40;
 }
 
 .wizard-title {
@@ -75,29 +75,29 @@
 
 .wizard-welcome {
     font-size: $font-size-12;
-    letter-spacing: 1px;
+    letter-spacing: $letter-spacing-1;
     font-family: "Montserrat";
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: $spacing-10;
 }
 
 .wizard-content {
     flex-grow: 1;
-    margin-top: 25px;
+    margin-top: $spacing-25;
     width: 100%;
 
     & > div {
-        padding: 5px 0;
+        padding: $spacing-5 0;
     }
 }
 
 .wizard-description {
     font-size: $font-size-14;
     margin-top: $spacing-14;
-    line-height: 25px;
+    line-height: $line-height-25;
 
     div {
-        margin-bottom: 10px;
+        margin-bottom: $spacing-10;
     }
 }
 
@@ -124,27 +124,27 @@
 
 .wizard-action-wrapper {
     width: 100%;
-    padding: 16px 0;
+    padding: $spacing-16 0;
 }
 
 ul.list-wrapper {
     margin: 0;
     padding: 0;
     width: 100%;
-    border: 1px solid color(gray-border);
+    border: $border-size-1 solid color(gray-border);
     border-radius: $border-radius-4;
     list-style-type: none;
-    max-height: 150px;
+    max-height: $spacing-150;
     overflow: auto;
 
     li.list-item {
         width: 100%;
-        height: 60px;
+        height: $spacing-60;
         cursor: pointer;
         padding: 0 $spacing-12;
 
         .item-box {
-            border-bottom: 1px solid color(gray-border);
+            border-bottom: $border-size-1 solid color(gray-border);
             padding: 0 $spacing-4;
             width: 100%;
             height: 100%;
@@ -160,8 +160,8 @@ ul.list-wrapper {
             }
 
             .item-check {
-                width: 22px;
-                height: 22px;
+                width: $spacing-22;
+                height: $spacing-22;
                 border-radius: 50%;
                 background-color: $light-silver-gray;
             }
@@ -169,7 +169,7 @@ ul.list-wrapper {
             .item-check-selected {
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: 24px;
+                background-size: $spacing-24;
                 background-image: url($success-mode);
                 background-color: transparent;
             }
@@ -187,12 +187,12 @@ ul.list-wrapper {
     }
 
     .selected-list-item {
-        width: 24px;
-        height: 24px;
+        width: $spacing-24;
+        height: $spacing-24;
         background-image: url($success-mode);
         background-repeat: no-repeat;
-        background-position: right 2px;
-        background-size: 24px;
+        background-position: right $spacing-2;
+        background-size: $spacing-24;
     }
 }
 

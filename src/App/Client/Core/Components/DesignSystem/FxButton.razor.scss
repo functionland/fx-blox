@@ -132,7 +132,8 @@
     border: 1px solid $green-dark-base !important;
     background-color: transparent !important;
     position: relative;
-
+    margin: auto;
+    display: block;
 
     &:hover {
         background-color: $green-dark-hover;
