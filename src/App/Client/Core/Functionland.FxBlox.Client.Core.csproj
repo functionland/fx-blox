@@ -157,6 +157,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Radzen.Blazor" Version="4.16.2" />
         <PackageReference Include="WalletConnect.Sign" Version="2.1.0" />
 
         <Using Include="Microsoft.AspNetCore.Components" />
