@@ -12,7 +12,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
         BloxDevice Device { get; }
         Task<string> ExchangeAsync(string peerId, string seed, CancellationToken cancellationToken = default);
         Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default);
-        Task ConnectToWifiAsync(string ssid, string password, CancellationToken cancellationToken = default);
+        Task ConnectToWifiAsync(string ssid, string? password, CancellationToken cancellationToken = default);
         Task<bool> GetStatusAsync(CancellationToken cancellationToken = default);
         Task<BloxInfo> GetBloxInfoAsync(CancellationToken cancellationToken = default);
         void Initialize(BloxDevice device);

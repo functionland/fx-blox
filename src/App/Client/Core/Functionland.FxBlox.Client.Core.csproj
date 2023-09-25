@@ -16,6 +16,7 @@
 
         <Content Remove="compilerconfig.json" />
         <None Include="compilerconfig.json" />
+        <None Include="Components\InputModal\InputModal.razor" />
         <None Include="wwwroot\images\icons\darkDesignSystem\checkbox.svg" />
         <None Include="wwwroot\images\icons\darkDesignSystem\close-btn.svg" />
         <None Include="wwwroot\images\icons\darkDesignSystem\crumbs-right-arrow.svg" />
