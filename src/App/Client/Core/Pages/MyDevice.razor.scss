@@ -1,6 +1,7 @@
 ﻿@import "../Styles/abstracts/_variables.scss";
 @import "../Styles/abstracts/_functions.scss";
 @import "../Styles/components/_bit-accordion.scss";
+@import "../Styles/abstracts/_mixins.scss";
 
 .page-container {
     padding: 0;
@@ -29,7 +30,7 @@
 .page-img {
     width: $spacing-150;
     height: $spacing-200;
-    background: url($base-img) center no-repeat;
+    @include Background(var(--base-img),center no-repeat);
     margin: auto;
 }
 

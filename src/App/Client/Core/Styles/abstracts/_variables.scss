@@ -1,8 +1,8 @@
 // base variable
 $base-unit: px;
 $font-path: "fonts";
-/*$icon-base-url: "images/icons/lightDesignSystem/";*/
-$icon-base-url: "images/icons/darkDesignSystem/";
+$icon-base-url-dark: "images/icons/darkDesignSystem/";
+$icon-base-url-light: "images/icons/lightDesignSystem/";
 
 //main brand colors
 $primary-color: #06b597;
@@ -61,151 +61,114 @@ $input-light-disable: $gray-dark-content3;
 $diable-item-light: #f8f9fa;
 $disable-icon-item-light: #e9ecef;
 
-$colors-light: (
-    "app-bg": $pure-white,
-    "error": $error-light,
-    "warning": $warning-light,
-    "green-bg": $green-light-bg,
-    "gray-border": $gray-light-border,
-    "gray-hover": $gray-light-hover,
-    "green-border": $green-light-border,
-    "gray-content1": $gray-light-content1,
-    "gray-content2": $gray-light-content2,
-    "gray-content3": $gray-light-content3,
-    "gray-bg-primary": $gray-light-bg-primary,
-    "gray-bg-secondary": $gray-light-bg-secondary,
-    "input-disable": $input-light-disable,
-    "disable-item": $diable-item-light,
-    "disable-item-icon": $disable-icon-item-light,
-    "error-border": $error-border-light,
-    "success-border": $success-border-light,
-    "warning-border": $warning-border-light,
-    "info-border": $info-border-light,
-);
+$colors-light: ( "app-bg": $pure-white, "error": $error-light, "warning": $warning-light, "green-bg": $green-light-bg, "gray-border": $gray-light-border, "gray-hover": $gray-light-hover, "green-border": $green-light-border, "gray-content1": $gray-light-content1, "gray-content2": $gray-light-content2, "gray-content3": $gray-light-content3, "gray-bg-primary": $gray-light-bg-primary, "gray-bg-secondary": $gray-light-bg-secondary, "input-disable": $input-light-disable, "disable-item": $diable-item-light, "disable-item-icon": $disable-icon-item-light, "error-border": $error-border-light, "success-border": $success-border-light, "warning-border": $warning-border-light, "info-border": $info-border-light, );
 
-$colors-dark: (
-    "app-bg": $main-dark,
-    "error": $error-dark,
-    "warning": $warning-dark,
-    "green-bg": $green-dark-bg,
-    "gray-border": $gray-dark-border,
-    "gray-hover": $gray-dark-hover,
-    "green-border": $green-dark-border,
-    "gray-content1": $gray-dark-content1,
-    "gray-content2": $gray-dark-content2,
-    "gray-content3": $gray-dark-content3,
-    "gray-bg-primary": $gray-dark-bg-primary,
-    "gray-bg-secondary": $gray-dark-bg-secondary,
-    "input-disable": $input-dark-disable,
-    "disable-item": $diable-item-dark,
-    "disable-item-icon": $disable-icon-item-dark,
-    "error-border": $border-notifications-dark,
-    "success-border": $border-notifications-dark,
-    "warning-border": $border-notifications-dark,
-    "info-border": $border-notifications-dark,
-);
+$colors-dark: ( "app-bg": $main-dark, "error": $error-dark, "warning": $warning-dark, "green-bg": $green-dark-bg, "gray-border": $gray-dark-border, "gray-hover": $gray-dark-hover, "green-border": $green-dark-border, "gray-content1": $gray-dark-content1, "gray-content2": $gray-dark-content2, "gray-content3": $gray-dark-content3, "gray-bg-primary": $gray-dark-bg-primary, "gray-bg-secondary": $gray-dark-bg-secondary, "input-disable": $input-dark-disable, "disable-item": $diable-item-dark, "disable-item-icon": $disable-icon-item-dark, "error-border": $border-notifications-dark, "success-border": $border-notifications-dark, "warning-border": $border-notifications-dark, "info-border": $border-notifications-dark, );
 
 //svg icons
 
-$back: $icon-base-url + "back.svg";
-$copy: $icon-base-url + "copy.svg";
-$delete: $icon-base-url + "delete.svg";
-$details: $icon-base-url + "details.svg";
-$rename-file: $icon-base-url + "rename.svg";
-$close-btn: $icon-base-url + "close-btn.svg";
-$play-circle: $icon-base-url + "play-circle.svg";
-$tag-label: $icon-base-url + "tag-label.svg";
-$chevron-up: $icon-base-url + "chevron-up.svg";
+$back: $icon-base-url-light + "back.svg";
+$copy: $icon-base-url-light + "copy.svg";
+$delete: $icon-base-url-light + "delete.svg";
+$details: $icon-base-url-light + "details.svg";
+$rename-file: $icon-base-url-light + "rename.svg";
+$close-btn: $icon-base-url-light + "close-btn.svg";
+$play-circle: $icon-base-url-light + "play-circle.svg";
+$tag-label: $icon-base-url-light + "tag-label.svg";
+$chevron-up: $icon-base-url-light + "chevron-up.svg";
 
-$options-vertical: $icon-base-url + "options-vertical.svg";
-$options-horizontal: $icon-base-url + "options-horizontal.svg";
-$options-vertical-disabled: $icon-base-url + "options-vertical-disabled.svg";
-$options-horizontal-disabled: $icon-base-url + "options-horizontal-disabled.svg";
+$options-vertical: $icon-base-url-light + "options-vertical.svg";
+$options-horizontal: $icon-base-url-light + "options-horizontal.svg";
+$options-vertical-disabled: $icon-base-url-light + "options-vertical-disabled.svg";
+$options-horizontal-disabled: $icon-base-url-light + "options-horizontal-disabled.svg";
 
-$pin-filled: $icon-base-url + "pin-filled.svg";
-$pin-outline: $icon-base-url + "pin-outline.svg";
-$pin-outline-black: $icon-base-url + "pin-outline-black.svg";
+$pin-filled: $icon-base-url-light + "pin-filled.svg";
+$pin-outline: $icon-base-url-light + "pin-outline.svg";
+$pin-outline-black: $icon-base-url-light + "pin-outline-black.svg";
 
-$avatar-grey: $icon-base-url + "avatar-grey.svg";
-$edit-status: $icon-base-url + "edit-status.svg";
-$selected-status: $icon-base-url + "selected-status.svg";
-$deselected-status: $icon-base-url + "deselected-status.svg";
+$avatar-grey: $icon-base-url-light + "avatar-grey.svg";
+$edit-status: $icon-base-url-light + "edit-status.svg";
+$selected-status: $icon-base-url-light + "selected-status.svg";
+$deselected-status: $icon-base-url-light + "deselected-status.svg";
 
-$select-check-filled: $icon-base-url + "select-check-filled.svg";
-$select-all-check-empty: $icon-base-url + "select-all-check-empty.svg";
-$select-all-check-filled: $icon-base-url + "select-all-check-filled.svg";
+$select-check-filled: $icon-base-url-light + "select-check-filled.svg";
+$select-all-check-empty: $icon-base-url-light + "select-all-check-empty.svg";
+$select-all-check-filled: $icon-base-url-light + "select-all-check-filled.svg";
 
-$move: $icon-base-url + "move.svg";
-$folder: $icon-base-url + "folder.svg";
-$add-file: $icon-base-url + "add-file.svg";
-$pdf-file: $icon-base-url + "pdf-file.svg";
-$filter-file: $icon-base-url + "filter.svg";
-$text-file: $icon-base-url + "text-file.svg";
-$photo-file: $icon-base-url + "photo-file.svg";
-$audio-file: $icon-base-url + "audio-file.svg";
-$create-file: $icon-base-url + "create-file.svg";
-$upload-file: $icon-base-url + "upload-file.svg";
-$disabled-folder: $icon-base-url + "disabled-folder.svg";
+$move: $icon-base-url-light + "move.svg";
+$folder: $icon-base-url-light + "folder.svg";
+$add-file: $icon-base-url-light + "add-file.svg";
+$pdf-file: $icon-base-url-light + "pdf-file.svg";
+$filter-file: $icon-base-url-light + "filter.svg";
+$text-file: $icon-base-url-light + "text-file.svg";
+$photo-file: $icon-base-url-light + "photo-file.svg";
+$audio-file: $icon-base-url-light + "audio-file.svg";
+$create-file: $icon-base-url-light + "create-file.svg";
+$upload-file: $icon-base-url-light + "upload-file.svg";
+$disabled-folder: $icon-base-url-light + "disabled-folder.svg";
 
-$list-view: $icon-base-url + "list-view.svg";
-$grid-view: $icon-base-url + "grid-view.svg";
-$list-view-selected: $icon-base-url + "list-view-selected.svg";
-$grid-view-selected: $icon-base-url + "grid-view-selected.svg";
+$list-view: $icon-base-url-light + "list-view.svg";
+$grid-view: $icon-base-url-light + "grid-view.svg";
+$list-view-selected: $icon-base-url-light + "list-view-selected.svg";
+$grid-view-selected: $icon-base-url-light + "grid-view-selected.svg";
 
-$search: $icon-base-url + "search.svg";
-$search-active: $icon-base-url + "search-active.svg";
-$search-disabled: $icon-base-url + "search-disabled.svg";
+$search: $icon-base-url-light + "search.svg";
+$search-active: $icon-base-url-light + "search-active.svg";
+$search-disabled: $icon-base-url-light + "search-disabled.svg";
 
-$info-mode: $icon-base-url + "info-mode.svg";
-$error-mode: $icon-base-url + "error-mode.svg";
-$success-mode: $icon-base-url + "success-circle-checked.svg";
-$in-progress-mode: $icon-base-url + "in-progress.svg";
-$warning-mode: $icon-base-url + "warning-mode.svg";
-$red-tab-label: $icon-base-url + "red-tab-label.svg";
-$output-error-message: $icon-base-url + "output-error-message.svg";
+$info-mode: $icon-base-url-light + "info-mode.svg";
+$error-mode: $icon-base-url-light + "error-mode.svg";
+$success-mode: $icon-base-url-light + "success-circle-checked.svg";
+$in-progress-mode: $icon-base-url-light + "in-progress.svg";
+$warning-mode: $icon-base-url-light + "warning-mode.svg";
+$red-tab-label: $icon-base-url-light + "red-tab-label.svg";
+$output-error-message: $icon-base-url-light + "output-error-message.svg";
 
-$checkbox: $icon-base-url + "checkbox.svg";
-$disabled-checkbox: $icon-base-url + "disabled-checkbox.svg";
-$indeterminate-checkbox: $icon-base-url + "indeterminate-checkbox.svg";
-$disabled-checked-checkbox: $icon-base-url + "disabled-checked-checkbox.svg";
+$checkbox: $icon-base-url-light + "checkbox.svg";
+$disabled-checkbox: $icon-base-url-light + "disabled-checkbox.svg";
+$indeterminate-checkbox: $icon-base-url-light + "indeterminate-checkbox.svg";
+$disabled-checked-checkbox: $icon-base-url-light + "disabled-checked-checkbox.svg";
 
-$radio-btn: $icon-base-url + "radio-btn.svg";
-$radio-btn-selected: $icon-base-url + "radio-btn-selected.svg";
-$radio-btn-disabled: $icon-base-url + "radio-btn-disabled.svg";
-$radio-btn-disabled-selected: $icon-base-url + "radio-btn-disabled-selected.svg";
+$radio-btn: $icon-base-url-light + "radio-btn.svg";
+$radio-btn-selected: $icon-base-url-light + "radio-btn-selected.svg";
+$radio-btn-disabled: $icon-base-url-light + "radio-btn-disabled.svg";
+$radio-btn-disabled-selected: $icon-base-url-light + "radio-btn-disabled-selected.svg";
 
-$user-person: $icon-base-url + "user-person.svg";
-$user-person-selected: $icon-base-url + "user-person-selected.svg";
-$user-person-disabled: $icon-base-url + "user-person-disabled.svg";
+$user-person: $icon-base-url-light + "user-person.svg";
+$user-person-selected: $icon-base-url-light + "user-person-selected.svg";
+$user-person-disabled: $icon-base-url-light + "user-person-disabled.svg";
 
-$green-circle: $icon-base-url + "green-circle.svg";
-$error-message: $icon-base-url + "error-message-icon.svg";
-$green-notification: $icon-base-url + "green-notification.svg";
-$brand-green-circle: $icon-base-url + "brand-green-circle.svg";
+$green-circle: $icon-base-url-light + "green-circle.svg";
+$error-message: $icon-base-url-light + "error-message-icon.svg";
+$green-notification: $icon-base-url-light + "green-notification.svg";
+$brand-green-circle: $icon-base-url-light + "brand-green-circle.svg";
 
-$download: $icon-base-url + "download.svg";
-$progress-download: $icon-base-url + "progress-download.svg";
-$progress-download-disabled: $icon-base-url + "progress-download-disabled.svg";
+$download: $icon-base-url-light + "download.svg";
+$progress-download: $icon-base-url-light + "progress-download.svg";
+$progress-download-disabled: $icon-base-url-light + "progress-download-disabled.svg";
 
-$down-arrow: $icon-base-url + "down-arrow.svg";
-$down-arrow-disable: $icon-base-url + "down-arrow-disable.svg";
-$down-arrow-pressed: $icon-base-url + "down-arrow-pressed.svg";
-$crumbs-right-arrow: $icon-base-url + "crumbs-right-arrow.svg";
+$down-arrow: $icon-base-url-light + "down-arrow.svg";
+$down-arrow-disable: $icon-base-url-light + "down-arrow-disable.svg";
+$down-arrow-pressed: $icon-base-url-light + "down-arrow-pressed.svg";
+$crumbs-right-arrow: $icon-base-url-light + "crumbs-right-arrow.svg";
 
-$left-arrow: $icon-base-url + "left-arrow.svg";
-$left-arrow-hover: $icon-base-url + "left-arrow-hover.svg";
-$left-arrow-pressed: $icon-base-url + "left-arrow-pressed.svg";
-$left-arrow-disabled: $icon-base-url + "lef-arrow-disabled.svg";
+$left-arrow: $icon-base-url-light + "left-arrow.svg";
+$left-arrow-hover: $icon-base-url-light + "left-arrow-hover.svg";
+$left-arrow-pressed: $icon-base-url-light + "left-arrow-pressed.svg";
+$left-arrow-disabled: $icon-base-url-light + "lef-arrow-disabled.svg";
 
-$right-arrow: $icon-base-url + "right-arrow.svg";
-$right-arrow-hover: $icon-base-url + "right-arrow-hover.svg";
-$right-arrow-pressed: $icon-base-url + "right-arrow-pressed.svg";
-$right-arrow-disabled: $icon-base-url + "right-arrow-disabled.svg";
+$right-arrow: $icon-base-url-light + "right-arrow.svg";
+$right-arrow-hover: $icon-base-url-light + "right-arrow-hover.svg";
+$right-arrow-pressed: $icon-base-url-light + "right-arrow-pressed.svg";
+$right-arrow-disabled: $icon-base-url-light + "right-arrow-disabled.svg";
 
 //background
+$backgrounds-dark: ( "base-img": "url("+$icon-base-url-dark + "base-img.svg"+")" );
 
-$base-img: $icon-base-url + "base-img.svg";
-// $base-img-light : $icon-base-url + "base-img-light.svg";
+$backgrounds-light: ( "base-img": "url("+$icon-base-url-light + "base-img.svg"+")" );
+
+/*$base-img: $icon-base-url-light + "base-img.svg";*/
+// $base-img-light : $icon-base-url-light + "base-img-light.svg";
 
 //outline icons
 $extract: "\e900";
@@ -371,21 +334,15 @@ $letter-spacing-0: 0 + $base-unit;
 
 //dark box shadows
 $box-shadow-dark-xs: 0px 1px 1px rgba(0, 0, 0, 0.12);
-$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16),
-    0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12),
-    0px 3px 5px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08),
-    0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
 
 //light box shadows
 $box-shadow-light-xs: 0px 1px 1px rgba(0, 0, 0, 0.06);
-$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
-$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1),
-    0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
-$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04),
-    0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
+$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1), 0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
+$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04), 0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
 
 //border-radius
 $border-radius-3: 3 + $base-unit;

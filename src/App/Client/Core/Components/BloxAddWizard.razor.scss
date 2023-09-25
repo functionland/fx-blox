@@ -46,7 +46,7 @@
 
 .wizard-image {
     margin-top: $spacing-24;
-    background: url($base-img) center no-repeat;
+    @include Background(var(--base-img),center no-repeat);
     // background-image: url("./images/backgrounds/base-img-light.svg");
     background-position: center;
     background-repeat: no-repeat;
