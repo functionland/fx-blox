@@ -7,7 +7,7 @@
     margin: 0;
     box-sizing: border-box;
     width: 100%;
-    margin-top: $spacing-70;
+    margin-top: $spacing-50;
     // overflow-y: scroll;
     font-size: $font-size-16;
 }
@@ -28,8 +28,10 @@
 
 .page-img {
     width: $spacing-150;
-    height: $spacing-200;
+    height: $spacing-180;
+    margin-bottom: $spacing-20;
     background: url($base-img) center no-repeat;
+    background-size: $spacing-120;
     margin: auto;
 }
 
@@ -37,11 +39,17 @@
     line-height: $line-height-40;
     margin-bottom: $spacing-20;
 
+    .blox-id-title {
+        padding-top: 5px;
+        line-height: $line-height-30;
+    }
+
     .blox-id-value {
         width: $spacing-320;
         border: $border-size-1 solid color(green-border);
         border-radius: $border-radius-5;
         padding: $spacing-0 $spacing-4;
+        line-height: $line-height-25;
         overflow: hidden;
         min-width: $spacing-40;
         white-space: nowrap;
@@ -54,6 +62,8 @@
         color: rgb(19, 135, 87);
         font-weight: 900;
         text-transform: uppercase;
+        line-height: $line-height-9;
+        font-size: $font-size-14;
     }
 }
 
@@ -64,15 +74,11 @@
 
     div {
         width: 40%;
-        height: $spacing-90;
+        height: $spacing-70;
         display: flex;
         justify-content: center;
         align-items: center;
-        background: linear-gradient(
-            135deg,
-            rgba(6, 181, 152, 0.7),
-            rgba(9, 147, 147, 0.6)
-        );
+        background: linear-gradient(135deg, #06b598b3, #09939399);
         border-radius: $border-radius-10;
         font-size: min(4vw, $font-size-25);
     }
@@ -92,7 +98,7 @@
     .installed-stacks-title {
         font-size: $font-size-18;
         font-weight: 600;
-        letter-spacing: 0.5px;
+        letter-spacing: $letter-spacing-05;
         margin-bottom: $spacing-10;
     }
 
@@ -118,15 +124,48 @@
             color: $primary-color;
         }
 
-        div {
+        .new-stack {
             height: $spacing-60;
             display: flex;
             align-items: center;
-            padding-left: $spacing-10;
+            padding: 0 $spacing-5 0 $spacing-10;
             background-color: color(gray-bg-secondary);
             border-radius: $border-radius-6;
             height: $spacing-40;
             margin-bottom: $spacing-5;
+            font-size: $font-size-14;
+
+            .stack-title {
+                padding-left: $spacing-28;
+                background: url($stack-icon) no-repeat;
+                background-position: 0%;
+                background-size: $spacing-24;
+            }
+
+            .stack-status {
+                text-align: right;
+                display: flex;
+                align-items: center;
+
+                .status-icon {
+                    width: $spacing-40;
+                    height: $spacing-28;
+                }
+
+                .running-state {
+                    background: url($success-mode) center no-repeat;
+                    background-size: $spacing-24;
+                }
+
+                .loading-state {
+                    background: url($in-progress-mode) center no-repeat;
+                    background-size: $spacing-24;
+                    animation: spinner 3s linear infinite;
+                }
+            }
+        }
+
+        div {
             animation: newStack 0.35s ease-out;
         }
     }
@@ -140,5 +179,19 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(720deg);
     }
 }
