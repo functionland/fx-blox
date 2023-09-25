@@ -98,7 +98,7 @@
     .installed-stacks-title {
         font-size: $font-size-18;
         font-weight: 600;
-        letter-spacing: 0.5px;
+        letter-spacing: $letter-spacing-05;
         margin-bottom: $spacing-10;
     }
 
@@ -128,15 +128,15 @@
             height: $spacing-60;
             display: flex;
             align-items: center;
-            padding: 0 $spacing-10;
+            padding: 0 $spacing-5 0 $spacing-10;
             background-color: color(gray-bg-secondary);
             border-radius: $border-radius-6;
             height: $spacing-40;
             margin-bottom: $spacing-5;
-            font-size: 14px;
+            font-size: $font-size-14;
 
             .stack-title {
-                padding-left: 28px;
+                padding-left: $spacing-28;
                 background: url($stack-icon) no-repeat;
                 background-position: 0%;
                 background-size: $spacing-24;
@@ -144,26 +144,21 @@
 
             .stack-status {
                 text-align: right;
-                // padding-right: 28px;
                 display: flex;
                 align-items: center;
 
-                .status-icon{
-                    // border: 1px solid red;
-                    width: 28px;
-                    height: 28px;
-                    margin-left: 5px;
+                .status-icon {
+                    width: $spacing-40;
+                    height: $spacing-28;
                 }
 
                 .running-state {
-                    background: url($success-mode) no-repeat;
-                    background-position: 100%;
+                    background: url($success-mode) center no-repeat;
                     background-size: $spacing-24;
                 }
 
                 .loading-state {
-                    background: url($in-progress-mode) no-repeat;
-                    background-position: 100%;
+                    background: url($in-progress-mode) center no-repeat;
                     background-size: $spacing-24;
                     animation: spinner 3s linear infinite;
                 }
@@ -173,10 +168,6 @@
         div {
             animation: newStack 0.35s ease-out;
         }
-
-        // & > div > div {
-        //     border: 1px solid red;
-        // }
     }
 }
 
