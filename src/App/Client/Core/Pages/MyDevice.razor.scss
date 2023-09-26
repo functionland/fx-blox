@@ -3,53 +3,62 @@
 @import "../Styles/components/_bit-accordion.scss";
 @import "../Styles/abstracts/_mixins.scss";
 
-.page-container {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: $spacing-50;
-    // overflow-y: scroll;
-    font-size: $font-size-16;
-}
 
-.info-container {
-    height: 90%;
-    width: 100%;
-    margin-bottom: $spacing-20;
 
-    & > div {
+
+.page-basic-style {
+    width: 100%;
+    height: 100%;
+    padding: 0 $spacing-12;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: auto;
+    background-color: color(app-bg);
+
+    .page-image {
+        margin-top: $spacing-70;
+        @include Background(var(--base-img));
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 120px 100px;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        min-height: 120px;
     }
-}
 
-.page-img {
-    width: $spacing-150;
-    height: $spacing-180;
-    margin-bottom: $spacing-20;
-    @include Background(var(--base-img));
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: $spacing-120;
-    margin: auto;
+    .page-content {
+        flex-grow: 1;
+        margin-top: $spacing-10;
+        width: 100%;
+        padding: 5px 0;
+    }
 }
 
 .state-info {
     line-height: $line-height-40;
     margin-bottom: $spacing-20;
+    text-align: center;
 
     .blox-id-title {
-        padding-top: 5px;
-        line-height: $line-height-30;
+        width: fit-content;
+        padding: 0 $spacing-8;
+        font-size: $font-size-12;
+        line-height: 12px;
+        margin: 12px auto 0 auto;
+        height: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid color(gray-border);
+        background-color: color(gray-border);
+        border-radius: $border-radius-4 $border-radius-4 0 0;
     }
 
     .blox-id-value {
         width: $spacing-320;
-        border: $border-size-1 solid color(green-border);
+        border: $border-size-1 solid color(gray-border);
         border-radius: $border-radius-5;
         padding: $spacing-0 $spacing-4;
         line-height: $line-height-25;
@@ -59,6 +68,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: $font-size-12;
+        margin: 0 auto;
     }
 
     .blox-state {
@@ -66,104 +76,157 @@
         font-weight: 900;
         text-transform: uppercase;
         line-height: $line-height-9;
-        font-size: $font-size-14;
+        font-size: $font-size-12;
     }
 }
 
-.hardware-info {
-    display: flex;
-    flex-direction: row !important;
-    gap: 10%;
+.chart-interpolation {
+    padding: $spacing-10;
+}
 
-    div {
-        width: 40%;
-        height: $spacing-70;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: linear-gradient(135deg, #06b598b3, #09939399);
-        border-radius: $border-radius-10;
-        font-size: min(4vw, $font-size-25);
+.gauge-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: center;
+    margin-bottom: $spacing-24;
+
+    .child:first-child {
+        margin-right: $font-size-25;
     }
+
+    .child:nth-child(2) {
+        margin-left: $font-size-25;
+    }
+
+    .gauge-blox {
+        text-align: center;
+
+        .blox-id-title {
+            width: fit-content;
+            padding: 0 $spacing-8;
+            font-size: $font-size-12;
+            line-height: 12px;
+            margin: 0px auto 0 auto;
+            height: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid color(gray-border);
+            background-color: color(gray-border);
+            border-radius: $border-radius-4 $border-radius-4 0 0;
+        }
+    }
+}
+
+::deep .gauge-blox .container {
+    padding: 10px 0;
+    width: 100%;
+}
+
+::deep .rz-arc-gauge-scale-value {
+    fill: $green-light-base;
+}
+
+::deep .rz-scheme-pastel {
+    height: 150px;
+}
+
+::deep .rz-arc-gauge {
+    height: 60px !important;
 }
 
 .installed-stacks {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: start;
-    padding: 0 $font-size-20;
-
-    div {
-        width: 100%;
-    }
+    width: 100%;
 
     .installed-stacks-title {
-        font-size: $font-size-18;
-        font-weight: 600;
+        width: 100%;
+        font-size: $font-size-16;
         letter-spacing: $letter-spacing-05;
         margin-bottom: $spacing-10;
     }
 
+    .blox-id-title {
+        width: fit-content;
+        padding: 0 $spacing-8;
+        font-size: $font-size-12;
+        line-height: 12px;
+        margin: 0px auto 0 0;
+        height: 20px;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid color(gray-border);
+        background-color: color(gray-border);
+        border-radius: $border-radius-4 $border-radius-4 0 0;
+        margin-bottom: $spacing-10;
+    }
+
     .installed-stacks-list {
-        padding: $spacing-4 $spacing-5;
-        border: $border-size-2 solid color(green-border);
-        border-radius: $border-radius-10 $border-radius-5 $border-radius-5
-            $border-radius-10;
+        width: 100%;
+        padding: $spacing-8 $spacing-5;
+        border: 1px solid color(gray-border);
+        border-radius: $border-radius-10 $border-radius-5 $border-radius-5 $border-radius-10;
         gap: $spacing-5;
-        max-height: $spacing-146;
+        /*max-height: $spacing-146;*/
         overflow-y: auto;
         overflow-x: hidden;
         margin-bottom: $spacing-10;
 
-        .add-stack-button {
-            width: $spacing-150;
-        }
+        .list-content {
+            width: 100%;
+            margin-bottom: $spacing-16;
 
-        p {
-            margin: $spacing-4;
-            text-align: center;
-            font-size: $font-size-16;
-            color: $primary-color;
-        }
-
-        .new-stack {
-            height: $spacing-60;
-            display: flex;
-            align-items: center;
-            padding: 0 $spacing-5 0 $spacing-10;
-            background-color: color(gray-bg-secondary);
-            border-radius: $border-radius-6;
-            height: $spacing-40;
-            margin-bottom: $spacing-5;
-            font-size: $font-size-14;
-
-            .stack-title {
-                padding-left: $spacing-28;
-                background: url($stack-icon) no-repeat;
-                background-position: 0%;
-                background-size: $spacing-24;
+            p {
+                margin: $spacing-4;
+                text-align: center;
+                font-size: $font-size-16;
+                color: $primary-color;
             }
 
-            .stack-status {
-                text-align: right;
+            .new-stack {
+                height: $spacing-60;
                 display: flex;
+                flex-flow: row nowrap;
                 align-items: center;
+                justify-content: space-between;
+                padding: 0 $spacing-5 0 $spacing-10;
+                background-color: color(gray-bg-secondary);
+                border-radius: $border-radius-6;
+                height: $spacing-40;
+                margin-bottom: $spacing-5;
+                font-size: $font-size-14;
 
-                .status-icon {
-                    width: $spacing-40;
-                    height: $spacing-28;
-                }
-
-                .running-state {
-                    background: url($success-mode) center no-repeat;
+                .stack-title {
+                    padding-left: $spacing-28;
+                    background: url($stack-icon) no-repeat;
+                    background-position: 0%;
                     background-size: $spacing-24;
                 }
 
-                .loading-state {
-                    background: url($in-progress-mode) center no-repeat;
-                    background-size: $spacing-24;
-                    animation: spinner 3s linear infinite;
+                .stack-status {
+                    text-align: right;
+                    display: flex;
+                    align-items: center;
+
+                    .status-icon {
+                        width: $spacing-40;
+                        height: $spacing-28;
+                    }
+
+                    .running-state {
+                        background: url($success-mode) center no-repeat;
+                        background-size: $spacing-24;
+                    }
+
+                    .loading-state {
+                        background: url($in-progress-mode) center no-repeat;
+                        background-size: $spacing-24;
+                        animation: spinner 3s linear infinite;
+                    }
                 }
             }
         }
@@ -179,6 +242,7 @@
         opacity: 0;
         transform: translateY(-5px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);

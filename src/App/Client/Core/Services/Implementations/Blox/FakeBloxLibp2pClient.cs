@@ -17,13 +17,15 @@ public class FakeBloxLibp2pClient : IBloxLibp2pClient
         await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
     }
 
+    private readonly Random _random = new();
+
     public async Task<BloxStatus> GetBloxStatusAsync(CancellationToken cancellationToken)
     {
-        await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
+        await Task.Delay(TimeSpan.FromMilliseconds(300), cancellationToken);
         return new BloxStatus
         {
-            CpuUsage = 0.25m,
-            MemoryUsage = 152132
+            CpuUsage = _random.Next(70, 85),
+            MemoryUsage = _random.Next(30, 40)
         };
     }
 
