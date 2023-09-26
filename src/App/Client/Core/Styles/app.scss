@@ -22,11 +22,19 @@ html, body {
         --#{$key}: #{$value};
     }
 
+    @each $key, $value in $backgrounds-light {
+        --#{$key}: #{$value};
+    }
+
     background-color: $gray-light-bg-primary;
 }
 
 html, body[data-theme="Dark"] {
     @each $key, $value in $colors-dark {
+        --#{$key}: #{$value};
+    }
+
+    @each $key, $value in $backgrounds-dark {
         --#{$key}: #{$value};
     }
 

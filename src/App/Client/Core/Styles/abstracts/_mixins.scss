@@ -6,3 +6,7 @@
     content: $icon;
     font-family: $Icons-Outline;
 }
+
+@mixin Background($url) {
+    background: $url;
+}
