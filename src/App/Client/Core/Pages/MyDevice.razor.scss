@@ -10,6 +10,17 @@
     margin-top: $spacing-50;
     // overflow-y: scroll;
     font-size: $font-size-16;
+
+    .chart-interpolation{
+        padding:$spacing-10;
+    }
+}
+::deep .rz-scheme-pastel{
+    height:150px;
+}
+
+::deep .rz-arc-gauge{
+    height:90px !important;
 }
 
 .info-container {
