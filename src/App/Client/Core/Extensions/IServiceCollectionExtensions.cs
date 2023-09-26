@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddScoped<IJavaScriptWalletService, JavaScriptWalletService>();
 
             services.AddSingleton<TokenListService>();
-            services.AddSingleton<IEthereumService, EthereumService>();
+            services.AddSingleton<IEthereumService, FakeEthereumService>();
 
             return services;
         }
