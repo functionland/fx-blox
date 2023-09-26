@@ -78,6 +78,18 @@
     }
 }
 
+.gauge-container {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: stretch;
+    align-items: center;
+}
+
+::deep .rz-arc-gauge-scale-value {
+    fill: $green-light-base;
+}
+
 .installed-stacks {
     display: flex;
     justify-content: flex-start;

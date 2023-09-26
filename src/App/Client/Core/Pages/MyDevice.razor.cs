@@ -13,6 +13,9 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         private BloxConnection? CurrentConnection { get; set; }
 
+        private IEnumerable<GaugeTickPosition> TickPositions = Enum.GetValues(typeof(GaugeTickPosition)).Cast<GaugeTickPosition>();
+        private GaugeTickPosition TickPosition = GaugeTickPosition.Outside;
+
         protected override void OnInitialized()
         {
             base.OnInitialized();
