@@ -20,14 +20,14 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         protected override async Task OnInitAsync()
         {
-            //var connection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
-            //{
-            //    HardwareId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
-            //    PeerId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
-            //    HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
-            //});
+            var connection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
+            {
+                HardwareId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+                PeerId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+                HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
+            });
 
-            //await connection.GetBloxStatusAsync();
+            await connection.GetBloxStatusAsync();
 
             await base.OnInitAsync();
         }
