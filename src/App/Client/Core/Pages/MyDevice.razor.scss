@@ -91,11 +91,39 @@
     justify-content: stretch;
     align-items: center;
     margin-bottom: $spacing-24;
+
+    .child:first-child {
+        margin-right: $font-size-25;
+    }
+
+    .child:nth-child(2) {
+        margin-left: $font-size-25;
+    }
+
+    .gauge-blox {
+        text-align: center;
+
+        .blox-id-title {
+            width: fit-content;
+            padding: 0 $spacing-8;
+            font-size: $font-size-12;
+            line-height: 12px;
+            margin: 12px auto 0 auto;
+            height: 20px;
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid color(gray-border);
+            background-color: color(gray-border);
+            border-radius: $border-radius-4 $border-radius-4 0 0;
+        }
+    }
 }
 
-::deep .container {
+::deep .gauge-blox .container {
     padding: 10px 0;
-    width: 66%;
+    width: 100%;
 }
 
 ::deep .rz-arc-gauge-scale-value {
