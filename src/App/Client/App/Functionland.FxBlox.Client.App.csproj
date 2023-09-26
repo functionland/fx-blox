@@ -12,7 +12,7 @@
         <EnableDefaultCssItems>false</EnableDefaultCssItems>
 
         <!-- Display name -->
-        <ApplicationTitle>Functionland.FxBlox.App</ApplicationTitle>
+        <ApplicationTitle>FxBlox RP</ApplicationTitle>
 
         <!-- App Identifier -->
         <ApplicationId>com.Functionland.FxBlox.Template</ApplicationId>
@@ -66,10 +66,10 @@
 
     <ItemGroup>
         <!-- App icon for Android -->
-        <MauiIcon Condition="$(TargetFramework.Contains('-android'))" Include="Resources\AppIcon\appicon.png" Color="#0065EF" ForegroundScale="0.68" />
+        <MauiIcon Condition="$(TargetFramework.Contains('-android'))" Include="Resources\AppIcon\appicon.png" Color="transparent" ForegroundScale="0.68" />
 
         <!-- App icon for all other platforms -->
-        <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#0065EF" />
+        <MauiIcon Include="Resources\AppIcon\appicon.png" Color="transparent" />
 
         <!-- Splash Screen -->
         <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#0D2960" BaseSize="128,128" />
