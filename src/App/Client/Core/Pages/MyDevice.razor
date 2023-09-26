@@ -3,7 +3,7 @@
 @inherits AppComponentBase
 
 <PageTitle>@Localizer[nameof(AppStrings.MyDevice)]</PageTitle>
-@* 
+@*
 <link rel="stylesheet" href="_content/Radzen.Blazor/css/material-base.css">
 <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script> *@
 
@@ -21,53 +21,51 @@
             }
         </div>
 
-        @if (BloxConnectionService.GetConnections().Any() && BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus != null)
-        {
-            <div class="gauge-container">
-                <div class="gauge-blox">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                <RadzenArcGauge Style="width: 100%; height: 50%;">
-                                    <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
-                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)" ShowValue=true>
-                                            <Template>
-                                                <div>
-                                                    @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%
-                                                </div>
-                                            </Template>
-                                        </RadzenArcGaugeScaleValue>
-                                    </RadzenArcGaugeScale>
-                                </RadzenArcGauge>
-                            </div>
+        <div class="gauge-container">
+            <div class="gauge-blox">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
+                            <RadzenArcGauge Style="width: 100%; height: 50%;">
+                                <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
+                                    <RadzenArcGaugeScaleValue Value="@((int)(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage??0))" ShowValue=true>
+                                        <Template>
+                                            <div>
+                                                @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%
+                                            </div>
+                                        </Template>
+                                    </RadzenArcGaugeScaleValue>
+                                </RadzenArcGaugeScale>
+                            </RadzenArcGauge>
                         </div>
                     </div>
-                    <div class="blox-id-title">CPU</div>
                 </div>
-
-                <div class="gauge-blox">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                <RadzenArcGauge Style="width: 100%; height: 50%;">
-                                    <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
-                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)" ShowValue=true>
-                                            <Template>
-                                                <div>
-                                                    @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)%
-                                                </div>
-                                            </Template>
-                                        </RadzenArcGaugeScaleValue>
-                                    </RadzenArcGaugeScale>
-                                </RadzenArcGauge>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blox-id-title">RAM</div>
-                </div>
+                <div class="blox-id-title">CPU</div>
             </div>
 
-            @* <div class="container chart-interpolation">
+            <div class="gauge-blox">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
+                            <RadzenArcGauge Style="width: 100%; height: 50%;">
+                                <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
+                                    <RadzenArcGaugeScaleValue Value="@((int)(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage??0))" ShowValue=true>
+                                        <Template>
+                                            <div>
+                                                @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)%
+                                            </div>
+                                        </Template>
+                                    </RadzenArcGaugeScaleValue>
+                                </RadzenArcGaugeScale>
+                            </RadzenArcGauge>
+                        </div>
+                    </div>
+                </div>
+                <div class="blox-id-title">RAM</div>
+            </div>
+        </div>
+
+        @* <div class="container chart-interpolation">
         <div class="row">
         <div class="col-sm-12 my-5">
         <RadzenChart>
@@ -82,8 +80,8 @@
         </div>
         </div>
         </div> *@
-        }
-    <div class="installed-stacks">
+
+        <div class="installed-stacks">
 
             @if (CurrentConnection is not null)
             {
@@ -125,9 +123,9 @@
                         }
                     </div>
                     <FxButton Text="Add Stack"
-                              Width="150px"
-                              ButtonStyle="FxButtonStyle.Outline"
-                              OnClick="AddStackClicked" />
+                          Width="150px"
+                          ButtonStyle="FxButtonStyle.Outline"
+                          OnClick="AddStackClicked" />
                 </div>
             }
         </div>

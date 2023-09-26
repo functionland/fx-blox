@@ -1,9 +1,10 @@
 ﻿using System.Globalization;
-
+using System.Timers;
 using Functionland.FxBlox.Client.Core.BloxStacks.Implementations;
 using Functionland.FxBlox.Client.Core.Models;
 
 using Radzen.Blazor;
+using Timer = System.Timers.Timer;
 
 namespace Functionland.FxBlox.Client.Core.Pages
 {
@@ -20,16 +21,34 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         protected override async Task OnInitAsync()
         {
-            var connection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
+            CurrentConnection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
             {
                 HardwareId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
                 PeerId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
                 HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
             });
 
-            await connection.GetBloxStatusAsync();
+            StartUpdatingStatus();
 
             await base.OnInitAsync();
+        }
+
+        private void StartUpdatingStatus()
+        {
+            var _ = Task.Run(async () =>
+            {
+                while (true)
+                {
+                    if (CurrentConnection != null)
+                    {
+                        await CurrentConnection.GetBloxStatusAsync();
+                    }
+
+                    await InvokeAsync(StateHasChanged);
+                    
+                    await Task.Delay(TimeSpan.FromSeconds(1));
+                }
+            });
         }
 
         protected override async Task OnParamsSetAsync()
