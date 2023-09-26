@@ -18,7 +18,7 @@
     background-color: color(app-bg);
 
     .page-image {
-        margin-top: $spacing-24;
+        margin-top: $spacing-70;
         @include Background(var(--base-img));
         background-position: center bottom;
         background-repeat: no-repeat;
