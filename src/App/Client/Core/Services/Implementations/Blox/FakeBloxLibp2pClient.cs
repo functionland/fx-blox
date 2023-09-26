@@ -22,8 +22,8 @@ public class FakeBloxLibp2pClient : IBloxLibp2pClient
         await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
         return new BloxStatus
         {
-            CpuUsage = 0.25m,
-            MemoryUsage = 152132
+            CpuUsage = 85m,
+            MemoryUsage = 35m
         };
     }
 

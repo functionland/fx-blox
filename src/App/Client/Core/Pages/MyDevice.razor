@@ -29,29 +29,8 @@
                         <div class="row">
                             <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
                                 <RadzenArcGauge Style="width: 100%; height: 50%;">
-                                    <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" TickPosition=@TickPosition Y="0.9" Margin="0">
-                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)" ShowValue=true>
-                                            <Template>
-                                                <h4>
-                                                    @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%
-                                                </h4>
-                                            </Template>
-                                        </RadzenArcGaugeScaleValue>
-                                    </RadzenArcGaugeScale>
-                                </RadzenArcGauge>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blox-id-title">Cpu</div>
-                </div>
-
-                <div class="gauge-blox">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
-                                <RadzenArcGauge Style="width: 100%; height: 50%;">
                                     <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
-                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)" ShowValue=true>
+                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)" ShowValue=true>
                                             <Template>
                                                 <div>
                                                     @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%
@@ -63,7 +42,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blox-id-title">Ram</div>
+                    <div class="blox-id-title">CPU</div>
+                </div>
+
+                <div class="gauge-blox">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
+                                <RadzenArcGauge Style="width: 100%; height: 50%;">
+                                    <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
+                                        <RadzenArcGaugeScaleValue Value="@((double)BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)" ShowValue=true>
+                                            <Template>
+                                                <div>
+                                                    @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)%
+                                                </div>
+                                            </Template>
+                                        </RadzenArcGaugeScaleValue>
+                                    </RadzenArcGaugeScale>
+                                </RadzenArcGauge>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blox-id-title">RAM</div>
                 </div>
             </div>
 
