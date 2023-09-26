@@ -97,10 +97,7 @@
     flex-flow: column nowrap;
     justify-content: stretch;
     align-items: flex-start;
-
-    .description-title {
-        margin-bottom: $spacing-10;
-    }
+    // margin-top: 10px;
 }
 
 .progress-container {
@@ -122,6 +119,15 @@
 
 .center-text {
     text-align: center;
+    width: 100%;
+}
+
+.welcome-desc{
+    margin-top: 10px;
+}
+
+.list-title{
+    margin-bottom: 5px;
 }
 
 .wizard-action-wrapper {
@@ -261,5 +267,35 @@ ul.list-wrapper {
             border-radius: 5px;
             padding-left: 10px;
         }
+    }
+}
+
+.add-animation-content {
+    animation: newWizContent 0.4s ease-out;
+}
+
+.add-animation-list {
+    animation: newList 0.5s ease-out;
+}
+
+@keyframes newWizContent {
+    0% {
+        opacity: 0;
+        transform: translateX(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes newList {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

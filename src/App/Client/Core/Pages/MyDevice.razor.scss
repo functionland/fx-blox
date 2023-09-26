@@ -45,10 +45,11 @@
     .blox-id-title {
         padding-top: 5px;
         line-height: $line-height-30;
+        font-size: 15px;
     }
 
     .blox-id-value {
-        width: $spacing-320;
+        width: 80%;
         border: $border-size-1 solid color(green-border);
         border-radius: $border-radius-5;
         padding: $spacing-0 $spacing-4;
@@ -59,6 +60,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         font-size: $font-size-12;
+        text-align: center;
     }
 
     .blox-state {
@@ -140,7 +142,9 @@
 
             .stack-title {
                 padding-left: $spacing-28;
-                background: url($stack-icon) no-repeat;
+                // background: url($stack-icon) no-repeat;
+                @include Background(var(--stack-icon));
+                background-repeat: no-repeat;
                 background-position: 0%;
                 background-size: $spacing-24;
             }
@@ -164,6 +168,10 @@
                     background: url($in-progress-mode) center no-repeat;
                     background-size: $spacing-24;
                     animation: spinner 3s linear infinite;
+                }
+
+                .stack-value {
+                    color: $primary-color;
                 }
             }
         }

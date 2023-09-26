@@ -7,25 +7,25 @@
 <div class="wizard-page">
     @if (WizardStep == BloxAddWizardStep.Welcome)
     {
-        <div class="wizard-image welcome-image"></div>
+        <div class="wizard-image welcome-image add-animation-content"></div>
 
-        <div class="wizard-title">
+        <div class="wizard-title add-animation-content">
             <div class="wizard-welcome">WELCOME</div>
             <div>Blox app setup</div>
         </div>
 
-        <div class="wizard-content center-text intro-des">
-            <div class="wizard-description center-text">
-                <div class="description-title">
+        <div class="wizard-content center-text intro-des add-animation-content">
+            <div class="wizard-description welcome-desc">
+                <div class="center-text">
                     Make sure your Blox is turned on!
                 </div>
-                <div class="description-title">
+                <div class="center-text">
                     And is somewhere near you…
                 </div>
             </div>
         </div>
 
-        <div class="wizard-action-wrapper">
+        <div class="wizard-action-wrapper add-animation-content">
             <FxButton Text="Setup a new device"
                 ButtonStyle="FxButtonStyle.Normal"
                 ButtonSize="FxButtonSize.Stretch"
@@ -42,11 +42,11 @@
         </div>
 
         <div class="wizard-image setup-img"></div>
-        <div class="wizard-title">Setup your wallet</div>
-        <div class="wizard-content">
+        <div class="wizard-title add-animation-content">Setup your wallet</div>
+        <div class="wizard-content add-animation-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                <div class="description-title">
+                <div class="list-title">
                     Select the network:
                 </div>
                 @*<BitDropdown class="action-section" Items="GetBlockchainNetworks()" @bind-Value="SelectedNetwork" />*@
@@ -95,11 +95,11 @@
         </div> 
 
         <div class="wizard-image hotspot-img"></div>
-        <div class="wizard-title">Connect to Blox hotspot</div>
-        <div class="wizard-content">
+        <div class="wizard-title add-animation-content">Connect to Blox hotspot</div>
+        <div class="wizard-content add-animation-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                    <div class="description-title center-text">
+                    <div class=" center-text">
                         Make sure your blox is turned on and its hotspot is available.
                     </div>
                 </div>
@@ -145,13 +145,13 @@
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
-                    <div class="description-title">
+                    <div class="list-title">
                         Select the Wi-Fi for you Blox to connect:
                     </div>
                     @*<BitDropdown Items="AvailableWifiList" @bind-Value="SelectedWifiForBlox" />*@
                     <ul class="list-wrapper">
                     @foreach(var item in AvailableWifiList) {
-                            <li class="list-item" @onclick="() => WifiClicked(item)">
+                            <li class="list-item add-animation-list" @onclick="() => WifiClicked(item)">
                             <div class="item-box">
                                 <div class="item-text">@item.Item.Essid</div>
                                     <div class="item-check  @(item.IsSelected ? "item-check-selected" : string.Empty)"></div>
