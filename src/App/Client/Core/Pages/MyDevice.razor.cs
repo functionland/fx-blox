@@ -16,9 +16,18 @@ namespace Functionland.FxBlox.Client.Core.Pages
         private IEnumerable<GaugeTickPosition> TickPositions = Enum.GetValues(typeof(GaugeTickPosition)).Cast<GaugeTickPosition>();
         private GaugeTickPosition TickPosition = GaugeTickPosition.Outside;
 
-        protected override void OnInitialized()
+        protected override async Task OnInitAsync()
         {
-            base.OnInitialized();
+            var connection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
+            {
+                HardwareId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+                PeerId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+                HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
+            });
+
+            await connection.GetBloxStatusAsync();
+
+            await base.OnInitAsync();
         }
 
         protected override async Task OnParamsSetAsync()
