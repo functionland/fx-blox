@@ -10,8 +10,8 @@
         <div class="wizard-image welcome-image"></div>
 
         <div class="wizard-title">
-            <div class="wizard-welcome">WELCOME</div>
-            <div>Blox app setup</div>
+            <div class="wizard-welcome">WELCOME TO</div>
+            <div>Blox Setup</div>
         </div>
 
         <div class="wizard-content center-text intro-des">
@@ -19,14 +19,11 @@
                 <div class="description-title">
                     Make sure your Blox is turned on!
                 </div>
-                <div class="description-title">
-                    And is somewhere near you…
-                </div>
             </div>
         </div>
 
         <div class="wizard-action-wrapper">
-            <FxButton Text="Setup a new device"
+            <FxButton Text="Start"
                 ButtonStyle="FxButtonStyle.Normal"
                 ButtonSize="FxButtonSize.Stretch"
                 OnClick="@(GoToNextStepAsync)">
@@ -95,7 +92,7 @@
         </div> 
 
         <div class="wizard-image hotspot-img"></div>
-        <div class="wizard-title">Connect to Blox hotspot</div>
+        <div class="wizard-title">Connect to Blox</div>
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {
                 <div class="wizard-description">
@@ -113,7 +110,7 @@
         <div class="wizard-action-wrapper">
             @if (ProgressItems.Count <= 0)
             {
-                <FxButton Text="Connect to hotspot"
+                <FxButton Text="Connect to Blox"
                     ButtonStyle="FxButtonStyle.Normal"
                     ButtonSize="FxButtonSize.Stretch"
                     OnClick="@(ConnectToHotspotClicked)">

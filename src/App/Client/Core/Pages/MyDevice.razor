@@ -12,12 +12,12 @@
     <div class="page-content">
         <div class="state-info">
 
-            <div class="blox-state">@BloxConnectionService.GetConnections().FirstOrDefault()?.Libp2pStatus</div>
+            <div class="blox-state">@CurrentConnection?.Libp2pStatus</div>
 
             @if (BloxConnectionService.GetConnections().Any())
             {
                 <div class="blox-id-title">Blox Peer ID</div>
-                <div class="blox-id-value">@(BloxConnectionService.GetConnections().FirstOrDefault()?.Device.HardwareId)</div>
+                <div class="blox-id-value">@(CurrentConnection?.Device.HardwareId)</div>
             }
         </div>
 
@@ -28,10 +28,10 @@
                         <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
                             <RadzenArcGauge Style="width: 100%; height: 50%;">
                                 <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
-                                    <RadzenArcGaugeScaleValue Value="@((int)(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage??0))" ShowValue=true>
+                                    <RadzenArcGaugeScaleValue Value="@((int)(CurrentConnection?.LastStatus?.CpuUsage??0))" ShowValue=true>
                                         <Template>
                                             <div>
-                                                @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.CpuUsage)%
+                                                @(CurrentConnection?.LastStatus?.CpuUsage)%
                                             </div>
                                         </Template>
                                     </RadzenArcGaugeScaleValue>
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blox-id-title">CPU</div>
+                <div class="gauge-title">CPU</div>
             </div>
 
             <div class="gauge-blox">
@@ -49,10 +49,10 @@
                         <div class="col-sm-12 col-lg-8 my-3 my-lg-5">
                             <RadzenArcGauge Style="width: 100%; height: 50%;">
                                 <RadzenArcGaugeScale Step="20" Min="0" Max="100" MinorStep="2" Radius="1.5" Y="0.9" Margin="0">
-                                    <RadzenArcGaugeScaleValue Value="@((int)(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage??0))" ShowValue=true>
+                                    <RadzenArcGaugeScaleValue Value="@((int)(CurrentConnection?.LastStatus?.MemoryUsage??0))" ShowValue=true>
                                         <Template>
                                             <div>
-                                                @(BloxConnectionService.GetConnections().FirstOrDefault()?.LastStatus?.MemoryUsage)%
+                                                @(CurrentConnection?.LastStatus?.MemoryUsage)%
                                             </div>
                                         </Template>
                                     </RadzenArcGaugeScaleValue>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="blox-id-title">RAM</div>
+                <div class="gauge-title">RAM</div>
             </div>
         </div>
 
@@ -85,7 +85,7 @@
 
             @if (CurrentConnection is not null)
             {
-                <div class="blox-id-title">Installed Stacks:</div>
+                <div class="blox-id-title">Installed Stacks</div>
 
                 <div class="installed-stacks-list">
                     <div class="list-content">

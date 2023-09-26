@@ -63,7 +63,7 @@
     background-size: $spacing-300;
     width: 100%;
     min-height: $spacing-270;
-    margin: $spacing-70 0 $spacing-40;
+    margin: $spacing-150 0 $spacing-40;
 }
 
 .wizard-title {
@@ -96,7 +96,6 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: stretch;
-    align-items: flex-start;
 
     .description-title {
         margin-bottom: $spacing-10;
