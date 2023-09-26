@@ -46,7 +46,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             return await HotspotClient.GetBloxInfoAsync(cancellationToken);
         }
 
-        public async Task ConnectBloxToWifiAsync(string ssid, string password, CancellationToken cancellationToken = default)
+        public async Task ConnectBloxToWifiAsync(string ssid, string? password, CancellationToken cancellationToken = default)
         {
             await HotspotClient.ConnectToWifiAsync(ssid, password, cancellationToken);
         }

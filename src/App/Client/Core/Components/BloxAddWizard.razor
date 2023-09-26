@@ -137,7 +137,7 @@
         </div> 
 
         // Temp placement
-        <PasswordModal IsOpen="IsPasswordModalOpen" IsOpenChanged="OnPasswordModalOpenChanged" OnSubmit="OnPasswordSubmitAsync" WifiName="@(SelectedWifiForBlox?.Essid)"></PasswordModal>
+        <InputModal @ref="_passwordModalRef"/>
         // Temp placement
 
         <div class="wizard-image wifi-img"></div>
@@ -186,3 +186,5 @@
         </div>
     }
 </div>
+
+        <FxToast @ref="_toastRef"/>
