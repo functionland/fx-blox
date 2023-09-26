@@ -1,4 +1,6 @@
-﻿using Functionland.FxBlox.Client.Core.BloxStacks.Implementations;
+﻿using System.Globalization;
+
+using Functionland.FxBlox.Client.Core.BloxStacks.Implementations;
 using Functionland.FxBlox.Client.Core.Models;
 
 using Radzen.Blazor;
@@ -87,5 +89,61 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
             StateHasChanged();
         }
+
+        //chart
+        Interpolation interpolation = Interpolation.Spline;
+        string FormatAsUSD(object value)
+        {
+            return ((double)value).ToString("C0", CultureInfo.CreateSpecificCulture("en-US"));
+        }
+
+        string FormatAsPercent(object value)
+        {
+            if (value != null)
+            {
+                return value.ToString() + "%";
+            }
+
+            return string.Empty;
+        }
+
+
+        DataItem[] revenue2020 = new DataItem[] {
+        new DataItem
+        {
+            Hour = ("10"),
+            Usage = 20
+        },
+        new DataItem
+        {
+            Hour = ("11"),
+            Usage = 30
+        },
+        new DataItem
+        {
+            Hour = ("12"),
+            Usage = 10
+        },
+        new DataItem
+        {
+            Hour = ("13"),
+            Usage = 15
+        },
+        new DataItem
+        {
+            Hour = ("14"),
+            Usage = 20
+        },
+        new DataItem
+        {
+            Hour = ("15"),
+            Usage = 30
+        },
+    };
+    }
+    public class DataItem
+    {
+        public string Hour { get; set; }
+        public double Usage { get; set; }
     }
 }
