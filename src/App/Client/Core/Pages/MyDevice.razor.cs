@@ -13,9 +13,18 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         private BloxConnection? CurrentConnection { get; set; }
 
-        protected override void OnInitialized()
+        protected override async Task OnInitAsync()
         {
-            base.OnInitialized();
+            //var connection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
+            //{
+            //    HardwareId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+            //    PeerId = "gadfjghsdfugaifjhsaslijfghsliujfhslfh",
+            //    HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
+            //});
+
+            //await connection.GetBloxStatusAsync();
+
+            await base.OnInitAsync();
         }
 
         protected override async Task OnParamsSetAsync()
