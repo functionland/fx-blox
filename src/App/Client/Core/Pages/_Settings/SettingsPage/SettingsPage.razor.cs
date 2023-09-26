@@ -64,9 +64,8 @@ public partial class SettingsPage
     {
         if (string.IsNullOrEmpty(transaction)) return;
 
-        var session = Preferences.Get("sessionStruct", string.Empty);
-        var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
-        var currentWallet = WalletService.GetCurrentAddress(sessionStruct, "eip155");
+
+        var currentWallet = WalletService.GetCurrentAddress();
 
         var chainId = currentWallet.ChainId;
         Uri uri = null;

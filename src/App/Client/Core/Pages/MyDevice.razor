@@ -89,7 +89,7 @@
                             @($"{stack.Stack.Title}  {stack.Status}")
                         </div> *@
 
-                        <div class="new-stack">
+                        <div class="new-stack" @onclick="GetBalance">
                             <div class="stack-title">
                                 @stack.Stack.Title
                             </div>
@@ -98,7 +98,7 @@
                                 @if (stack.Status.ToString() == "Running")
                                 {
                                     <div>
-                                        0.000034 ETH
+                                        @(stack.EthereumBalance) ETH
                                     </div>
                                     <div class="status-icon running-state"></div>
                                 }

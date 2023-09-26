@@ -20,9 +20,13 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             return new SessionStruct();
         }
 
-        public Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain)
+        public Caip25Address GetCurrentAddress()
         {
-            throw new NotImplementedException();
+            return new Caip25Address()
+            {
+                Address = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb",
+                ChainId = "eip155:5"
+            };
         }
 
         public virtual void OpenConnectWallet(string url)

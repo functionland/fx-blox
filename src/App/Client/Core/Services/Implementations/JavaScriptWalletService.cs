@@ -14,6 +14,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public partial class JavaScriptWalletService : IJavaScriptWalletService
     {
+        private const string SessionStruct = "sessionStruct";
         private readonly IJSRuntime _js;
         public JavaScriptWalletService(IJSRuntime jsRuntime)
         {
@@ -25,7 +26,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             try
             {
                 var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
-                Preferences.Set("sessionStruct", sessionStruct);
+                Preferences.Set(SessionStruct, sessionStruct);
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(sessionStruct);
             }
             catch (Exception ex)
@@ -45,10 +46,11 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         {
             try
             {
-                var session = Preferences.Get("sessionStruct", string.Empty);
+                var session = Preferences.Get(SessionStruct, string.Empty);
                 var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
                 var topic = sessionStruct.Topic;
-                var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+
+                var currentWallet = GetCurrentAddress();
                 var toWalletId = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb";
                 var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
                 var hexAmount = $"0x{amount}";
@@ -66,10 +68,10 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         {
             try
             {
-                var session = Preferences.Get("sessionStruct", string.Empty);
+                var session = Preferences.Get(SessionStruct, string.Empty);
                 var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
                 var topic = sessionStruct.Topic;
-                var currentWallet = GetCurrentAddress(sessionStruct, "eip155");
+                var currentWallet = GetCurrentAddress();
 
                 var transaction = await _js.InvokeAsync<string>("WalletConnect.SignMessage", message, currentWallet.Address, topic, currentWallet.ChainId);
 
@@ -82,24 +84,36 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
         }
 
 
-        public Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain)
+        public Caip25Address GetCurrentAddress()
         {
-            var defaultNamespace = currentSession.Namespaces[chain];
-
-            if (defaultNamespace.Accounts.Length == 0)
-                return null;
-
-            var fullAddress = defaultNamespace.Accounts[0];
-            var addressParts = fullAddress.Split(":");
-
-            var address = addressParts[2];
-            var chainId = string.Join(':', addressParts.Take(2));
-
-            return new Caip25Address()
+            try
             {
-                Address = address,
-                ChainId = chainId,
-            };
+                var chain = "eip155";
+                var session = Preferences.Get(SessionStruct, string.Empty);
+                var sessionStruct = Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(session);
+
+                var defaultNamespace = sessionStruct.Namespaces[chain];
+
+                if (defaultNamespace.Accounts.Length == 0)
+                    return null;
+
+                var fullAddress = defaultNamespace.Accounts[0];
+                var addressParts = fullAddress.Split(":");
+
+                var address = addressParts[2];
+                var chainId = string.Join(':', addressParts.Take(2));
+
+                return new Caip25Address()
+                {
+                    Address = address,
+                    ChainId = chainId,
+                };
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+           
         }
     }
 }

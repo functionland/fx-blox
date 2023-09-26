@@ -2,6 +2,7 @@
 using Functionland.FxBlox.Client.Core.Models;
 
 using Radzen.Blazor;
+using System;
 
 namespace Functionland.FxBlox.Client.Core.Pages
 {
@@ -9,6 +10,11 @@ namespace Functionland.FxBlox.Client.Core.Pages
     {
         [AutoInject] private IBloxConnectionService BloxConnectionService { get; set; } = default!;
         [AutoInject] private IBloxStackManager BloxStackManager { get; set; } = default!;
+
+        [AutoInject] private IEthereumService EthereumService { get; set; } = default!;
+
+        [AutoInject] private IWalletService WalletService { get; set; } = default!;
+
         private bool _applyAnimation = false;
 
         private BloxConnection? CurrentConnection { get; set; }
@@ -65,6 +71,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
             try
             {
                 await BloxStackManager.DeployStackAsync(bloxStack);
+                bloxStack.EthereumBalance = await GetBalance();
                 bloxStack.Status = BloxStackStatus.Running;
             }
             catch (Exception ex)
@@ -74,6 +81,13 @@ namespace Functionland.FxBlox.Client.Core.Pages
             }
 
             StateHasChanged();
+        }
+
+        private async Task<decimal> GetBalance()
+        {
+            var walletAddress = WalletService.GetCurrentAddress();
+            var balance = (await EthereumService.GetEtherBalanceAsync(walletAddress.Address, walletAddress.ChainId))?.Balance ?? 1m;
+            return Math.Truncate(balance * 1000000m) / 1000000m;
         }
     }
 }

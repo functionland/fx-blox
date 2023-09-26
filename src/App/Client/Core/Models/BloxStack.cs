@@ -15,5 +15,6 @@ namespace Functionland.FxBlox.Client.Core.Models
         public required BloxDevice Device { get; set; }
         public required IFxStack Stack { get; set; }
         public BloxStackStatus? Status { get; set; }
+        public decimal EthereumBalance { get; set; }
     }
 }

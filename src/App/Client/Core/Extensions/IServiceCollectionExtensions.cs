@@ -1,5 +1,8 @@
 ﻿using Functionland.FxBlox.Client.Core.Services.Contracts;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
+using Functionland.FxBlox.Client.Core.Services.Implementations.Ethereum;
+using Functionland.FxBlox.Client.Core.Services.Implementations.EthereumService;
+using Nethereum.Web3;
 using WalletConnectSharp.Storage.Interfaces;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -37,6 +40,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             services.AddScoped<IWalletService, FakeWalletService>();
             services.AddScoped<IJavaScriptWalletService, JavaScriptWalletService>();
+
+            services.AddSingleton<TokenListService>();
+            services.AddSingleton<IEthereumService, EthereumService>();
 
             return services;
         }

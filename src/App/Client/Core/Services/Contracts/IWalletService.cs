@@ -16,6 +16,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Contracts
         Task<string> TransferSomeMoneyAsync();
 
         Task<string> SignMessage(string message);
-        Caip25Address GetCurrentAddress(SessionStruct currentSession, string chain);
+        Caip25Address GetCurrentAddress();
     }
 }
