@@ -14,8 +14,9 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    overflow: auto;
     background-color: color(app-bg);
+    //overflow: auto;
+    height: calc(100vh - 81px);
 
     .page-image {
         margin-top: $spacing-70;
@@ -32,8 +33,15 @@
         margin-top: $spacing-10;
         width: 100%;
         padding: 5px 0;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        //tt
+        overflow: hidden;
     }
 }
+
 
 .state-info {
     line-height: $line-height-40;
@@ -141,7 +149,12 @@
 .installed-stacks {
     width: 100%;
     display: flex;
-    flex-flow: column;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    //tt
+    overflow: hidden;
 
     .installed-stacks-title {
         width: 100%;
@@ -174,17 +187,30 @@
         border: 1px solid color(gray-border);
         border-radius: $border-radius-10 $border-radius-5 $border-radius-5 $border-radius-10;
         gap: $spacing-5;
-        /*max-height: $spacing-146;*/
-        overflow-y: auto;
-        overflow-x: hidden;
         margin-bottom: $spacing-10;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-grow: 1;
+        overflow: auto;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 80px;
 
         .list-content {
             width: 100%;
             margin-bottom: $spacing-16;
+            flex-grow: 1;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
 
             p {
-                margin: $spacing-4;
+                margin: auto $spacing-4;
                 text-align: center;
                 font-size: $font-size-16;
                 color: $primary-color;
