@@ -11,6 +11,7 @@
 
 .theme-mode {
     padding: $spacing-16 $spacing-21;
+    animation: initialAnimation 0.4s ease-out;
 }
 
 .mode-content {
@@ -151,4 +152,15 @@
     -webkit-border-radius: 7.5px;
     border-radius: 7.5px;
     background-color: $pure-white;
+}
+
+@keyframes initialAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
