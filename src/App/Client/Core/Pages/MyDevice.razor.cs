@@ -21,6 +21,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
         [AutoInject] private IWalletService WalletService { get; set; } = default!;
 
         private bool _applyAnimation = false;
+        private FxToast _toastRef = default!;
 
         private BloxConnection? CurrentConnection { get; set; }
 
@@ -133,7 +134,13 @@ namespace Functionland.FxBlox.Client.Core.Pages
             {
                 try
                 {
-                    bloxStack.EthereumBalance = await GetBalance();
+                    var newBalance = await GetBalance();
+                    if (bloxStack.EthereumBalance != newBalance)
+                    {
+                        var diff = newBalance - bloxStack.EthereumBalance;
+                        bloxStack.EthereumBalance = newBalance;
+                        await _toastRef.HandleShow("Wallet Balance Change", diff.ToString(), FxToastType.Info);
+                    }
                 }
                 catch
                 { }
