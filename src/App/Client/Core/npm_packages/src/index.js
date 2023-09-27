@@ -24,10 +24,19 @@ export async function ConnectToWallet(ethereumChain) {
         },
     };
 
+    var interval = setInterval(function () {
+        var walletConnectModal = document.querySelector("body > wcm-modal");
+        if (!!walletConnectModal) {
+            var modal = walletConnectModal.shadowRoot.querySelector("#wcm-modal");
+            if (!!modal) {
+                modal.style = "z-index: 100;opacity: 1;";
+                clearInterval(interval);
+            }
+        }
+    }, 500);
+
     const session = await web3Modal.connect(connectArgument);
-
     return JSON.stringify(session);
-
 }
 
 export async function TransferMoney(topic, fromwalletid, towalletid, chainId, amount) {
