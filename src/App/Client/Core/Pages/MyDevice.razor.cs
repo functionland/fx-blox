@@ -7,6 +7,7 @@ using Radzen.Blazor;
 using System;
 using Timer = System.Timers.Timer;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Functionland.FxBlox.Client.Core.Pages
 {
@@ -45,7 +46,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
                     }
 
                     await InvokeAsync(StateHasChanged);
-                    
+
                     await Task.Delay(TimeSpan.FromSeconds(1));
                 }
             });
@@ -67,6 +68,14 @@ namespace Functionland.FxBlox.Client.Core.Pages
                     await connection.ConnectToLibp2pAsync();
 
                 await connection.GetBloxStatusAsync();
+            }
+
+            if (CurrentConnection != null && CurrentConnection.Stacks != null)
+            {
+                foreach (var stack in CurrentConnection.Stacks)
+                {
+                    _ = UpdateBalanceEvery10Sec(stack);
+                }
             }
         }
 
@@ -99,6 +108,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
             {
                 await BloxStackManager.DeployStackAsync(bloxStack);
                 bloxStack.EthereumBalance = await GetBalance();
+                _ = UpdateBalanceEvery10Sec(bloxStack);
                 bloxStack.Status = BloxStackStatus.Running;
             }
             catch (Exception ex)
@@ -115,6 +125,21 @@ namespace Functionland.FxBlox.Client.Core.Pages
             var walletAddress = WalletService.GetCurrentAddress();
             var balance = (await EthereumService.GetEtherBalanceAsync(walletAddress.Address, walletAddress.ChainId))?.Balance ?? 1m;
             return Math.Truncate(balance * 1000000m) / 1000000m;
+        }
+
+        private async Task UpdateBalanceEvery10Sec(BloxStack bloxStack)
+        {
+            while (true)
+            {
+                try
+                {
+                    bloxStack.EthereumBalance = await GetBalance();
+                }
+                catch
+                { }
+
+                await Task.Delay(TimeSpan.FromSeconds(10));
+            }
         }
 
         //chart
