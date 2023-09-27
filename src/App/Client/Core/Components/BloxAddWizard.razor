@@ -32,13 +32,13 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectToWallet)
     {
-         <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
             <div class="progress-empty"></div>
         </div>
 
-        <div class="wizard-image setup-img"></div>
+        <div class="wizard-image setup-img add-animation-content"></div>
         <div class="wizard-title add-animation-content">Setup your wallet</div>
         <div class="wizard-content add-animation-content">
             @if(ProgressItems.Count <= 0) {
@@ -85,13 +85,18 @@
     } 
     else if (WizardStep == BloxAddWizardStep.ConnectToHotspot)
     {
-         <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-empty"></div>
         </div> 
 
-        <div class="wizard-image hotspot-img"></div>
+        <div class="wizard-mult-img add-animation-content">
+            <div class="phone-icon"></div>
+            <div class="arrow-icon"></div>
+            <div class="blox-icon"></div>
+        </div>
+
         <div class="wizard-title add-animation-content">Connect to Blox</div>
         <div class="wizard-content add-animation-content">
             @if(ProgressItems.Count <= 0) {
@@ -127,7 +132,7 @@
     }
     else if (WizardStep == BloxAddWizardStep.ConnectBloxToWifi)
     {
-         <div class="progress-bar">
+        <div class="progress-bar">
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
             <div class="progress-fill"></div>
@@ -137,7 +142,12 @@
         <InputModal @ref="_passwordModalRef"/>
         // Temp placement
 
-        <div class="wizard-image wifi-img"></div>
+        <div class="wizard-mult-img add-animation-content">
+            <div class="blox-icon"></div>
+            <div class="arrow-icon"></div>
+            <div class="wifi-icon"></div>
+        </div>
+
         <div class="wizard-title add-animation-content">Connect Blox to Wi-Fi</div>
         <div class="wizard-content">
             @if(ProgressItems.Count <= 0) {

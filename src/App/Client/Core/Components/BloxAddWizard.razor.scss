@@ -47,12 +47,53 @@
 .wizard-image {
     margin-top: $spacing-24;
     @include Background(var(--base-img));
-    // background-image: url("./images/backgrounds/base-img-light.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: $spacing-146 $spacing-190;
     width: 100%;
     min-height: $spacing-190;
+}
+
+.wizard-mult-img {
+    margin-top: $spacing-24;
+    width: 100%;
+    min-height: $spacing-190;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        width: $spacing-90;
+        height: $spacing-110;
+    }
+
+    .phone-icon {
+        @include Background(var(--phone-icon));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $spacing-70;
+    }
+
+    .arrow-icon {
+        @include Background(var(--arrow-icon));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $spacing-50;
+    }
+
+    .wifi-icon {
+        @include Background(var(--wifi-icon));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $spacing-70;
+    }
+
+    .blox-icon {
+        @include Background(var(--base-img));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: $spacing-70;
+    }
 }
 
 .welcome-image {
@@ -268,7 +309,7 @@ ul.list-wrapper {
 }
 
 .add-animation-list {
-    animation: newList 0.5s ease-out;
+    animation: newList 0.7s ease-out;
 }
 
 @keyframes newWizContent {
@@ -284,6 +325,10 @@ ul.list-wrapper {
 
 @keyframes newList {
     0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    40% {
         opacity: 0;
         transform: translateY(-5px);
     }
