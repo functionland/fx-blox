@@ -61,9 +61,49 @@ $input-light-disable: $gray-dark-content3;
 $diable-item-light: #f8f9fa;
 $disable-icon-item-light: #e9ecef;
 
-$colors-light: ( "app-bg": $pure-white, "error": $error-light, "warning": $warning-light, "green-bg": $green-light-bg, "gray-border": $gray-light-border, "gray-hover": $gray-light-hover, "green-border": $green-light-border, "gray-content1": $gray-light-content1, "gray-content2": $gray-light-content2, "gray-content3": $gray-light-content3, "gray-bg-primary": $gray-light-bg-primary, "gray-bg-secondary": $gray-light-bg-secondary, "input-disable": $input-light-disable, "disable-item": $diable-item-light, "disable-item-icon": $disable-icon-item-light, "error-border": $error-border-light, "success-border": $success-border-light, "warning-border": $warning-border-light, "info-border": $info-border-light, );
+$colors-light: (
+    "app-bg": $pure-white,
+    "error": $error-light,
+    "warning": $warning-light,
+    "green-bg": $green-light-bg,
+    "gray-border": $gray-light-border,
+    "gray-hover": $gray-light-hover,
+    "green-border": $green-light-border,
+    "gray-content1": $gray-light-content1,
+    "gray-content2": $gray-light-content2,
+    "gray-content3": $gray-light-content3,
+    "gray-bg-primary": $gray-light-bg-primary,
+    "gray-bg-secondary": $gray-light-bg-secondary,
+    "input-disable": $input-light-disable,
+    "disable-item": $diable-item-light,
+    "disable-item-icon": $disable-icon-item-light,
+    "error-border": $error-border-light,
+    "success-border": $success-border-light,
+    "warning-border": $warning-border-light,
+    "info-border": $info-border-light,
+);
 
-$colors-dark: ( "app-bg": $main-dark, "error": $error-dark, "warning": $warning-dark, "green-bg": $green-dark-bg, "gray-border": $gray-dark-border, "gray-hover": $gray-dark-hover, "green-border": $green-dark-border, "gray-content1": $gray-dark-content1, "gray-content2": $gray-dark-content2, "gray-content3": $gray-dark-content3, "gray-bg-primary": $gray-dark-bg-primary, "gray-bg-secondary": $gray-dark-bg-secondary, "input-disable": $input-dark-disable, "disable-item": $diable-item-dark, "disable-item-icon": $disable-icon-item-dark, "error-border": $border-notifications-dark, "success-border": $border-notifications-dark, "warning-border": $border-notifications-dark, "info-border": $border-notifications-dark, );
+$colors-dark: (
+    "app-bg": $main-dark,
+    "error": $error-dark,
+    "warning": $warning-dark,
+    "green-bg": $green-dark-bg,
+    "gray-border": $gray-dark-border,
+    "gray-hover": $gray-dark-hover,
+    "green-border": $green-dark-border,
+    "gray-content1": $gray-dark-content1,
+    "gray-content2": $gray-dark-content2,
+    "gray-content3": $gray-dark-content3,
+    "gray-bg-primary": $gray-dark-bg-primary,
+    "gray-bg-secondary": $gray-dark-bg-secondary,
+    "input-disable": $input-dark-disable,
+    "disable-item": $diable-item-dark,
+    "disable-item-icon": $disable-icon-item-dark,
+    "error-border": $border-notifications-dark,
+    "success-border": $border-notifications-dark,
+    "warning-border": $border-notifications-dark,
+    "info-border": $border-notifications-dark,
+);
 
 //svg icons
 
@@ -79,8 +119,10 @@ $chevron-up: $icon-base-url-light + "chevron-up.svg";
 
 $options-vertical: $icon-base-url-light + "options-vertical.svg";
 $options-horizontal: $icon-base-url-light + "options-horizontal.svg";
-$options-vertical-disabled: $icon-base-url-light + "options-vertical-disabled.svg";
-$options-horizontal-disabled: $icon-base-url-light + "options-horizontal-disabled.svg";
+$options-vertical-disabled: $icon-base-url-light +
+    "options-vertical-disabled.svg";
+$options-horizontal-disabled: $icon-base-url-light +
+    "options-horizontal-disabled.svg";
 
 $pin-filled: $icon-base-url-light + "pin-filled.svg";
 $pin-outline: $icon-base-url-light + "pin-outline.svg";
@@ -127,12 +169,14 @@ $output-error-message: $icon-base-url-light + "output-error-message.svg";
 $checkbox: $icon-base-url-light + "checkbox.svg";
 $disabled-checkbox: $icon-base-url-light + "disabled-checkbox.svg";
 $indeterminate-checkbox: $icon-base-url-light + "indeterminate-checkbox.svg";
-$disabled-checked-checkbox: $icon-base-url-light + "disabled-checked-checkbox.svg";
+$disabled-checked-checkbox: $icon-base-url-light +
+    "disabled-checked-checkbox.svg";
 
 $radio-btn: $icon-base-url-light + "radio-btn.svg";
 $radio-btn-selected: $icon-base-url-light + "radio-btn-selected.svg";
 $radio-btn-disabled: $icon-base-url-light + "radio-btn-disabled.svg";
-$radio-btn-disabled-selected: $icon-base-url-light + "radio-btn-disabled-selected.svg";
+$radio-btn-disabled-selected: $icon-base-url-light +
+    "radio-btn-disabled-selected.svg";
 
 $user-person: $icon-base-url-light + "user-person.svg";
 $user-person-selected: $icon-base-url-light + "user-person-selected.svg";
@@ -145,7 +189,8 @@ $brand-green-circle: $icon-base-url-light + "brand-green-circle.svg";
 
 $download: $icon-base-url-light + "download.svg";
 $progress-download: $icon-base-url-light + "progress-download.svg";
-$progress-download-disabled: $icon-base-url-light + "progress-download-disabled.svg";
+$progress-download-disabled: $icon-base-url-light +
+    "progress-download-disabled.svg";
 
 $down-arrow: $icon-base-url-light + "down-arrow.svg";
 $down-arrow-disable: $icon-base-url-light + "down-arrow-disable.svg";
@@ -164,9 +209,21 @@ $right-arrow-disabled: $icon-base-url-light + "right-arrow-disabled.svg";
 $stack-icon: $icon-base-url-light + "stack-icon.svg";
 
 //background
-$backgrounds-dark: ( "base-img": "url("+$icon-base-url-dark + "base-img.svg"+")" );
+$backgrounds-dark: (
+    "base-img": "url(" + $icon-base-url-dark + "base-img.svg"+")",
+    "stack-icon": "url(" + $icon-base-url-dark + "stack-icon.svg"+")",
+    "wifi-icon": "url(" + $icon-base-url-dark + "wifi-icon.svg"+")",
+    "arrow-icon": "url(" + $icon-base-url-dark + "arrow-right.svg"+")",
+    "phone-icon": "url(" + $icon-base-url-dark + "phone.svg"+")",
+);
 
-$backgrounds-light: ( "base-img": "url("+$icon-base-url-light + "base-img.svg"+")" );
+$backgrounds-light: (
+    "base-img": "url(" + $icon-base-url-light + "base-img.svg"+")",
+    "stack-icon": "url(" + $icon-base-url-light + "stack-icon.svg"+")",
+    "wifi-icon": "url(" + $icon-base-url-light + "wifi-icon.svg"+")",
+    "arrow-icon": "url(" + $icon-base-url-light + "arrow-right.svg"+")",
+    "phone-icon": "url(" + $icon-base-url-light + "phone.svg"+")",
+);
 
 /*$base-img: $icon-base-url-light + "base-img.svg";*/
 // $base-img-light : $icon-base-url-light + "base-img-light.svg";
@@ -337,15 +394,21 @@ $letter-spacing-0: 0 + $base-unit;
 
 //dark box shadows
 $box-shadow-dark-xs: 0px 1px 1px rgba(0, 0, 0, 0.12);
-$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16), 0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
-$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08), 0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-s: 0px 1px 1px rgba(0, 0, 0, 0.16),
+    0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-m: 0px 1px 18px rgba(0, 0, 0, 0.12),
+    0px 3px 5px rgba(0, 0, 0, 0.2);
+$box-shadow-dark-l: 0px 24px 38px rgba(0, 0, 0, 0.08),
+    0px 9px 46px rgba(0, 0, 0, 0.12), 0px 11px 15px rgba(0, 0, 0, 0.2);
 
 //light box shadows
 $box-shadow-light-xs: 0px 1px 1px rgba(0, 0, 0, 0.06);
-$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08), 0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
-$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1), 0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
-$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04), 0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
+$box-shadow-light-s: 0px 1px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 1px rgba(0, 0, 0, 0.06), 0px 1px 3px rgba(0, 0, 0, 0.1);
+$box-shadow-light-m: 0px 3px 5px rgba(0, 0, 0, 0.1),
+    0px 1px 18px rgba(0, 0, 0, 0.06), 0px 6px 10px rgba(0, 0, 0, 0.08);
+$box-shadow-light-l: 0px 24px 38px rgba(0, 0, 0, 0.04),
+    0px 9px 46px rgba(0, 0, 0, 0.06), 0px 11px 15px rgba(0, 0, 0, 0.1);
 
 //border-radius
 $border-radius-3: 3 + $base-unit;
@@ -394,6 +457,7 @@ $spacing-70: 70 + $base-unit;
 $spacing-72: 72 + $base-unit;
 $spacing-80: 80 + $base-unit;
 $spacing-90: 90 + $base-unit;
+$spacing-110: 110 + $base-unit;
 $spacing-120: 120 + $base-unit;
 $spacing-146: 146 + $base-unit;
 $spacing-150: 150 + $base-unit;

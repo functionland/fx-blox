@@ -1,0 +1,34 @@
+@page "/wallet-playground"
+@namespace Functionland.FxBlox.Client.Core.Pages
+@inherits AppComponentBase;
+
+<PageTitle>Wallet Playground</PageTitle>
+
+
+<div class="fx-basic-page @(_applyAnimation ? "fx-page-open-mode" : "") settings-content">
+    <div class="page-title">Wallet Playground</div>
+
+    <div class="settings-wrapper">
+
+        <FxButton Text="Test Connect To Wallet"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="ConnectToWallet" />
+
+        <FxButton Text="Test Sign Message"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="TestSignMessage" />
+
+        <FxButton Text="Test Transfer Money"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="TransferMoney" />
+
+        @if (SucessFullTransfer)
+        {
+            <FxLink FxLinkSize="FxLinkSize.Large" Link="@TransactionLink" LinkText="Transaction Link" FxLinkIconSide="FxLinkIconSide.Regular"></FxLink>
+        }
+
+    </div>
+
+</div>
+
+<FxToast @ref="_toastRef" />

@@ -23,31 +23,16 @@
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="@(() => NavigationManager.NavigateTo("/add-blox-wizard", false, true))" />
 
+        <FxButton Text="Wallet Playground"
+                  ButtonStyle="FxButtonStyle.MenuLine"
+                  OnClick="@(() => NavigationManager.NavigateTo("/wallet-playground", false, true))" />
+
         @if (AppStateStore.IsAvailableForTest)
         {
             <FxButton Text="@Localizer[nameof(AppStrings.TestExplorer)]"
                       ButtonStyle="FxButtonStyle.MenuLine"
                       OnClick="@(() => NavigationManager.NavigateTo("settings/testexplorer", false, true))" />
         }
-
-        <FxButton Text="Test Connect To Wallet"
-                  ButtonStyle="FxButtonStyle.MenuLine"
-                  OnClick="ConnectToWallet" />
-
-        <FxButton Text="Test Transfer Money"
-                  ButtonStyle="FxButtonStyle.MenuLine"
-                  OnClick="TransferMoney" />
-        @if (SucessFullTransfer)
-        {
-            <FxButton Text="Open Transfer Transaction"
-            ButtonStyle="FxButtonStyle.MenuLine"
-            OnClick="OpenTransferTransaction" />
-        }
-        <FxButton Text="Test Sign Message"
-                  ButtonStyle="FxButtonStyle.MenuLine"
-                  OnClick="TestSignMessage" />
-
-
 
         <FxDivider FxDividerSize="FxDividerSize.Thin"
                    FxDividerMode="FxDividerMode.Solid"
