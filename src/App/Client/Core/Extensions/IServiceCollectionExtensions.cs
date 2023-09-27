@@ -1,4 +1,5 @@
-﻿using Functionland.FxBlox.Client.Core.Services.Contracts;
+﻿using Functionland.FxBlox.Client.Core.Models;
+using Functionland.FxBlox.Client.Core.Services.Contracts;
 using Functionland.FxBlox.Client.Core.Services.Implementations;
 using Functionland.FxBlox.Client.Core.Services.Implementations.Ethereum;
 using Functionland.FxBlox.Client.Core.Services.Implementations.EthereumService;
@@ -57,6 +58,13 @@ namespace Microsoft.Extensions.DependencyInjection
 
                 var bloxConnectionService = serviceProvider.GetRequiredService<IBloxConnectionService>();
                 await bloxConnectionService.InitializeAsync();
+
+                await bloxConnectionService.CreateForDeviceAsync(new BloxDevice()
+                {
+                    HardwareId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
+                    PeerId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
+                    HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
+                });
             }
             catch (Exception ex)
             {

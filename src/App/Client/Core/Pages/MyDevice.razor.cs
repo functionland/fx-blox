@@ -29,13 +29,6 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         protected override async Task OnInitAsync()
         {
-            CurrentConnection = await BloxConnectionService.CreateForDeviceAsync(new BloxDevice()
-            {
-                HardwareId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
-                PeerId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
-                HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
-            });
-
             StartUpdatingStatus();
 
             await base.OnInitAsync();
@@ -67,7 +60,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
         private async Task RefreshBloxStatusesAsync()
         {
-            CurrentConnection = BloxConnectionService.GetConnections().FirstOrDefault();
+            CurrentConnection = BloxConnectionService.GetConnections().LastOrDefault();
             var connections = BloxConnectionService.GetConnections();
             foreach (var connection in connections)
             {
