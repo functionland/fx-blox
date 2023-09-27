@@ -8,15 +8,12 @@ public partial class SettingsPage
     private bool _applyAnimation = false;
 
     [AutoInject] private ThemeInterop ThemeInterop = default!;
-    [AutoInject] private IJavaScriptWalletService WalletService = default!;
 
     private FxTheme DesiredTheme { get; set; }
 
     private string? CurrentTheme { get; set; }
     private string? CurrentVersion { get; set; }
 
-    private string transaction;
-    private bool SucessFullTransfer = false;
     private int _counter = 0;
     private const int MaxCount = 7;
 
@@ -41,50 +38,7 @@ public partial class SettingsPage
         GetAppVersion();
     }
 
-    private async Task ConnectToWallet()
-    {
-        await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
-    }
-
-    private async Task TransferMoney()
-    {
-        transaction = await WalletService.TransferSomeMoneyAsync();
-        if (!string.IsNullOrEmpty(transaction))
-        {
-            SucessFullTransfer = true;
-        }
-    }
-
-    private async Task TestSignMessage()
-    {
-        var sign = await WalletService.SignMessage("Sign this message");
-    }
-
-    private async Task OpenTransferTransaction()
-    {
-        if (string.IsNullOrEmpty(transaction)) return;
-
-
-        var currentWallet = WalletService.GetCurrentAddress();
-
-        var chainId = currentWallet.ChainId;
-        Uri uri = null;
-
-        if (chainId.EndsWith("1"))
-        {
-            uri = new Uri($"https://etherscan.io/tx/{transaction}");
-        }
-        else if (chainId.EndsWith("5"))
-        {
-            uri = new Uri($"https://goerli.etherscan.io/tx/{transaction}");
-        }
-       
-        if(uri == null) return;
-
-        await Browser.Default.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-
-    }
-
+   
     private void UpdateBackButtonDeviceBehavior()
     {
         NavigationManager.NavigateTo("mydevice", false, true);
