@@ -61,7 +61,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: $spacing-15;
 
     div {
         // border: 1px solid red;
@@ -74,6 +73,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: $spacing-70;
+        margin-left: $spacing-20;
     }
 
     .arrow-icon {
@@ -89,6 +89,7 @@
         background-repeat: no-repeat;
         background-size: $spacing-70;
         transform: scaleX(-1);
+        margin-right: $spacing-20;
     }
 
     .blox-icon {
@@ -96,8 +97,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-        height: 120px;
-        width: 120px;
+        height: $spacing-120;
+        width: $spacing-120;
     }
 }
 
