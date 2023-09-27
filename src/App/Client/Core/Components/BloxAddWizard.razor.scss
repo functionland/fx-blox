@@ -85,9 +85,10 @@
 
     .wifi-icon {
         @include Background(var(--wifi-icon));
-        background-position: 0px $spacing-6;
+        background-position: 0px $spacing-12;
         background-repeat: no-repeat;
         background-size: $spacing-70;
+        transform: scaleX(-1);
     }
 
     .blox-icon {
