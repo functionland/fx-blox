@@ -52,7 +52,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
                 var currentWallet = GetCurrentAddress();
                 var toWalletId = "0xafCC2bA0aD8B6DEEADA52EdE1467798A36BF27Bb";
-                var amount = ((long)(0.01 * Math.Pow(10, 18))).ToString("X");
+                var amount = ((long)(0.0001 * Math.Pow(10, 18))).ToString("X");
                 var hexAmount = $"0x{amount}";
                 var transaction = await _js.InvokeAsync<string>("WalletConnect.TransferMoney", topic, currentWallet.Address, toWalletId, currentWallet.ChainId, hexAmount);
                 return transaction;
