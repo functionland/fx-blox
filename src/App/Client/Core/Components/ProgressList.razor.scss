@@ -20,6 +20,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: $spacing-4 $spacing-4;
+    animation: newList 0.3s ease-out;
 
     .progress-item-icon {
         width: 24px;
@@ -79,3 +80,14 @@
     background-image: url($info-mode);
 }
 
+@keyframes newList {
+    0% {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

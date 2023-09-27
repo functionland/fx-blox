@@ -205,7 +205,8 @@
 
                 .stack-title {
                     padding-left: $spacing-28;
-                    background: url($stack-icon) no-repeat;
+                    @include Background(var(--stack-icon));
+                    background-repeat: no-repeat;
                     background-position: 0%;
                     background-size: $spacing-24;
                 }
@@ -229,6 +230,10 @@
                         background: url($in-progress-mode) center no-repeat;
                         background-size: $spacing-24;
                         animation: spinner 3s linear infinite;
+                    }
+
+                    .stack-value {
+                        color: $primary-color;
                     }
                 }
             }

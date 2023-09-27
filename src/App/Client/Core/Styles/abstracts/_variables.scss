@@ -164,9 +164,15 @@ $right-arrow-disabled: $icon-base-url-light + "right-arrow-disabled.svg";
 $stack-icon: $icon-base-url-light + "stack-icon.svg";
 
 //background
-$backgrounds-dark: ( "base-img": "url("+$icon-base-url-dark + "base-img.svg"+")" );
+$backgrounds-dark: (
+    "base-img": "url(" + $icon-base-url-dark + "base-img.svg"+")",
+    "stack-icon": "url(" + $icon-base-url-dark + "stack-icon.svg"+")",
+);
 
-$backgrounds-light: ( "base-img": "url("+$icon-base-url-light + "base-img.svg"+")" );
+$backgrounds-light: (
+    "base-img": "url(" + $icon-base-url-light + "base-img.svg"+")",
+    "stack-icon": "url(" + $icon-base-url-light + "stack-icon.svg"+")",
+);
 
 /*$base-img: $icon-base-url-light + "base-img.svg";*/
 // $base-img-light : $icon-base-url-light + "base-img-light.svg";

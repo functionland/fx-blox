@@ -262,3 +262,33 @@ ul.list-wrapper {
         }
     }
 }
+
+.add-animation-content {
+    animation: newWizContent 0.4s ease-out;
+}
+
+.add-animation-list {
+    animation: newList 0.5s ease-out;
+}
+
+@keyframes newWizContent {
+    0% {
+        opacity: 0;
+        transform: translateX(-6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes newList {
+    0% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
