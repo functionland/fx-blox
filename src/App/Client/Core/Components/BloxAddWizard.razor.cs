@@ -104,7 +104,6 @@ public partial class BloxAddWizard
 
         Progress($"Found {wifiListOfBlox.Count} Wi-Fi(s) near '{device.Title}'.", ProgressType.Done);
 
-        await Task.Delay(TimeSpan.FromSeconds(2));
         ProgressItems.Clear();
         await GoToNextStepAsync();
 

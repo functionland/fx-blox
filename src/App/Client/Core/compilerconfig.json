@@ -138,5 +138,9 @@
   {
     "outputFile": "Pages/MyDevice.razor.css",
     "inputFile": "Pages/MyDevice.razor.scss"
+  },
+  {
+    "outputFile": "Pages/WalletPlayground.razor.css",
+    "inputFile": "Pages/WalletPlayground.razor.scss"
   }
 ]

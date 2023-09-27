@@ -31,7 +31,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
         protected override async Task OnInitAsync()
         {
             StartUpdatingStatus();
-
+            UpdateBalanceEvery10Sec();
             await base.OnInitAsync();
         }
 
@@ -70,14 +70,6 @@ namespace Functionland.FxBlox.Client.Core.Pages
 
                 await connection.GetBloxStatusAsync();
             }
-
-            if (CurrentConnection != null && CurrentConnection.Stacks != null)
-            {
-                foreach (var stack in CurrentConnection.Stacks)
-                {
-                    _ = UpdateBalanceEvery10Sec(stack);
-                }
-            }
         }
 
         protected override void OnAfterRender(bool firstRender)
@@ -109,7 +101,6 @@ namespace Functionland.FxBlox.Client.Core.Pages
             {
                 await BloxStackManager.DeployStackAsync(bloxStack);
                 bloxStack.EthereumBalance = await GetBalance();
-                _ = UpdateBalanceEvery10Sec(bloxStack);
                 bloxStack.Status = BloxStackStatus.Running;
             }
             catch (Exception ex)
@@ -128,25 +119,43 @@ namespace Functionland.FxBlox.Client.Core.Pages
             return Math.Truncate(balance * 1000000m) / 1000000m;
         }
 
-        private async Task UpdateBalanceEvery10Sec(BloxStack bloxStack)
+        private void UpdateBalanceEvery10Sec()
         {
-            while (true)
+            _ = Task.Run(async () =>
             {
-                try
+                while (true)
                 {
-                    var newBalance = await GetBalance();
-                    if (bloxStack.EthereumBalance != newBalance)
+                    if (CurrentConnection != null && CurrentConnection.Stacks != null)
                     {
-                        var diff = newBalance - bloxStack.EthereumBalance;
-                        bloxStack.EthereumBalance = newBalance;
-                        await _toastRef.HandleShow("Wallet Balance Change", diff.ToString(), FxToastType.Info);
-                    }
-                }
-                catch
-                { }
+                        foreach (var bloxStack in CurrentConnection.Stacks)
+                        {
+                            try
+                            {
+                                var newBalance = await GetBalance();
+                                var oldBalance = bloxStack.EthereumBalance;
+                                if (bloxStack.EthereumBalance != newBalance)
+                                {
+                                    var diff = newBalance - bloxStack.EthereumBalance;
+                                    bloxStack.EthereumBalance = newBalance;
+                                    await InvokeAsync(async () =>
+                                    {
+                                        StateHasChanged();
+                                        await _toastRef.HandleShow("New balance",
+                                            newBalance.ToString(CultureInfo.InvariantCulture), FxToastType.Info);
+                                    });
 
-                await Task.Delay(TimeSpan.FromSeconds(10));
-            }
+                                }
+                            }
+                            catch
+                            {
+                            }
+
+                            await Task.Delay(TimeSpan.FromSeconds(10));
+                        }
+                    }
+                    
+                }
+            });
         }
 
         //chart

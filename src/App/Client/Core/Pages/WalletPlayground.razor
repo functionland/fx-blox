@@ -21,10 +21,20 @@
         <FxButton Text="Test Transfer Money"
                   ButtonStyle="FxButtonStyle.MenuLine"
                   OnClick="TransferMoney" />
+        
 
         @if (SucessFullTransfer)
         {
-            <FxLink FxLinkSize="FxLinkSize.Large" Link="@TransactionLink" LinkText="Transaction Link" FxLinkIconSide="FxLinkIconSide.Regular"></FxLink>
+            <div class="transaction-wrapper">
+                <div class="transaction-label">Transaction link:</div>
+                <div class="transaction-link">
+                    <FxLink FxLinkSize="FxLinkSize.Large"
+                            Link="@TransactionLink"
+                            LinkText="@TransactionLink"
+                            FxLinkIconSide="FxLinkIconSide.Regular"/>
+                </div>
+            </div>
+            
         }
 
     </div>

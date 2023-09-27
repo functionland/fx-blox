@@ -25,6 +25,22 @@
     font-family: $montserrat-medium;
 }
 
+.transaction-wrapper {
+    padding: 21px;
+    padding-top: 10px;
+}
+
+.transaction-label {
+    padding: 2px;
+}
+
+.transaction-link {
+    padding: 2px;
+    overflow: scroll;
+}
+
+
+
 ::deep .fxbutton-menuline {
     margin: 4px 0;
 
