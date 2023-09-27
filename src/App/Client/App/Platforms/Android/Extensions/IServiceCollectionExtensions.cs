@@ -2,6 +2,7 @@
 using Functionland.FxBlox.Client.App.Platforms.Android.Implementations.Test;
 using Functionland.FxBlox.Client.App.Platforms.Android.PlatformTests;
 using Functionland.FxBlox.Client.Core.TestInfra.Contracts;
+using Functionland.FxFiles.Client.App.Platforms.Android.Implementations;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -13,6 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IPlatformTestService, AndroidPlatformTestService>();
             services.AddTransient<AndroidWalletServiceTransferSomeMoneyPlatformTest>();
             services.AddTransient<AndroidWalletServiceConnectToWalletPlatformTest>();
+            //services.AddSingleton<IWifiService, AndroidWifiService>();
             return services;
         }
     }

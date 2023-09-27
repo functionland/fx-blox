@@ -63,7 +63,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 {
                     HardwareId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
                     PeerId = "a48b2b11c2f44fc3a103c7daa8bf4dd4a96d9e5d65a027404a269de29d50dbbf",
-                    HotspotInfo = new WifiInfo() { Essid = "", Ssid = "", Rssi = 0 }
+                    HotspotInfo = new WifiInfo() { Ssid = "", Essid = "", Rssi = 0 }
                 });
             }
             catch (Exception ex)

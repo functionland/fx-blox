@@ -17,32 +17,32 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             {
                 new()
                 {
-                    Essid = "Afshin Home",
-                    Ssid = "66:32:b1:cf:7e:16",
+                    Ssid = "Afshin Home",
+                    Essid = "66:32:b1:cf:7e:16",
                     Rssi = -57
                 },
                 new()
                 {
-                    Essid = "Mehran Work",
-                    Ssid = "c5:af:b1:11:36:6b",
+                    Ssid = "Mehran Work",
+                    Essid = "c5:af:b1:11:36:6b",
                     Rssi = -12
                 },
                 new()
                 {
-                    Essid = "Functionland 1",
-                    Ssid = "22:c9:6c:ff:ee:22",
+                    Ssid = "Functionland 1",
+                    Essid = "22:c9:6c:ff:ee:22",
                     Rssi = -17
                 },
                 new()
                 {
-                    Essid = "Blox 11",
-                    Ssid = "11:c9:6c:ff:ee:11",
+                    Ssid = "Blox 11",
+                    Essid = "11:c9:6c:ff:ee:11",
                     Rssi = -17
                 },
                 new()
                 {
-                    Essid = "Functionland 3",
-                    Ssid = "33:c9:6c:ff:ee:33",
+                    Ssid = "Functionland 3",
+                    Essid = "33:c9:6c:ff:ee:33",
                     Rssi = -17
                 }
             };

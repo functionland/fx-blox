@@ -70,7 +70,7 @@ public partial class BloxAddWizard
             return;
         }
 
-        Progress($"Blox found: '{hotspot.Essid}'.", progressType: ProgressType.Done);
+        Progress($"Blox found: '{hotspot.Ssid}'.", progressType: ProgressType.Done);
 
         Progress("Connecting to directly Blox hotspot...", createNew: true);
 
@@ -81,7 +81,7 @@ public partial class BloxAddWizard
         var device = new BloxDevice
         {
             HotspotInfo = hotspot,
-            Title = hotspot.Essid
+            Title = hotspot.Ssid
         };
 
         BloxConnection = await BloxConnectionService.CreateForDeviceAsync(device);
@@ -128,7 +128,7 @@ public partial class BloxAddWizard
             return;
         }
 
-        var result = await _passwordModalRef.ShowAsync($"Enter password for \"{(SelectedWifiForBlox?.Essid ?? "")}\"",
+        var result = await _passwordModalRef.ShowAsync($"Enter password for \"{(SelectedWifiForBlox?.Ssid ?? "")}\"",
             string.Empty,
             string.Empty,
             "Enter password",

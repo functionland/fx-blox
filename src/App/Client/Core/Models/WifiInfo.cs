@@ -15,7 +15,7 @@ namespace Functionland.FxBlox.Client.Core.Models
         public bool IsBloxHotspot()
         {
             // ToDo: What's the real logic?
-            return Essid.Contains("Blox");
+            return Ssid.Contains("Blox");
         }
     }
 }

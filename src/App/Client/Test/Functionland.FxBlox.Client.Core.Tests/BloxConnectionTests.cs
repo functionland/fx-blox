@@ -24,7 +24,7 @@ namespace Functionland.FxBlox.Client.Core.Tests
 
             var factory = serviceProvider.GetRequiredService<BloxConnectionFactory>();
 
-            using var connection = factory.Create(new BloxDevice() { HotspotInfo = new WifiInfo() { Essid = "", Rssi = 1, Ssid = "" } });
+            using var connection = factory.Create(new BloxDevice() { HotspotInfo = new WifiInfo() { Ssid = "", Rssi = 1, Essid = "" } });
 
             Assert.NotNull(connection.Device);
 

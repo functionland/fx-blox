@@ -8,9 +8,11 @@ using Functionland.FxBlox.Client.Core.Services.Contracts;
 
 namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
-    public class FakeBloxHotspotClient : IBloxHotspotClient
+    public partial class FakeBloxHotspotClient : IBloxHotspotClient
     {
+        [AutoInject] IWifiService WifiService { get; set; } = default!;
         public BloxDevice Device { get; private set; } = default!;
+        
 
         public async Task<BloxInfo> GetBloxInfoAsync(CancellationToken cancellationToken = default)
         {
@@ -31,41 +33,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken)
         {
-            await Task.Delay(TimeSpan.FromSeconds(2), cancellationToken);
-
-            return new List<WifiInfo>()
-            {
-                new()
-                {
-                    Essid = "Afshin Home",
-                    Ssid = "66:32:b1:cf:7e:16",
-                    Rssi = -57
-                },
-                new()
-                {
-                    Essid = "Mehran Work",
-                    Ssid = "c5:af:b1:11:36:6b",
-                    Rssi = -12
-                },
-                new()
-                {
-                    Essid = "Functionland 1",
-                    Ssid = "22:c9:6c:ff:ee:22",
-                    Rssi = -17
-                },
-                new()
-                {
-                    Essid = "Functionland 2",
-                    Ssid = "11:c9:6c:ff:ee:11",
-                    Rssi = -17
-                },
-                new()
-                {
-                    Essid = "Functionland 3",
-                    Ssid = "33:c9:6c:ff:ee:33",
-                    Rssi = -17
-                }
-            };
+            return await WifiService.GetWifiListAsync(cancellationToken);
         }
 
         public async Task ConnectToWifiAsync(string ssid, string? password, CancellationToken cancellationToken)
