@@ -33,7 +33,9 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken)
         {
-            return await WifiService.GetWifiListAsync(cancellationToken);
+            var wifiList = await WifiService.GetWifiListAsync(cancellationToken);
+            var result = wifiList.Where(w => !w.Ssid.Contains("Blox")).ToList();
+            return result;
         }
 
         public async Task ConnectToWifiAsync(string ssid, string? password, CancellationToken cancellationToken)

@@ -9,12 +9,18 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 {
     public class FakeWifiService : IWifiService
     {
-        public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default)
+        public virtual async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default)
         {
             await Task.Delay(TimeSpan.FromSeconds(3), cancellationToken);
 
             return new List<WifiInfo>()
             {
+                new()
+                {
+                    Ssid = "Blox Test",
+                    Essid = "11:c9:6c:ff:ee:11",
+                    Rssi = -17
+                },
                 new()
                 {
                     Ssid = "Afshin Home",
@@ -31,12 +37,6 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
                 {
                     Ssid = "Functionland 1",
                     Essid = "22:c9:6c:ff:ee:22",
-                    Rssi = -17
-                },
-                new()
-                {
-                    Ssid = "Blox 11",
-                    Essid = "11:c9:6c:ff:ee:11",
                     Rssi = -17
                 },
                 new()

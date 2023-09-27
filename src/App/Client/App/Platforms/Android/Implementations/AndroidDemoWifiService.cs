@@ -12,25 +12,29 @@ using Android.Views.InputMethods;
 namespace Functionland.FxFiles.Client.App.Platforms.Android.Implementations;
 
 
-public class AndroidWifiService : IWifiService
+public class AndroidDemoWifiService : FakeWifiService
 {
-    public async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default)
+    public override async Task<List<WifiInfo>> GetWifiListAsync(CancellationToken cancellationToken = default)
     {
-        IEnumerable<ScanResult> availableNetworks = null;
         var wifiMgr = (WifiManager)MauiApplication.Current.GetSystemService(Context.WifiService);
         var wifiReceiver = new WifiReceiver(wifiMgr);
 
-        await Task.Run(() =>
+        var availableNetworks = await Task.Run(() =>
         {
             MauiApplication.Current.RegisterReceiver(wifiReceiver, new IntentFilter(WifiManager.ScanResultsAvailableAction));
-            availableNetworks = wifiReceiver.Scan();
+            return wifiReceiver.Scan();
         });
 
-        return availableNetworks.Select(i => new WifiInfo() { Ssid = i.Ssid, Rssi = i.Level, Essid = i.Bssid }).ToList();
-    }
+        var result = availableNetworks
+               .Select(i => new WifiInfo()
+               {
+                   Ssid = i.Ssid,
+                   Rssi = i.Level,
+                   Essid = i.Bssid
+               }).ToList();
 
-    public async Task ConnectAsync(WifiInfo hotspot)
-    {
-        await Task.Delay(TimeSpan.FromSeconds(2));
+        result.Add(new WifiInfo() { Ssid = "Blox (Fake)", Essid = "Some ESSID", Rssi = 12 });
+        
+        return result;
     }
 }
