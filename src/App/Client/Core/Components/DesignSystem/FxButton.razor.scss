@@ -4,7 +4,7 @@
 .fxbutton {
     /*width: min-content;*/
     color: $pure-white;
-    height: $spacing-40;
+    min-height: $spacing-40;
     cursor: pointer;
     overflow: hidden;
     user-select: none;
