@@ -94,9 +94,9 @@
         @include Background(var(--base-img));
         background-position: center;
         background-repeat: no-repeat;
-        background-size: $spacing-90;
-        width: $spacing-110;
-        height: $spacing-110;
+        background-size: contain;
+        height: 120px;
+        width: 120px;
     }
 }
 
