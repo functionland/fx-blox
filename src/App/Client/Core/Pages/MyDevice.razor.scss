@@ -16,7 +16,7 @@
     height: calc(100vh - 81px);
 
     .page-image {
-        margin-top: $spacing-70;
+        margin-top: $spacing-60;
         @include Background(var(--base-img));
         background-position: center bottom;
         background-repeat: no-repeat;

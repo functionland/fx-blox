@@ -24,7 +24,8 @@ namespace Functionland.FxBlox.Client.Core
         await base.OnInitializedAsync();
 
             //Temperory: until BitTheme get's implemented in UI
-            await _bitDeviceCoordinator.SetDeviceTheme(isDark: false);
+            //await _bitDeviceCoordinator.SetDeviceTheme(isDark: false);
+
         }
 #else
         protected override async Task OnAfterRenderAsync(bool firstRender)

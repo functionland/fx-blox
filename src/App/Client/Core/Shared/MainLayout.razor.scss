@@ -212,6 +212,7 @@
 .main-layout {
     max-width: 600px;
     margin: 0 auto;
+    margin-top : 10px;
     background-color: color(app-bg);
 }
 
@@ -221,4 +222,34 @@
     height: 100vh;
     padding-bottom: 81px;
     background-color: color(app-bg);
+}
+
+.status-bar {
+    top: 0;
+    z-index: 12;
+    width: 100%;
+    display: none;
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    font-size: 14px;
+    justify-content: center;
+    color: color(gray-content1);
+    background-color: color(app-bg);
+}
+
+.bit-windows, .bit-macos {
+    .status-bar {
+        display: flex;
+        background-color: transparent;
+        height: var(--bit-status-bar-height);
+        color: color(gray-content1);
+    }
+}
+
+.bit-ios .status-bar {
+    display: flex;
+    color: transparent;
+    background-color: transparent;
+    height: env(safe-area-inset-top);
 }
