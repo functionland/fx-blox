@@ -4,5 +4,5 @@ Your Blox is designed in a way so you can configure different stacks on it such 
 
 # To Developers
 As a developer, you can easily add support for new stacks. For example, if you want to add support for a new stack for other blockchain networks, it's as easy as pie! Check these documentations for more details:
-  - [Developing a new FxStack](https://github.com/functionland/fx-blox/blob/main/docs/fx-stack-overview.md)
+  - [How to develop a new FxStack](https://github.com/functionland/fx-blox/blob/main/docs/fx-stack-overview.md)
   - [Setup development environment](https://github.com/functionland/fx-blox/blob/main/docs/setup-development-environment.md)
