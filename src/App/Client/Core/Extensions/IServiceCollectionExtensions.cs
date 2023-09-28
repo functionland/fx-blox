@@ -39,11 +39,13 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IWifiService, FakeWifiService>();
             services.AddSingleton<IBloxStackManager, BloxStackManager>();
 
-            services.AddScoped<IWalletService, FakeWalletService>();
+            //services.AddScoped<IWalletService, FakeWalletService>();
+            services.AddScoped<IWalletService, JavaScriptWalletService>();
             services.AddScoped<IJavaScriptWalletService, JavaScriptWalletService>();
 
             services.AddSingleton<TokenListService>();
-            services.AddSingleton<IEthereumService, FakeEthereumService>();
+            //services.AddSingleton<IEthereumService, FakeEthereumService>();
+            services.AddSingleton<IEthereumService, EthereumService>();
 
             return services;
         }
