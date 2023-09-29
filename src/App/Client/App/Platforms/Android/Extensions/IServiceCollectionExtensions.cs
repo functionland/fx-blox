@@ -17,7 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddTransient<AndroidWalletServiceConnectToWalletPlatformTest>();
             //services.AddSingleton<IWifiService, AndroidWifiService>();
             services.AddSingleton<IPermissionUtils, PermissionUtils>();
-            //services.AddSingleton<IWifiService, AndroidDemoWifiService>();
+            services.AddSingleton<IWifiService, AndroidDemoWifiService>();
             return services;
         }
     }
