@@ -16,7 +16,16 @@ public partial class WalletPlayground
     private FxToast _toastRef = default!;
     private async Task ConnectToWallet()
     {
-        await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
+        try
+        {
+            await WalletService.ConnectAsync(BlockchainNetwork.EthereumTestnet);
+        }
+        catch (Exception ex)
+        {
+            await _toastRef.HandleShow("Connect", ex.Message,
+                    FxToastType.Error);
+        }
+      
     }
 
     protected override void OnAfterRender(bool firstRender)

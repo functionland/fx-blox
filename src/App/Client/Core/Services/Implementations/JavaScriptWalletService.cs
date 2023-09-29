@@ -23,18 +23,9 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
 
         public async Task<SessionStruct> ConnectAsync(BlockchainNetwork ethereumChain, CancellationToken cancellationToken = default)
         {
-            try
-            {
-                var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
-                Preferences.Set(SessionStruct, sessionStruct);
-                return Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(sessionStruct);
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            return new SessionStruct();
+            var sessionStruct = await _js.InvokeAsync<string>("WalletConnect.ConnectToWallet", ((int)ethereumChain).ToString());
+            Preferences.Set(SessionStruct, sessionStruct);
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<SessionStruct>(sessionStruct);
         }
 
         public void OpenConnectWallet(string url)
@@ -113,7 +104,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             {
                 return null;
             }
-           
+
         }
     }
 }
