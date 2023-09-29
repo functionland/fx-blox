@@ -9,7 +9,7 @@ namespace Functionland.FxBlox.Client.Core.Pages
     {
         protected override Task OnInitAsync()
         {
-            NavigationManager.NavigateTo("mydevice",false, true);
+            NavigationManager.NavigateTo("add-blox-wizard", false, true);
             return base.OnInitAsync();
         }
     }
