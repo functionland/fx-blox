@@ -36,7 +36,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IBloxConnectionService, BloxConnectionService>();
             services.AddSingleton<IKeyValueStorage, WalletStorageService>();
 
-            services.AddSingleton<IWifiService, FakeWifiService>();
+            //services.AddSingleton<IWifiService, FakeWifiService>();
             services.AddSingleton<IBloxStackManager, BloxStackManager>();
 
             //services.AddScoped<IWalletService, FakeWalletService>();
