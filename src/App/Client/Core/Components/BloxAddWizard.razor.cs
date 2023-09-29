@@ -21,6 +21,7 @@ public partial class BloxAddWizard
     private BloxConnection? BloxConnection { get; set; }
     public List<ListItem<WifiInfo>> AvailableWifiList { get; set; } = new();
 
+    private bool ShowConnectToWallet { get; set; } = true;
     public async Task GoToNextStepAsync()
     {
         WizardStep++;
@@ -205,19 +206,22 @@ public partial class BloxAddWizard
 
     private async Task ConnectToWalletClicked()
     {
-        if (SelectedNetwork is null)
+        Progress("Waiting for wallet approval...",progressType: ProgressType.Running);
+        ShowConnectToWallet = false;
+
+        try
         {
-            // ToDo: Ask user to select a network.
-            return;
+            await WalletService.ConnectAsync(SelectedNetwork.Value);
+            Progress("Wallet approved.", ProgressType.Done);
+            await Task.Delay(TimeSpan.FromSeconds(2));
+            ProgressItems.Clear();
+            await GoToNextStepAsync();
         }
-
-        Progress("Waiting for wallet approval...");
-        await WalletService.ConnectAsync(SelectedNetwork.Value);
-        Progress("Wallet approved.", ProgressType.Done);
-
-        await Task.Delay(TimeSpan.FromSeconds(2));
-        ProgressItems.Clear();
-        await GoToNextStepAsync();
+        catch (Exception ex)
+        {
+            Progress("Connecting to wallet canceled.", progressType: ProgressType.Fail);
+            ShowConnectToWallet = true;
+        }
     }
 
     private void BlockchainNetworkClicked(ListItem<BlockchainNetwork> item)
