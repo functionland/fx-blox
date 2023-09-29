@@ -65,7 +65,7 @@ public static class WebViewSoftInputPatch
         }
         else
         {
-            return rect.Bottom - GetStatusBarHeight();
+            return rect.Bottom;
         }
     }
 

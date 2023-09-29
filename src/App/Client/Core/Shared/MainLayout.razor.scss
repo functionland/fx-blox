@@ -212,14 +212,15 @@
 .main-layout {
     max-width: 600px;
     margin: 0 auto;
-    margin-top : 10px;
+    padding-top : 10px;
+    height:100vh;
     background-color: color(app-bg);
 }
 
 .content {
     position: relative;
     color: color(gray-content1);
-    height: 100vh;
+    height: 100%;
     padding-bottom: 81px;
     background-color: color(app-bg);
 }
