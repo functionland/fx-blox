@@ -113,7 +113,8 @@ public partial class BloxAddWizard
     {
         if (SelectedWifiForBlox is null)
         {
-            // ToDo: Ask user to select one
+            await _toastRef.HandleShow("", "Select a Wi-Fi first.", FxToastType.Info);
+
             return;
         }
 
@@ -207,7 +208,7 @@ public partial class BloxAddWizard
     {
         if (SelectedNetwork is null)
         {
-            // ToDo: Ask user to select a network.
+            await _toastRef.HandleShow("", "Select a blockchain network first.", FxToastType.Info);
             return;
         }
 
@@ -233,5 +234,20 @@ public partial class BloxAddWizard
         AvailableWifiList.ForEach(i => i.IsSelected = false);
         item.IsSelected = true;
         SelectedWifiForBlox = item.Item;
+    }
+
+    private async Task CancelConnectToHotspotClicked()
+    {
+        await _toastRef.HandleShow("", "Can not cancel now.", FxToastType.Info);
+    }
+
+    private async Task CancelConnectToWalletClicked()
+    {
+        await _toastRef.HandleShow("", "Can not cancel now.", FxToastType.Info);
+    }
+
+    private async Task CancelConnectBloxToWifiClicked()
+    {
+        await _toastRef.HandleShow("", "Can not cancel now.", FxToastType.Info);
     }
 }
