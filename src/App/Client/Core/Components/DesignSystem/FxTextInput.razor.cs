@@ -1,4 +1,6 @@
-﻿namespace Functionland.FxBlox.Client.Core.Components
+﻿using Microsoft.AspNetCore.Components.Web;
+
+namespace Functionland.FxBlox.Client.Core.Components
 {
     public partial class FxTextInput
     {
@@ -7,6 +9,9 @@
 
         [Parameter]
         public EventCallback<string?> TextChanged { get; set; }
+
+        [Parameter]
+        public EventCallback<bool> IsEnterClicked { get; set; }
 
         private string? _text { get; set; }
         [Parameter]
@@ -39,9 +44,19 @@
 
         private ElementReference _input;
 
+        private Guid InputId { get; set; } = Guid.NewGuid();
+
         public async Task FocusInputAsync()
         {
             await _input.FocusAsync();
+        }
+        private async Task HandleOnKeyDownAsync(KeyboardEventArgs e)
+        {
+            if (e.Key == "Enter")
+            {
+                await JSRuntime.InvokeVoidAsync("Controller.hideKeyboard", InputId.ToString());
+                await IsEnterClicked.InvokeAsync(true);
+            }
         }
     }
 }

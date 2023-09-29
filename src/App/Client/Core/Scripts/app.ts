@@ -24,7 +24,7 @@
     }
 
     public static removeParametersOfUrl(url: any) {
-        history.pushState(null, '', url); 
+        history.pushState(null, '', url);
     }
 }
 
@@ -33,6 +33,13 @@ class Controller {
         const element = document.getElementById(elementId);
         if (element) {
             element.focus();
+        }
+    }
+
+    public static hideKeyboard(elementId: string): void {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.blur();
         }
     }
 }

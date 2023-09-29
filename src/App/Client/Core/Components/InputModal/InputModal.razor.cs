@@ -124,6 +124,14 @@ public partial class InputModal
         }
     }
 
+    public void OnHandelEnterClick(bool isEnterClicked)
+    {
+        if (isEnterClicked)
+        {
+            Confirm();
+        }
+    }
+
     public void Dispose()
     {
         _tcs?.SetCanceled();
