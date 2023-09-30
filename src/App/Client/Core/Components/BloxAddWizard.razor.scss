@@ -315,6 +315,10 @@ ul.list-wrapper {
     animation: newList 0.7s ease-out;
 }
 
+.add-animation-img {
+    animation: newWizImg 0.7s ease-out;
+}
+
 @keyframes newWizContent {
     0% {
         opacity: 0;
@@ -334,6 +338,21 @@ ul.list-wrapper {
     40% {
         opacity: 0;
         transform: translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes newWizImg {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    40% {
+        opacity: 0;
+        transform: translateY(-6px);
     }
     100% {
         opacity: 1;
