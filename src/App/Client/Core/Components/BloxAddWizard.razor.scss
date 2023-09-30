@@ -312,7 +312,7 @@ ul.list-wrapper {
 }
 
 .add-animation-list {
-    animation: newList 0.7s ease-out;
+    animation: newList 0.9s ease-out;
 }
 
 .add-animation-img {
@@ -335,7 +335,7 @@ ul.list-wrapper {
         opacity: 0;
         transform: translateY(-5px);
     }
-    40% {
+    50% {
         opacity: 0;
         transform: translateY(-5px);
     }
