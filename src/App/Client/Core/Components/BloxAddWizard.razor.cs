@@ -165,13 +165,13 @@ public partial class BloxAddWizard
         Progress("Blox Wi-Fi configured.", ProgressType.Done);
 
         // Now we have lost the connection to the blox via hotspot.
-        Progress("Connecting to Blox via blockchain (Libp2p)...", createNew: true);
+        Progress("Connecting to Blox via Libp2p...", createNew: true);
         await BloxConnection.ConnectToLibp2pAsync();
-        Progress("Connected to Blox via blockchain (Libp2p).", ProgressType.Done);
+        Progress("Connected to Blox via Libp2p.", ProgressType.Done);
 
         Progress("Checking the Blox Libp2p connection...", createNew: true);
         var status = await BloxConnection.CheckLibp2pConnectionAsync();
-        Progress("Connected to Blox via blockchain successfully.", ProgressType.Done);
+        Progress("Connected to Blox via Libp2p successfully.", ProgressType.Done);
 
         Progress("Navigating to Blox Home", createNew: true);
         await Task.Delay(TimeSpan.FromSeconds(2));

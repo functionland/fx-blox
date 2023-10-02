@@ -44,7 +44,7 @@ public partial class AndroidDemoWifiService : FakeWifiService
                    Essid = i.Bssid
                }).ToList();
 
-        result.Add(new WifiInfo() { Ssid = "Blox (Fake)", Essid = "Some ESSID01", Rssi = 12 });
+        result.Add(new WifiInfo() { Ssid = "Blox (Mock)", Essid = "Some ESSID01", Rssi = 12 });
         result.Add(new WifiInfo() { Ssid = "Test Wi-Fi", Essid = "Some ESSID02", Rssi = 12 });
 
         return result;

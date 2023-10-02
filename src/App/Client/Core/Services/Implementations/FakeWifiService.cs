@@ -17,7 +17,7 @@ namespace Functionland.FxBlox.Client.Core.Services.Implementations
             {
                 new()
                 {
-                    Ssid = "Blox Test",
+                    Ssid = "Blox (Mock)",
                     Essid = "11:c9:6c:ff:ee:11",
                     Rssi = -17
                 },
