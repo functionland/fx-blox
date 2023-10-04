@@ -1,4 +1,4 @@
-## Mobile App interface for Smart Node
+## Mobile App Interface for Smart Node
 
 ### What is the work being proposed?
  - Context about blox and hardware infrastructure
@@ -12,11 +12,10 @@
  - Describe similar UI in Fula
 
 ### Will the results of this project be entirely open source? If not, which parts will not be, why, and under what license will they be published?
- - Yes, [MIT](https://opensource.org/licenses/MIT)
+ - Yes, The license is [MIT](https://opensource.org/licenses/MIT), so everybody is welcome.
  - Everything is open-source
 
 ## Benefits - enter N/A where appropriate
- - Expand Node Operators to normies
 
 ### How does this help people looking to stake ETH for rETH?
  - This is a bridge for mass adoption
@@ -42,19 +41,50 @@
  - SSV Network
  
 ### Will the resulting project be open source?
- - YES
+ - YES, everything is open source.
 
 ## Team
 
 ### Who is doing the work?
- - Mehran
- - Keyvan
- - Ehsan
- - Afshin
+ - [Mehran](https://github.com/mehrandvd): Software Architect, PM
+ - [Keyvan](https://github.com/keyvan-m-sadeghi)
+ - [Ehsan](https://github.com/ehsan6sha)
+ - [Afshin](https://github.com/afshinalizadeh): Senior Develoer
+ - [Maryam](https://github.com/Marirood): UI/UX Developer
+ - [Hootan](https://github.com/hootanht): UI Developer
+
+
 ### What is the background of the person(s) doing the work? What experience do they have with such projects in the past?
- - FxFiles
- - FxFotos
- - 
+ - Team
+   - [Mehran](https://github.com/mehrandvd)
+     - 20+ years of experience in software development
+     - .NET guru
+     - Managed lots of projects with team size of 20+
+     - 5+ years of experience on Azure
+   - [Keyvan](https://github.com/keyvan-m-sadeghi)
+     - _[Background]_
+   - [Ehsan](https://github.com/ehsan6sha)
+     - _[Background]_
+   - [Afshin](https://github.com/afshinalizadeh)
+     - 20+ years of experience in software development
+     - Worked with a variety of technologies: C#, Java, JavaScript, TypeScript, React, Angular, Blazor, Maui, ...
+     - A principal engineer in developing FxFiles
+     - There is literally nothing defined as difficult for Afshin, he will do it!
+   - [Maryam](https://github.com/Marirood)
+     - 10+ years of experience in UI/UX
+     - Master of CSS and styles
+     - Experienced in Blazor
+     - The main UI/UX developer of [TonRich](https://github.com/tonradar/tonrich)
+   - [Hootan](https://github.com/hootanht)
+     - Experienced in Blazor
+     - Experienced in CSS and styles
+     - Experienced in designing complicated UIs
+ 
+ - Previous Projects
+   - FxFiles
+   - FxFotos
+   - [TonRich](https://github.com/tonradar/tonrich)
+   - Ton.Fragment Nuget Package: A .NET SDK to work with [fragment.com](https://fragment.com) auctions on TON
 
 ### What is the breakdown of the proposed work, in terms of milestones and/or deadlines?
  - Milestone 0: Initial App (Already Done)
@@ -70,7 +100,7 @@
 
 ### How will the work be maintained after delivery?
  - This is not a RocketPool-specific application and it has a key role in Functionaland's ecosystem.
- - The feature expansion will be supported for follow-up grants and bouties.
+ - The feature expansion will be supported for follow-up grants and bounties.
 
 ## Payment and Verification
 
@@ -92,7 +122,7 @@
 
 ### What alternatives or options have been considered in order to save costs for the proposed project?
  - We are using cross-platform technologies to reduce the costs of development for different platforms
- - We have a small and efficient fully remote team
+ - We have a small efficient fully remote team
 
 ## Conflict of Interest
   
