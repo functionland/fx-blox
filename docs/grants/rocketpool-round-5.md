@@ -7,6 +7,8 @@
  - Easy-to-navigate UI with opinionated config
  - Making RocketPool experience Grandmother friendly!
 
+Blox 
+
 ### Is there any related work this builds off of?
  - We should search for it
  - Describe similar UI in Fula
@@ -53,7 +55,19 @@
 
 
 ### What is the background of the person(s) doing the work? What experience do they have with such projects in the past?
- - Team
+
+Functionland started as a participant of 2021 Filecoin Hackathon, in which our backend project (named “Box” at the time) [won the first place](https://filecoin.io/blog/posts/249k-for-17-projects-from-dorahacks-filecoin-grant-hackathon/), and our mobile photo gallery app (named “Photos” at the time, now renamed to “FxFotos”) won the third place.
+
+[This blog post](https://dev.to/fx/google-photos-open-source-alternative-with-react-native-80c) announcing these projects, we amassed 500+ stars on GiHub on the first week.
+
+We also ran a [crowdfunding campaign](https://www.indiegogo.com/projects/box-first-free-forever-cloud-storage-alternative#/) for the hardware, where we raised over half a million dollars for the devices (shipping starts April).
+
+Functionland was incorporated in Canada after the Hackathon and [we closed a $1.1M seed](https://www.newswire.ca/news-releases/functionland-raises-1-1m-in-seed-funding-830473543.html) round in January 2022.
+
+Essentially, we are a team of 20 developers, software architects, UI/UX designers, testers and… with an endless thirst to bring the true essence of blockchain into people’s life.
+I’m Keyvan, and I’m representing this great team. If you want to know more about our team, there is more in this link: [Functionland’s Team of Ninjas](https://mehrandvd.com/2022/12/18/building-a-ninja-team-for-fxland/)
+
+ #### Our Core Team
    - [Mehran](https://github.com/mehrandvd)
      - 20+ years of experience in software development
      - .NET guru
@@ -80,7 +94,7 @@
      - Experienced in CSS and styles
      - Experienced in designing complicated UIs
  
- - Previous Projects
+#### Our Previous Projects
    - FxFiles
    - FxFotos
    - [TonRich](https://github.com/tonradar/tonrich)
@@ -100,7 +114,7 @@
  - **UAT Tests**: The whole application will be tested by our QA team before each release to ensure everything works fine from an end-user perspective
 
 ### How will the work be maintained after delivery?
- - This is not a RocketPool-specific application and it has a key role in Functionaland's ecosystem.
+ - This is not only a RocketPool-specific application. Instead, it is a key application in Functionaland's ecosystem and our business is tightly involved with success of this application.
  - The feature expansion will be supported for follow-up grants and bounties.
 
 ## Payment and Verification
