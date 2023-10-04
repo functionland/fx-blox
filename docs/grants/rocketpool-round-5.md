@@ -12,11 +12,9 @@
  - Describe similar UI in Fula
 
 ### Will the results of this project be entirely open source? If not, which parts will not be, why, and under what license will they be published?
- - Yes, The license is [MIT](https://opensource.org/licenses/MIT), so everybody is welcome.
- - Everything is open-source
+ - Yes, The license is [MIT](https://opensource.org/licenses/MIT) for everything.
 
 ## Benefits - enter N/A where appropriate
-
 ### How does this help people looking to stake ETH for rETH?
  - This is a bridge for mass adoption
 
@@ -95,10 +93,11 @@
  - Milestone 3: Connecting to RocketPool SDK
 
 ### How is the work being tested? Is testing included in the schedule?
- - Yes
- - Unit Tests
- - Integration Tests
- - Screenshot from platform tests
+ To ensure the quality of the app, we have various methods
+ - **Unit Tests**: For critical sections of the logic
+ - **Integration Tests**: Automated tests to test the most frequent scenarios
+ - **Android Specific Tests**: Some tests that are specialized to test Android-specific code
+ - **UAT Tests**: The whole application will be tested by our QA team before each release to ensure everything works fine from an end-user perspective
 
 ### How will the work be maintained after delivery?
  - This is not a RocketPool-specific application and it has a key role in Functionaland's ecosystem.
@@ -113,9 +112,9 @@
 
 ### What is the proposed payment schedule for the grant? How much USD $ and over what period of time is the applicant requesting?
  - Totally: 50,000 USD stablecoin
- - Milestone 1 (UI): 50% ($25,000)
- - Milestone 2 (Backend and P2P logic): 30% ($15,000)
- - Milestone 3 (Connecting to RocketPool SDK): 20% ($10,000)
+ - Milestone 1 (UI): 50% (**$25,000 at the end of 4th week**)
+ - Milestone 2 (Backend and P2P logic): 30% (**$15,000 at the end of 8th week**)
+ - Milestone 3 (Connecting to RocketPool SDK): 20% (**$10,000 at the end of 12th week**)
 
 ### How will the GMC verify that the work delivered matches the proposed cadence?
  - The app will be available on PlayStore for download
