@@ -7,8 +7,6 @@
  - Easy-to-navigate UI with opinionated config
  - Making RocketPool experience Grandmother friendly!
 
-Blox 
-
 ### Is there any related work this builds off of?
  - We should search for it
  - Describe similar UI in Fula
