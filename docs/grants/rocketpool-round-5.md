@@ -68,7 +68,9 @@
    - [Afshin](https://github.com/afshinalizadeh)
      - 20+ years of experience in software development
      - Worked with a variety of technologies: C#, Java, JavaScript, TypeScript, React, Angular, Blazor, Maui, ...
+     - Experienced in development for almost every platform: Android, iOS, Windows, macOS, Linux
      - A principal engineer in developing FxFiles
+     - A principal engineer in developing TonRich
      - There is literally nothing defined as difficult for Afshin, he will do it!
    - [Maryam](https://github.com/Marirood)
      - 10+ years of experience in UI/UX
