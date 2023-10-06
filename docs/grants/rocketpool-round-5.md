@@ -1,18 +1,26 @@
-## Mobile App Interface for Smart Node
+## FxBlox
 
 ### What is the work being proposed?
- - Context about blox and hardware infrastructure
- - Expand Node Operators to normies
- - Develop a cross-platform mobile app
- - Easy-to-navigate UI with opinionated config
- - Making RocketPool experience Grandmother friendly!
+We have started work on a mobile app interface for Smartnode setup and operation. This app has a clear mission: simplifying the complexities of becoming a Rocket Pool node owner, making it approachable for a broad user base with little to no technical background. The app is cross-platform, designed with utmost care, ensuring it is easy to navigate, intuitive, and user-friendly.
+
+The current scope of the project is local staking hardware nodes. The app guides users through a step-by-step wizard, assisting them in connecting their device to their home network and establishing a remote connection via Libp2p for remote accessibility. It then deploys an opinionated configuration for their Smartnode, requiring minimal user input. After the quick-setup step, users enter a dashboard to monitor their node's status and customize settings to their liking. While the current scope of the work doesn't encompass setting up on a laptop or virtual machine, the app is [architected in a way](https://github.com/functionland/fx-blox/blob/main/docs/fx-stack-overview.md) that allows for the addition of these capabilities in future development phases. Although our initial focus is on Android, the framework we've chosen, MAUI Blazor, allows for expansion to iOS, Windows, and Mac.
+
+The inspiration for initiating this project stemmed from [conversations](https://discord.com/channels/405159462932971535/405164275036848128) within the [#hardware](https://discord.com/channels/405159462932971535/405164275036848128) channel on Discord. The idea of a mobile app interface was met with enthusiasm. Community members recognized that such an interface could significantly lower entry barriers, making it easier to introduce Rocket Pool solo staking to a wider audience, especially normies. The project was given the green light in September after a meeting with @jcrtp, @darcius and @langers, with @jcrtp confirming that the required APIs can be integrated into the Smartnode code. Development commenced and the project has already amassed over 200 commits. The progress achieved, as shown in the GIF below, was demoed to @darcius and @langers, they recommended that we proceed with a grant proposal.
+
+[Android APK installer of the demo](https://drive.google.com/file/d/1IKGYJNC-Rj19_Axm21TClfsI6BGuyE-s/view?usp=sharing)
+
+[Repo on GitHub](https://github.com/functionland/fx-blox)
+
+![Demo](https://github.com/functionland/fx-blox/assets/1758649/1f64f4ba-fe94-4a3f-9171-4d526a47b447)
+
+
 
 ### Is there any related work this builds off of?
  - We should search for it
  - Describe similar UI in Fula
 
 ### Will the results of this project be entirely open source? If not, which parts will not be, why, and under what license will they be published?
- - Yes, The license is [MIT](https://opensource.org/licenses/MIT) for everything.
+ - Yes, everything is [MIT](https://opensource.org/licenses/MIT) licensed.
 
 ## Benefits - enter N/A where appropriate
 ### How does this help people looking to stake ETH for rETH?
