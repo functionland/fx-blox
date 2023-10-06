@@ -5,7 +5,7 @@ We have started work on a mobile app interface for Smartnode setup and operation
 
 The current scope of the project is local hardware nodes. The app guides users through a step-by-step wizard, assisting them in connecting their device to their home network and establishing a remote connection via Libp2p for remote accessibility. It then deploys an opinionated configuration for their Smartnode, requiring minimal user input. After the quick-setup step, users enter a dashboard to monitor their node's status and customize settings to their liking. While the current scope of the work doesn't encompass setting up on a laptop or virtual machine, the app is [architected in a way](https://github.com/functionland/fx-blox/blob/main/docs/fx-stack-overview.md) that allows for the addition of these capabilities in future development phases. Although our initial focus is on Android, the framework we've chosen, MAUI Blazor, allows for expansion to iOS, Windows, and Mac.
 
-The inspiration for initiating this project stemmed from [conversations](https://discord.com/channels/405159462932971535/405164275036848128/1144912479936323614) within the [#hardware](https://discord.com/channels/405159462932971535/405164275036848128) channel on Discord. The idea of a mobile app interface was met with enthusiasm. Community members recognized that such an interface could significantly lower entry barriers, making it easier to introduce Rocket Pool solo staking to a wider audience, especially normies. The project was given the green light in September after a meeting with @jcrtp, @darcius and @langers, with @jcrtp confirming that the required APIs can be integrated into the Smartnode code. Development commenced and the project has already amassed over 200 commits. The progress achieved, as shown in the GIF below, was demoed to @darcius and @langers, they recommended that we proceed with a grant application.
+The inspiration for initiating this project stemmed from [conversations](https://discord.com/channels/405159462932971535/405164275036848128/1144912479936323614) within the [#hardware](https://discord.com/channels/405159462932971535/405164275036848128) channel on Discord. The idea of a mobile app interface was met with enthusiasm. Community members recognized that such an interface could significantly lower entry barriers, making it easier to introduce Rocket Pool solo staking to a wider audience, especially normies. The project was given the green light in September after a meeting with [Joe](https://dao.rocketpool.net/u/jcrtp), [Dave](https://dao.rocketpool.net/u/darcius) and [Langers](https://dao.rocketpool.net/u/langers), with @jcrtp confirming that the required APIs can be integrated into the Smartnode code. Development commenced and the project has already amassed over 200 commits. The progress achieved, as shown in the GIF below, was demoed to [Dave](https://dao.rocketpool.net/u/darcius) and @langers, they recommended that we proceed with a grant application.
 
 [Android APK installer of the demo](https://drive.google.com/file/d/1IKGYJNC-Rj19_Axm21TClfsI6BGuyE-s/view?usp=sharing)
 
@@ -120,7 +120,7 @@ To learn more about our talented development team, you can read [Functionland's 
  - Milestone 0: PoC (Done)
  - Milestone 1: UI
  - Milestone 2: Backend and P2P logic
- - Milestone 3: Connecting to RocketPool APIs (through support from @jcrtp)
+ - Milestone 3: Connecting to RocketPool APIs (through support from Joe)
 
 ### How is the work being tested? Is testing included in the schedule?
 
