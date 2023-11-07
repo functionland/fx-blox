@@ -437,7 +437,7 @@ Please confirm your email by clicking on the link.</value>
     <value>Search some todo...</value>
   </data>
   <data name="HomeMessage" xml:space="preserve">
-    <value>Welcome to RocketPool Smart Node setup.</value>
+    <value>Welcome to SSN Smart Node setup.</value>
   </data>
   <data name="HomeTitle" xml:space="preserve">
     <value>FxBlox Home</value>
