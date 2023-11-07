@@ -13,14 +13,14 @@ You can enable it by this command too (after you've enabled the hardware in BIOS
 ```
 
 ## Visual Studio
-- Visual Studio 17.4.0 or higher
+- Visual Studio 17.7.5 or higher
 - Workloads:
     - ASP.NET and web development
 	- .NET Multi-platform App UI development
     - .NET desktop development
-- .NET SDK 6.0.400: You can install it by 
+- .NET SDK 7.0.201: You can install it by 
 ```cmd
-winget install Microsoft.DotNet.SDK.6 --version 6.0.403
+winget install Microsoft.DotNet.SDK.7 --version 7.0.201
 ```
 
 - Make sure Nuget is configured.
