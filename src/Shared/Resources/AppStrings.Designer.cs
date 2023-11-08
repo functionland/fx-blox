@@ -746,7 +746,7 @@ namespace Functionland.FxBlox.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to SSN Smart Node setup..
+        ///   Looks up a localized string similar to Welcome to SSV Smart Node setup..
         /// </summary>
         public static string HomeMessage {
             get {

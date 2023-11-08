@@ -10,8 +10,8 @@ namespace Functionland.FxBlox.Client.Core.BloxStacks.Implementations
 {
     public class FakeRocketPoolStack : IFxStack
     {
-        public string Title => "SSN Stack";
-        public string Description => "SSN Stack Description";
+        public string Title => "SSV Stack";
+        public string Description => "SSV Stack Description";
         public Task NavigateToConfigurationPageAsync()
         {
             return Task.CompletedTask;
