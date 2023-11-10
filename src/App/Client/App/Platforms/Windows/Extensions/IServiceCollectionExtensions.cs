@@ -14,6 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<IPlatformTestService, WindowsPlatformTestService>();
             services.AddTransient<WindowsWalletServiceTransferSomeMoneyPlatformTest>();
             services.AddTransient<WindowsWalletServiceConnectToWalletPlatformTest>();
+            services.AddSingleton<IWifiService, FakeWifiService>();
             return services;
         }
     }
